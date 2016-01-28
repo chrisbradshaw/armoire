@@ -1,0 +1,4 @@
+<h2><%= link_to @shoe.name, shoe %></h2> 
+
+<p><%= link_to 'Edit', edit_shoes_path(shoe) %></p>
+<p><%= link_to 'Remove', post, method: :delete, data: { confirm: 'Are you sure you want to remove this from your Armoire?' } %></p>
