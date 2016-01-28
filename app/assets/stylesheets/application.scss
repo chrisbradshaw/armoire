@@ -2,17 +2,6 @@
 @import "bootstrap";
 
 
-/* mixins, variables, etc. */
-
-.jumbotron {
-    position: relative;
-    background: #F2EBBF url("jumbotron-bg.png") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-}
-
 $btn-primary-bg: #FF5640;
 
 $gray-medium-light: #eaeaea;
