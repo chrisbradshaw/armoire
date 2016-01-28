@@ -1,0 +1,2 @@
+class GarmentsController < ApplicationController
+end
