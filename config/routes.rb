@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  resources :outfits
+  resources :accessories
+  resources :shoes
   resources :garments
   root 'home#index'
   get 'signup'  => 'users#new'
