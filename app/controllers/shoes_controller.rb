@@ -39,8 +39,8 @@ class ShoesController < ApplicationController
   end
 
   private
-  def params
-    params.require(:shoe).permit(:name, :element, :style, :color, :occasion, :season, :clean, :last_worn)
+  def shoe_params
+    params.require(:shoe).permit(:name, :element, :style, :color, :occasion, :season, :worn)
   end
 
 end

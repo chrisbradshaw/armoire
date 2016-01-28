@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20160128185827) do
   end
 
   create_table "shoes", force: :cascade do |t|
-
     t.string   "name"
     t.string   "element"
     t.string   "style"
