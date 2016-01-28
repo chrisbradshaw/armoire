@@ -1,0 +1,4 @@
+<h1>Sign in</h1>
+ <%= form_tag signin_path, method: :post %>
+ <%= select_tag "user[id]", options_from_collection_for_select(User.all, :id, :name) %>
+ <%= submit_tag "Sign In"%>

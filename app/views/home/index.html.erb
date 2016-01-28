@@ -1,8 +1,37 @@
-<h1>Armoire:</h1>
 
-<h2>Style your life</h2>
+<div class="center jumbotron">
+<h1 class="center bold-header">Armoire</h1>
+
+<h2 class="center italic-h2">Style your life</h2>
+
+
+
+<div class="row">
+<div class="col-md-4">
+      <p>Organized Wardrobe</p>
+         <%= link_to image_tag("girl-pose.svg", alt: "girl pose"),
+            '#' %>
+      </div>
+        <div class="col-md-4">
+            <p>Text Alerts</p>
+              <span class="glyphicon glyphicon-phone" id="phone" aria-hidden="true"></span>
+          </div>
+
+        <div class="col-md-4"><p>Focus on What Matters</p>
+              <%= link_to image_tag("man-pose.svg", alt: "Wardrobe"),
+            '#' %>
+        </div>
+
+</div>
+
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
+</div>
+
 
 <p>
   The time is now: <%= Time.now %>
 </p>
+
 <p>You look: amazing</p>
