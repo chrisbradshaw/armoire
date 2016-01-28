@@ -1,0 +1,8 @@
+<% if !logged_in? %>
+  <p>Please log in to see your garments!</p>
+<% else %>
+  <h1>Garments</h1>
+  <%= render @garments %>
+<% end %>
+
+<%#link back to login page%>
