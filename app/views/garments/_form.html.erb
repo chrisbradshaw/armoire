@@ -1,0 +1,28 @@
+<%= form_for(@garment) do |f| %>
+  <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %><br>
+
+      <%= f.label :element %><br>
+      <%= f.text_field :element %><br>
+
+      <%= f.label :style %><br>
+      <%= f.text_field :style %><br>
+
+      <%= f.label :color %><br>
+      <%= f.text_field :color %><br>
+
+      <%= f.label :occassion %><br>
+      <%= f.text_field :occassion %><br>
+
+      <%= f.label :season %><br>
+      <%= f.text_field :season %><br>
+
+      <%= f.label :worn %><br>
+      <%= f.check_box :worn %><br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
