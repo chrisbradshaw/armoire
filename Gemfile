@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.3"
+ruby "2.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -52,3 +52,5 @@ gem "rails_12factor"
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'puma'
+
+gem 'faker', '~> 1.6', '>= 1.6.1'

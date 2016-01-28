@@ -4,8 +4,10 @@ class HomeController < ApplicationController
   end
 
   def help
+    render 'help'
   end
 
   def about
+    render 'help'
   end
 end
