@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
+  root 'home#index'
 
   resources :outfits
   resources :accessories
   resources :shoes
   resources :garments
-  root 'home#index'
   get 'signup'  => 'users#new'
   get 'help'    => 'home#help'
   get 'about'   => 'home#about'
