@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'help'    => 'home#help'
   get 'about'   => 'home#about'
   get 'contact' => 'home#contact'
+  get 'signin' => 'sessions#new'
   resources :users
 
 
