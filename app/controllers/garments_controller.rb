@@ -4,6 +4,7 @@ class GarmentsController < ApplicationController
   end
 
   def show
+     #binding.pry
     @garment = Garment.find(params[:id])
   end
 
@@ -18,7 +19,7 @@ class GarmentsController < ApplicationController
     @garment = Garment.new(garment_params)
 
     if @garment.save
-      flash[:success] = "You've added #{@garment[:name]} to your armoire."
+      flash[:success] = "You've added a garment to your armoire."
       redirect_to @garment
     end
   end
@@ -26,14 +27,17 @@ class GarmentsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+
+    @garment = Garment.find_by(params[:id])
     @garment.destroy
-    flash[:success] = "You've deleted #{@garment[:name]} from your Armoire."
+    flash[:success] = "You've deleted a garment from your Armoire."
+    redirect_to garments_path
   end
 
   private
   def garment_params
-    params.require(:garment).permit(:name, :element, :style, :color, :occassion, :season, :worn)
+    params.require(:garment).permit(:name, :element, :style, :color, :occasion, :season, :worn)
   end
 
 end

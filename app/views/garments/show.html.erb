@@ -4,8 +4,9 @@
     <li><%= @garment.element%></li>
     <li><%= @garment.style %></li>
     <li><%= @garment.color %></li>
-    <li><%= @garment.occasion %></li>
     <li><%= @garment.season %></li>
     <li><%= @garment.worn %></li>
 </ul>
 <%#link back to index %>
+<%= link_to 'Go back', garments_path %>
+<%= link_to 'Delete this garment', delete_path(@garment) %>

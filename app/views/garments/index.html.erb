@@ -1,8 +1,8 @@
-<%# if !logged_in? %>
-<!--   <p>Please log in to see your garments!</p> -->
-<%# else %>
-  <h1>Garments</h1>
-  <%= render 'form' %>
-<%# end %>
 
-<%#link back to login page%>
+  <h1>Garments</h1>
+
+  <% @garments.each do |i| %>
+    <p><%= link_to i.name, i %></p>
+  <% end %>
+
+  <%= link_to "Add another garment", new_garment_path %>

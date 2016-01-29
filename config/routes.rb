@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'about'   => 'home#about'
   get 'contact' => 'home#contact'
   get 'signin' => 'sessions#new'
+  get 'delete' => 'garments#destroy'
+
   resources :users
 
 
