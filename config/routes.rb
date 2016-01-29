@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'signin' => 'sessions#new'
 
   get 'delete' => 'garments#destroy'
-
+  get 'delete_accessory' => 'accessories#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
