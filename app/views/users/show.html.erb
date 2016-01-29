@@ -1,4 +1,5 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -7,5 +8,34 @@
         <%= @user.name %>
       </h1>
     </section>
+
+  <!-- User armoire below. Need to show user favorites on top once built-->
+  <!-- User garments -->
+    <section class="user_garments">
+      <ul>
+        <% @user.garments.each do |garments| %>
+          <li> <%= link_to garment.name, garment %> </li><br>
+        <% end %>
+      </ul>
+    </section>
+
+  <!-- User shoes -->
+    <section class="user_shoes">
+      <ul>
+        <% @user.shoes.each do |shoe| %>
+          <li> <%= link_to shoe.name, shoe %> </li><br>
+        <% end %>
+      </ul>
+    </section>
+
+    <!-- User accessories -->
+    <section class="user_accessories">
+      <ul>
+        <% @user.accessories.each do |accessory| %>
+          <li> <%= link_to accessory.name, accessory %> </li><br>
+        <% end %>
+      </ul>
+    </section>
+
   </aside>
 </div>
