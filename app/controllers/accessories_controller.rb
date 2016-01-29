@@ -1,6 +1,6 @@
 class AccessoriesController < ApplicationController
 
-<<<<<<< HEAD
+
   def index
     @accessories = Accessory.all
   end
@@ -18,7 +18,7 @@ class AccessoriesController < ApplicationController
     @accessory = Accessory.new(accessory_params)
       if @accessory.save
         flash[:success] = "Your Accessory has been added to your Armoire!"
-        redirect_to @Accessory
+        redirect_to @accessory
       else
       render 'new'
     end
@@ -46,4 +46,4 @@ class AccessoriesController < ApplicationController
      def accessory_params
        params.require(:accessory).permit(:name, :element, :style, :color, :occasion, :season, :worn)
      end
-# end
+end
