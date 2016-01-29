@@ -33,7 +33,7 @@ class GarmentsController < ApplicationController
 
   private
   def garment_params
-    params.require(:garment).permit(:name, :element, :style, :color, :occasion, :season, :worn)
+    params.require(:garment).permit(:name, :element, :style, :color, :occassion, :season, :worn)
   end
 
 end
