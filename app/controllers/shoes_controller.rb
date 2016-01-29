@@ -33,10 +33,7 @@ class ShoesController < ApplicationController
 
   def delete
     @shoe.destroy
-    respond_to do |format|
-      format.html { redirect_to shoes_url}
-      format.json { head :no_content }
-    end
+    flash[:success] = "#{@shoe.name} is removed from your armoire."
   end
 
   private
