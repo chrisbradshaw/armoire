@@ -1,3 +1,8 @@
 class Outfit < ActiveRecord::Base
-  belongs_to: :user
+
+  has_many :garments
+  has_many :accessories
+  has_many :shoes
+  has_many :users, through: :garments
+  
 end

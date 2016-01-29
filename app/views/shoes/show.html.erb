@@ -1,12 +1,9 @@
-<h2>Your Shoe</h2>
-<div class="container">
-
-      <li><%= @shoe.name %></li>
-      <li><%= @shoe.style %></li>
-      <li><%= @shoe.color %></li>
-      <li><%= @shoe.occasion %></li>
-      <li><%= @shoe.season %> </li>
-      <li><%= @shoe.worn %></li>
-
-</div>
+<h1><%= @shoe.name %></h1>
+  <div class="container">
+    <li><strong>Style: </strong> <%= @shoe.style %></li>
+    <li><strong>Color: </strong> <%= @shoe.color %></li>
+    <li><strong>Occasion: </strong> <%= @shoe.occasion %></li>
+    <li><strong>Season: </strong> <%= @shoe.season %> </li>
+    <li><strong>Ready to wear: </strong> <%= @shoe.worn %></li>
+  </div>
 
