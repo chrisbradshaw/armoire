@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources :users
   resources :outfits
   resources :accessories
   resources :shoes
@@ -11,9 +12,9 @@ Rails.application.routes.draw do
   get 'about'   => 'home#about'
   get 'contact' => 'home#contact'
   get 'signin' => 'sessions#new'
+
   get 'delete' => 'garments#destroy'
 
-  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.
