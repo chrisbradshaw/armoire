@@ -1,3 +1,4 @@
+
 class AccessoriesController < ApplicationController
 
 
@@ -32,12 +33,13 @@ class AccessoriesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+
+    @accessory = Accessory.find_by(id: params[:id])
+
     @accessory.destroy
-    respond_to do |format|
-      format.html { redirect_to accessories_url}
-      format.json { head :no_content }
-    end
+    flash[:success] = "You've deleted a accessory from your Armoire."
+    redirect_to accessories_path
   end
 
    private

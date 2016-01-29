@@ -29,7 +29,8 @@ class GarmentsController < ApplicationController
 
   def destroy
 
-    @garment = Garment.find_by(params[:id])
+    @garment = Garment.find_by(id: params[:id])
+    
     @garment.destroy
     flash[:success] = "You've deleted a garment from your Armoire."
     redirect_to garments_path
