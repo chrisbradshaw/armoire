@@ -17,6 +17,13 @@ ActiveRecord::Schema.define(version: 20160128185827) do
   enable_extension "plpgsql"
 
   create_table "accessories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "element"
+    t.string   "style"
+    t.string   "color"
+    t.string   "occasion"
+    t.string   "season"
+    t.boolean  "worn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
