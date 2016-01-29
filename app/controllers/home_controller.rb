@@ -10,4 +10,5 @@ class HomeController < ApplicationController
   def about
     render 'help'
   end
+  
 end
