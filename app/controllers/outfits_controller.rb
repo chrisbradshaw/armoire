@@ -12,8 +12,22 @@ class OutfitsController < ApplicationController
     render 'new'
   end
 
+
+  def show
+    @outfit = Outfit.find(params[:id])
+  end
+
+  def create
+    @outfit = Outfit.new(outfit_params)
+      if @outfit
+        flash[:success] = "Get dressed, not stressed!"
+        redirect_to @outfit
+      else
+       'Need to send this undressed person somewhere'
+    end
+  end
+
   private
   def outfits_params
   end
-
 end

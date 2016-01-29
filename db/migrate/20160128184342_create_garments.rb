@@ -5,7 +5,7 @@ class CreateGarments < ActiveRecord::Migration
       t.string :element
       t.string :style
       t.string :color
-      t.string :occassion
+      t.string :occasion
       t.string :season
       t.boolean :worn
       t.timestamps null: false

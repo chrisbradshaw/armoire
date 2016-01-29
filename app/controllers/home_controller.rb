@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def about
-    render 'help'
+    render 'about'
   end
   
 end

@@ -1,9 +1,10 @@
 class GarmentsController < ApplicationController
   def index
-    @garments = Garments.all
+    @garments = Garment.all
   end
 
   def show
+    @garment = Garment.find(params[:id])
   end
 
   def new
@@ -27,7 +28,7 @@ class GarmentsController < ApplicationController
 
   def delete
     @garment.destroy
-    flash[:success] = "You've deleted #{@garment[:name]} from your armoire."
+    flash[:success] = "You've deleted #{@garment[:name]} from your Armoire."
   end
 
   private

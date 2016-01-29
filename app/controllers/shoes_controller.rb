@@ -4,18 +4,19 @@ class ShoesController < ApplicationController
     @shoes = Shoe.all
   end
 
-  def show
-    @shoe = Shoe.find(params[:id])
-  end
-
   def new
     @shoe = Shoe.new
   end
 
+  def show
+    @shoe = Shoe.find(params[:id])
+  end
+
+
   def create
     @shoe = Shoe.new(shoe_params)
       if @shoe.save
-        flash[:success] = "Your shoe has been put in your closet!"
+        flash[:success] = "Your shoe added to your Armoire!"
         redirect_to @shoe
       else
       render 'new'
