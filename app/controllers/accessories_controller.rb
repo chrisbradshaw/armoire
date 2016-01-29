@@ -1,16 +1,17 @@
 class AccessoriesController < ApplicationController
 
- before_action :set_post, only: [:show, :edit, :update, :destroy]
+ before_action :set_accessory, only: [:show, :edit, :update, :destroy]
 
    # GET /posts
    # GET /posts.json
    def index
-     @accessory = Accessories.all
+     @accessory = Accessory.all
    end
 
    # GET /posts/1
    # GET /posts/1.json
    def show
+
    end
 
    # GET /posts/new
@@ -64,7 +65,7 @@ class AccessoriesController < ApplicationController
      #     format.json { render json: @accessory.errors, status: :unprocessable_entity }
      #   end
      # end
-   end
+  #  end
 
    # DELETE /posts/1
    # DELETE /posts/1.json
@@ -78,12 +79,12 @@ class AccessoriesController < ApplicationController
 
    private
      # Use callbacks to share common setup or constraints between actions.
-     def set_accessory
-       @accessory = Accessory.find(params[:id])
-     end
+    #  def set_accessory
+    #    @accessory = Accessory.find(params[:id])
+    #  end
 
      # Never trust parameters from the scary internet, only allow the white list through.
      def accessory_params
-       params.require(:accessory).permit(:name, :element, :style, :color, :occasion, :season, :clean, :last_worn)
+       params.require(:accessory).permit(:name, :element, :style, :color, :occasion, :season, :worn)
      end
-end
+# end
