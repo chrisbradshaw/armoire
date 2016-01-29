@@ -1,6 +1,6 @@
 class GarmentsController < ApplicationController
   def index
-    @garments = Garments.all
+    @garments = Garment.all
   end
 
   def show
