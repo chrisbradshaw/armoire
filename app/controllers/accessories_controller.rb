@@ -1,5 +1,6 @@
 class AccessoriesController < ApplicationController
 
+<<<<<<< HEAD
   def index
     @accessories = Accessory.all
   end
@@ -41,7 +42,8 @@ class AccessoriesController < ApplicationController
 
    private
 
+
      def accessory_params
-       params.require(:accessory).permit(:name, :element, :style, :color, :occasion, :season, :clean, :last_worn)
+       params.require(:accessory).permit(:name, :element, :style, :color, :occasion, :season, :worn)
      end
-end
+# end
