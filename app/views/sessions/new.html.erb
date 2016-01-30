@@ -1,4 +1,23 @@
-<h1>Sign in</h1>
- <%= form_tag signin_path, method: :post %>
+<% provide(:title, "Log in") %>
+<h1>Log in</h1>
+
+<div class ="row">
+  <div class="col-md-6 col-md-offset-3"> 
+    <%= form_for(:session, url: login_path) do |f|%>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%=f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>With ARMOIRE, get dressed, not stressed. <%=link_to "Sign up now!", signup_path %></p>
+    </div>
+  </div>
+
+
+  <!--     
  <%= select_tag "user[id]", options_from_collection_for_select(User.all, :id, :name) %>
- <%= submit_tag "Sign In"%>
+ <%= submit_tag "Sign In"%> -->

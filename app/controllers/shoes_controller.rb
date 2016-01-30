@@ -12,6 +12,8 @@ class ShoesController < ApplicationController
     @shoe = Shoe.find(params[:id])
   end
 
+  def edit
+  end
 
   def create
     @shoe = Shoe.new(shoe_params)
@@ -31,7 +33,7 @@ class ShoesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @shoe = Shoe.find_by(id: params[:id])
     @shoe.destroy
     flash[:success] = "#{@shoe.name} is removed from your Armoire."
