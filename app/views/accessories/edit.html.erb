@@ -1,0 +1,30 @@
+<% provide(:title, "Edit accessory") %>
+<h1>Alter your accessories</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @accessory do |f| %>
+
+    <%= f.label :name %><br>
+    <%= f.text_area :name %><br>
+
+    <%= f.label :element %><br>
+    <%= f.text_area :element %><br>
+
+    <%= f.label :style %><br>
+    <%= f.text_area :style %><br>
+
+    <%= f.label :color %><br>
+    <%= f.text_area :color %><br>
+
+    <%= f.label :season %><br>
+    <%= f.text_area :season %><br>
+
+    <%= f.label :worn %><br>
+    <%= f.check_box :worn %><br>
+
+      <%= f.submit "upgrade", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
