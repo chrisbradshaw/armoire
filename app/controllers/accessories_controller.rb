@@ -38,7 +38,7 @@ class AccessoriesController < ApplicationController
     @accessory = Accessory.find_by(id: params[:id])
 
     @accessory.destroy
-    flash[:success] = "You've deleted a accessory from your Armoire."
+    flash[:success] = "#{@accessory.name} is removed from your Armoire."
     redirect_to accessories_path
   end
 

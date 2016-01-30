@@ -32,8 +32,10 @@ class ShoesController < ApplicationController
   end
 
   def delete
+    @shoe = Shoe.find_by(id: params[:id])
     @shoe.destroy
-    flash[:success] = "#{@shoe.name} is removed from your armoire."
+    flash[:success] = "#{@shoe.name} is removed from your Armoire."
+    redirect_to shoes_path
   end
 
   private

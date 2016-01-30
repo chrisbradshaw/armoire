@@ -1,4 +1,4 @@
-<h1><%= @shoe.name %></h1>
+<h2><%= @shoe.name %></h2>
   <div class="container">
     <li><strong>Style: </strong> <%= @shoe.style %></li>
     <li><strong>Color: </strong> <%= @shoe.color %></li>
@@ -7,3 +7,6 @@
     <li><strong>Ready to wear: </strong> <%= @shoe.worn %></li>
   </div>
 
+<%= link_to 'Go back', shoes_path %>
+<%= link_to 'Get rid of these shoes!', shoes_delete_path(@shoe) %>
+<%= link_to 'Edit', edit_shoe_path(@shoe) %>
