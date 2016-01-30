@@ -56,3 +56,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'puma'
 
 gem 'faker', '~> 1.6', '>= 1.6.1'
+
+gem 'rubycritic'

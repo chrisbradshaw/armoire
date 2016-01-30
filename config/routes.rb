@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   resources :accessories
   resources :shoes
   resources :garments
-  get 'signup'  => 'users#new'
   get 'help'    => 'home#help'
   get 'about'   => 'home#about'
   get 'contact' => 'home#contact'
-  get 'signin' => 'sessions#new'
+  get 'signup'  => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
 
   get 'delete/:id' => 'garments#destroy', as:'garment_destroy'
   get 'delete_accessories/:id' => 'accessories#destroy', as:'accessory_delete'
