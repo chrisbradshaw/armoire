@@ -11,9 +11,8 @@ class AccessoriesController < ApplicationController
   end
 
   def show
-    @accessory = Accessory.find(params[:id])
+    @accessory = Accessory.find_by(id: params[:id])
   end
-
 
   def create
     @accessory = Accessory.new(accessory_params)
@@ -25,18 +24,20 @@ class AccessoriesController < ApplicationController
     end
   end
 
+  def edit
+    @accessory = Accessory.find(params[:id])
+  end
+
   def update
     if @accessory.update(accessory_params)
-      flash[:success] = "Your Accessory has been updated!"
+      flash[:success] = "changed accessory"
     else
       render 'new'
     end
   end
-
+  
   def destroy
-
     @accessory = Accessory.find_by(id: params[:id])
-
     @accessory.destroy
     flash[:success] = "#{@accessory.name} is removed from your Armoire."
     redirect_to accessories_path
