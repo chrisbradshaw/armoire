@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   get 'about'   => 'home#about'
   get 'contact' => 'home#contact'
   get 'signin' => 'sessions#new'
-  
+
+  get 'delete/:id' => 'garments#destroy', as:'garment_destroy'
+  get 'delete_accessories/:id' => 'accessories#destroy', as:'accessory_delete'
+  get 'delete_shoes/:id' => 'shoes#destroy', as:'shoes_delete'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

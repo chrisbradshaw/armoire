@@ -1,4 +1,6 @@
+
 class AccessoriesController < ApplicationController
+
 
   def index
     @accessories = Accessory.all
@@ -17,7 +19,7 @@ class AccessoriesController < ApplicationController
     @accessory = Accessory.new(accessory_params)
       if @accessory.save
         flash[:success] = "Your Accessory has been added to your Armoire!"
-        redirect_to @Accessory
+        redirect_to @accessory
       else
       render 'new'
     end
@@ -31,17 +33,19 @@ class AccessoriesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+
+    @accessory = Accessory.find_by(id: params[:id])
+
     @accessory.destroy
-    respond_to do |format|
-      format.html { redirect_to accessories_url}
-      format.json { head :no_content }
-    end
+    flash[:success] = "#{@accessory.name} is removed from your Armoire."
+    redirect_to accessories_path
   end
 
    private
 
+
      def accessory_params
-       params.require(:accessory).permit(:name, :element, :style, :color, :occasion, :season, :clean, :last_worn)
+       params.require(:accessory).permit(:name, :element, :style, :color, :occasion, :season, :worn)
      end
 end

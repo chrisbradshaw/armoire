@@ -1,11 +1,11 @@
-<h2>Garment name:</h2>
-<ul>
-    <li><%= @garment.name %></li>
-    <li><%= @garment.element%></li>
-    <li><%= @garment.style %></li>
-    <li><%= @garment.color %></li>
-    <li><%= @garment.occasion %></li>
-    <li><%= @garment.season %></li>
-    <li><%= @garment.worn %></li>
-</ul>
+<h2><%= @garment.name %></h2>
+  <div class="container">
+    <li><strong>Style: </strong> <%= @shoe.style %></li>
+    <li><strong>Color: </strong> <%= @shoe.color %></li>
+    <li><strong>Occasion: </strong> <%= @shoe.occasion %></li>
+    <li><strong>Season: </strong> <%= @shoe.season %> </li>
+    <li><strong>Ready to wear: </strong> <%= @shoe.worn %></li>
+</div>
 <%#link back to index %>
+<%= link_to 'Go back', garments_path %>
+<%= link_to 'Toss this old rag!', garment_destroy_path(@garment) %>

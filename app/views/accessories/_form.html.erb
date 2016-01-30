@@ -1,0 +1,44 @@
+<%= form_for(@accessory) do |f| %>
+  <% if @accessory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accessory.errors.count, "error") %> prohibited this accessory from being put in your Armoire:</h2>
+
+      <ul>
+      <% @accessory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %><br>
+
+    <%= f.label :element %><br>
+    <%= f.text_area :element %><br>
+
+    <%= f.label :style %><br>
+    <%= f.text_area :style %><br>
+
+    <%= f.label :color %><br>
+    <%= f.text_area :color %><br>
+
+    <%= f.label :occasion %><br>
+    <%= f.text_area :occasion %><br>
+
+    <%= f.label :season %><br>
+    <%= f.text_area :season %><br>
+
+    <%= f.label :worn %><br>
+    <%= f.check_box :worn %><br>
+
+    <%= hidden_field_tag "accessory_id", @accessory.id %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
