@@ -1,14 +1,19 @@
-<div class="navbar">
-<%= link_to "My Garments", garments_path %>
-<%= link_to "My Shoes", shoes_path %>
-<%= link_to "My Accessories", accessories_path %>
-</div>
+<% if current_user %>
+  <div class="navbar">
+    <%= link_to "My Garments", garments_path %>
+    <%= link_to "My Shoes", shoes_path %>
+    <%= link_to "My Accessories", accessories_path %>
+<% else %>
+  <%= "Please " %> <%=link_to "log in", login_path%> <%=" to view your armoire!"%>
+<% end %>
+  </div>
+
+
 
 <div class="center jumbotron">
 <h1 class="center bold-header">Armoire</h1>
 
 <h2 class="center italic-h2">Style your life</h2>
-
 
 
 <div class="row">

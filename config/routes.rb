@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
 
+##should all eventually be hidden:
   get 'delete/:id' => 'garments#destroy', as:'garment_destroy'
   get 'delete_accessories/:id' => 'accessories#destroy', as:'accessory_delete'
   get 'delete_shoes/:id' => 'shoes#destroy', as:'shoes_delete'
