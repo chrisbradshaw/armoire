@@ -1,5 +1,7 @@
   <h1>Your Garments</h1>
 
+  <%= render partial: 'outfits/outfit' %>
+
   <% @garments.each do |i| %>
     <p><%= link_to i.name, i %></p>
   <% end %>

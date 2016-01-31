@@ -1,6 +1,10 @@
 <h1>Your Shoes</h1>
+
+
 <%if current_user%>
-  <%= render 'shoes' %> <br>
+  <%= render @shoes %> <br>
+<%= render partial: 'outfits/outfit' %>
+
 <%else%>
   <%= "Please " %> <%=link_to "log in", login_path%> <%=" to view your shoes"%><br>
 <% end %>

@@ -1,6 +1,8 @@
 <h1>Your Accessories</h1>
 <%= render @accessories %> <br>
 
+<%= render partial: 'outfits/outfit' %>
+
 <br><%= link_to "You need another piece of sparkle in your life! Add one here", new_accessory_path %><br>
 
 <br><%= link_to "Shop your shoe closet! See all your shoes here.", shoes_path %><br>
