@@ -1,10 +1,14 @@
 <h2>Your Accessory</h2>
-<%= @accessory.name %><br>
-<%= @accessory.style %><br>
-<%= @accessory.color %><br>
-<%= @accessory.occasion %><br>
-<%= @accessory.season %> <br>
-<%= @accessory.worn %><br>
+<div class="container">
+<ul>
+  <li><%= @accessory.name %></li>
+  <li><%= @accessory.style %></li>
+  <li><%= @accessory.color %></li>
+  <li><%= @accessory.occasion %></li>
+  <li><%= @accessory.season %> </li>
+  <li><%= @accessory.worn %></li>
+</ul>
+</div>
 
 <%= link_to 'Go back', accessories_path %>
 <%= link_to 'These diamonds lost their sparkle.', accessory_delete_path(@accessory) %>

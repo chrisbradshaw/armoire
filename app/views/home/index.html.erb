@@ -36,9 +36,11 @@
 
       <!-- facebook huge block of login in js goes here -->
 
-
+<% if !signed_in? %>
     <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-
+    <% else %>
+     <%= link_to "Build your Wardrobe!", new_shoe_path, class: "btn btn-lg btn-primary" %>
+<% end %>
 </div>
 
 

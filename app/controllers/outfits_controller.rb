@@ -3,11 +3,10 @@ class OutfitsController < ApplicationController
   #outfits last only while they are on-screen should be created and shown but not saved. 
   
   def index
-
-    @outfits = Outfit.all
     @shoes = Shoe.all
     @garments = Garment.all
     @accessories = Accessory.all
+    byebug
   end
 
   def new

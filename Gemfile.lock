@@ -73,6 +73,8 @@ GEM
     execjs (2.6.0)
     font-awesome-rails (4.5.0.0)
       railties (>= 3.2, < 5.0)
+    font-awesome-sass (4.5.0)
+      sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -189,6 +191,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   font-awesome-rails
+  font-awesome-sass (~> 4.5.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.15)
