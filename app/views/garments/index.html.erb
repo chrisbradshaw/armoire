@@ -1,8 +1,6 @@
   <h1>Your Garments</h1>
 
-  <% @garments.each do |i| %>
-    <p><%= link_to i.name, i %></p>
-  <% end %>
+  <% render 'garment' %>
 
   <br><%= link_to "You NEED a dress for every occasion! Add one here.", new_garment_path %><br>
 

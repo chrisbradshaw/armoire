@@ -1,5 +1,9 @@
 <h1>Your Shoes</h1>
-<%= render 'shoes' %> <br>
+<%if current_user%>
+  <%= render 'shoes' %> <br>
+<%else%>
+  <%= "Please " %> <%=link_to "log in", login_path%> <%=" to view your shoes"%><br>
+<% end %>
 
 <br><%= link_to "Go ahead, add another.  You can never have too many shoes!", new_shoe_path %><br>
 
