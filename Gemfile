@@ -39,6 +39,8 @@ group :development, :test do
   gem 'byebug'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'pry'
+  gem 'rails-pry', '~> 0.0.1'
 end
 
 group :development do
@@ -57,6 +59,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'puma'
 
-gem 'faker', '~> 1.6', '>= 1.6.1'
+gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'rubycritic'
+
+

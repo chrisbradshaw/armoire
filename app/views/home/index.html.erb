@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if signed_in? %>
   <div class="navbar">
     <%= link_to "My Garments", garments_path %>
     <%= link_to "My Shoes", shoes_path %>

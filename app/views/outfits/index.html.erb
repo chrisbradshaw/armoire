@@ -2,5 +2,40 @@
 
 <%# render partial: 'shoes/shoe' %>
 
-<%= render @outfits %>
+<%= render @accessories %>
 <%= render @shoes %>
+<%= render @garments%>
+
+<div class="row">
+
+    <% @garments.each_slice(3) do |garment|%>
+
+          <div class="col-md-4">
+            <h3>Name: <%= gament.name %></h3><br>
+            <h5> Season: <%= garment.season %></h5><br>
+            <p> Worn? <%= garment.worn %></p>
+              </div>
+            <% end %>
+
+    <% @shoes.each_slice(3) do |shoe|%>
+
+      <div class="col-md-4">
+        <h3>Name: <%= shoe.name %></h3><br>
+        <h5> Season: <%= shoe.season %></h5><br>
+        <p> Worn? <%= shoe.worn %></p>
+          </div>
+        <% end %>
+
+   <% @accessories.each_slice(3) do |accessory|%>
+
+      <div class="col-md-4">
+        <h3>Name: <%= accessory.name %></h3><br>
+        <h5> Season: <%= accessory.season %></h5><br>
+        <p> Worn? <%= accessory.worn %></p>
+          </div>
+        <% end %>
+
+
+      </div>
+
+
