@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+# include SessionsHelper
+# before_action :authenticate_user!
 
   def show
     @user = User.find(params[:id])
@@ -9,7 +11,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new(user_params)
+    @garment = current_user.garments.build(params[:garment])
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Armoire. Prepare to look amazing."

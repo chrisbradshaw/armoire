@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: 'home#index'
   devise_for :users
-  root 'home#index'
 
   resources :users
   resources :outfits

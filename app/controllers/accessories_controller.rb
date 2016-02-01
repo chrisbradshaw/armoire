@@ -15,7 +15,6 @@ class AccessoriesController < ApplicationController
   end
 
   def create
-
     @accessory = Accessory.new(accessory_params)
     @accessory.user_id = current_user.id
       if @accessory.save
@@ -38,7 +37,7 @@ class AccessoriesController < ApplicationController
       render 'new'
     end
   end
-  
+
   def destroy
     @accessory = Accessory.find_by(id: params[:id])
     @accessory.destroy

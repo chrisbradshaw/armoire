@@ -1,12 +1,12 @@
 class OutfitsController < ApplicationController
 
-  #outfits last only while they are on-screen should be created and shown but not saved. 
+  #outfits last only while they are on-screen should be created and shown but not saved.
 
 
   def new
-    @outfit = Outfit.new(user_id: current_user.id)
-    outfit = Outfit.where(user_id: current_user.id).order('random()').first
-    
+    # @outfit = Outfit.new(user_id: current_user.id)
+    # outfit = Outfit.where(user_id: current_user.id).order('random()').first
+
     @shoes=Shoe.all.where(user_id: current_user.id)
     @accessories= Accessory.all.where(user_id: current_user.id)
     @garments= Garment.all.where(user_id: current_user.id)
@@ -26,7 +26,7 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new(outfits_params)
-    @outfit.user_id = current_user.id
+    @outfit.user = current_user
       if @outfit.save
         flash[:success] = "Get dressed, not stressed!"
         redirect_to @outfit
