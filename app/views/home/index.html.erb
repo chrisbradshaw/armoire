@@ -1,8 +1,18 @@
 <% if current_user %>
   <div class="navbar">
-    <%= link_to "My Garments", garments_path %>
-    <%= link_to "My Shoes", shoes_path %>
-    <%= link_to "My Accessories", accessories_path %>
+    <%= link_to garments_path, class: "btn btn-default" do %>
+    My Garments
+    <% end %>
+     <%= link_to shoes_path, class: "btn btn-default" do %>
+    My Shoes
+    <% end %>
+    <%= link_to accessories_path, class: "btn btn-default" do %>
+    My Accessories
+    <% end %>
+    <%= link_to new_outfit_path, class: "btn btn-default" do %>
+    Create an Outfit
+    <% end %>
+    
 <% else %>
   <%= "Please " %> <%=link_to "log in", login_path%> <%=" to view your armoire!"%>
 <% end %>
@@ -37,13 +47,11 @@
       <!-- facebook huge block of login in js goes here -->
 
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+<% if !logged_in? %>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    <% else %>
+     <%= link_to "Start building your Wardrobe!", new_shoe_path, class: "btn btn-lg btn-primary" %>
+<% end %>
+
 
 </div>
-
-
-<p>
-  The time is now: <%= Time.now %>
-</p>
-
-<p>You look: amazing</p>

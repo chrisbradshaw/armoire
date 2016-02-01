@@ -15,7 +15,9 @@ class AccessoriesController < ApplicationController
   end
 
   def create
+
     @accessory = Accessory.new(accessory_params)
+    @accessory.user_id = current_user.id
       if @accessory.save
         flash[:success] = "Your Accessory has been added to your Armoire!"
         redirect_to @accessory
@@ -29,6 +31,7 @@ class AccessoriesController < ApplicationController
   end
 
   def update
+    @accessory.user_id = current_user.id
     if @accessory.update(accessory_params)
       flash[:success] = "changed accessory"
     else
