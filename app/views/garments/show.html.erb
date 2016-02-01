@@ -1,12 +1,31 @@
-<h2><%= @garment.name %></h2>
+<h1>Your New Garment</h1>
+
   <div class="container">
+    <ul>
+    <h4><%= @garment.name %></h4>
+
     <li><strong>Style: </strong> <%= @garment.style %></li>
     <li><strong>Color: </strong> <%= @garment.color %></li>
     <li><strong>Occasion: </strong> <%= @garment.occasion %></li>
     <li><strong>Season: </strong> <%= @garment.season %> </li>
     <li><strong>Ready to wear: </strong> <%= @garment.worn %></li>
+    </ul>
 </div>
-<%#link back to index %>
-<%= link_to 'Go back', garments_path %>
-<%= link_to 'Toss this old rag!', garment_destroy_path(@garment) %>
-<%= link_to 'Add another garment', new_garment_path %>
+
+<div class="container center">
+
+<%= link_to garments_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
+<%= link_to garment_destroy_path(@garment), class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-remove"></i>
+<% end %>
+
+
+<%= link_to new_garment_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-pencil"></i>
+<% end %>
+</div>
+
+</div>
