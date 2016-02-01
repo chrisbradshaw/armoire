@@ -50,7 +50,7 @@
 <% if !signed_in? %>
     <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
     <% else %>
-     <%= link_to "Build your Wardrobe!", user_show_path, class: "btn btn-lg btn-primary" %>
+     <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-lg btn-primary" %>
 <% end %>
 </div>
 
