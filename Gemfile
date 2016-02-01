@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.3"
+ruby "2.3.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -32,11 +32,16 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'pry'
+  gem 'rails-pry', '~> 0.0.1'
+  gem 'rubycritic'
 end
 
 group :development do
@@ -47,14 +52,12 @@ group :development do
   gem 'spring'
 end
 
-gem "font-awesome-rails"
-
 gem "rails_12factor"
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'puma'
 
-gem 'faker', '~> 1.6', '>= 1.6.1'
+gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'rubycritic'
+

@@ -17,6 +17,7 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = Shoe.new(shoe_params)
+    @shoe.user_id = current_user.id
       if @shoe.save
         flash[:success] = "Your shoe added to your Armoire!"
         redirect_to @shoe
@@ -26,6 +27,7 @@ class ShoesController < ApplicationController
   end
 
   def update
+    @shoe.user_id = current_user.id
     if @shoe.update(shoe_params)
       flash[:success] = "Your shoe has been updated!"
     else

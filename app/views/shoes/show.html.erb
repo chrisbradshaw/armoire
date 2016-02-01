@@ -1,5 +1,8 @@
-<h2><%= @shoe.name %></h2>
-  <div class="container">
+<h1>Add New Shoes</h1>
+
+<div class="container">
+  <ul>
+  <h4><%= @shoe.name %></h4>
     <li><strong>Style: </strong> <%= @shoe.style %></li>
     <li><strong>Color: </strong> <%= @shoe.color %></li>
     <li><strong>Occasion: </strong> <%= @shoe.occasion %></li>
@@ -7,5 +10,19 @@
     <li><strong>Ready to wear: </strong> <%= @shoe.worn %></li>
   </div>
 
-<%= link_to 'Go back', shoes_path %>
-<%= link_to 'Get rid of these shoes!', shoes_delete_path(@shoe) %>
+<div class="container center">
+
+<%= link_to shoes_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
+<%= link_to shoes_delete_path(@shoe), class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-remove"></i>
+<% end %>
+
+
+<%= link_to new_shoe_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-pencil"></i>
+<% end %>
+
+</div>

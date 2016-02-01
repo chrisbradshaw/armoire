@@ -1,14 +1,29 @@
-<div class="navbar">
-<%= link_to "My Garments", garments_path %>
-<%= link_to "My Shoes", shoes_path %>
-<%= link_to "My Accessories", accessories_path %>
-</div>
+<% if signed_in? %>
+  <div class="navbar">
+    <%= link_to garments_path, class: "btn btn-default" do %>
+    My Garments
+    <% end %>
+     <%= link_to shoes_path, class: "btn btn-default" do %>
+    My Shoes
+    <% end %>
+    <%= link_to accessories_path, class: "btn btn-default" do %>
+    My Accessories
+    <% end %>
+    <%= link_to new_outfit_path, class: "btn btn-default" do %>
+    Create an Outfit
+    <% end %>
+    
+<% else %>
+  <%= "Please " %> <%=link_to "log in", user_session_path%> <%=" to view your armoire!"%>
+<% end %>
+  </div>
+
+
 
 <div class="center jumbotron">
 <h1 class="center bold-header">Armoire</h1>
 
 <h2 class="center italic-h2">Style your life</h2>
-
 
 
 <div class="row">
@@ -32,13 +47,12 @@
       <!-- facebook huge block of login in js goes here -->
 
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-
+<% if !signed_in? %>
+    <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+    <% else %>
+     <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-lg btn-primary" %>
+<% end %>
 </div>
 
 
-<p>
-  The time is now: <%= Time.now %>
-</p>
-
-<p>You look: amazing</p>
+</div>
