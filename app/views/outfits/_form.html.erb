@@ -1,0 +1,35 @@
+
+<%= form_for(@outfit) do |f| %>
+  <% if @outfit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@outfit.errors.count, "error") %> prohibited this outfit from being put in your Armoire:</h2>
+
+      <ul>
+      <% @outfit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shoes %><br>
+    <%= f.collection_select(:shoe_id, Shoe.all, :id, :name, prompt: true)%><br>
+
+    <%= f.label :garments %><br>
+    <%= f.collection_select(:garment_id, Garment.all, :id, :name, prompt: true)%><br>
+
+    <%= f.label :shoes %><br>
+    <%= f.collection_select(:accessory_id, Accessory.all, :id, :name, prompt: true)%><br>
+
+
+  </div>
+
+  <div class="field">
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

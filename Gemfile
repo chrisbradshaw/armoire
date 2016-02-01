@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.3"
+ruby "2.3.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rubycritic'
 end
 
 group :development do
@@ -57,4 +58,4 @@ gem 'puma'
 
 gem 'faker', '~> 1.6', '>= 1.6.1'
 
-gem 'rubycritic'
+

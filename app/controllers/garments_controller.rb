@@ -17,7 +17,7 @@ class GarmentsController < ApplicationController
 
   def create
     @garment = Garment.new(garment_params)
-
+    @garment.user_id = current_user.id
     if @garment.save
       flash[:success] = "You've added a garment to your armoire."
       redirect_to @garment
@@ -25,6 +25,7 @@ class GarmentsController < ApplicationController
   end
 
   def update
+    @garment.user_id = current_user.id
   end
 
   def destroy
