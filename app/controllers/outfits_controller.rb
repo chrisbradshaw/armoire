@@ -1,7 +1,7 @@
 class OutfitsController < ApplicationController
 
   #outfits last only while they are on-screen should be created and shown but not saved. 
-  
+
 
   def new
     @outfit = Outfit.new(user_id: current_user.id)
