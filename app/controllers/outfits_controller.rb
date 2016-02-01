@@ -6,9 +6,10 @@ class OutfitsController < ApplicationController
   def new
     @outfit = Outfit.new(user_id: current_user.id)
     outfit = Outfit.where(user_id: current_user.id).order('random()').first
-     @shoes = [outfit.shoe]
-        @accessories= [outfit.accessory]
-     @garments = [outfit.garment]
+    
+    @shoes=Shoe.all.where(user_id: current_user.id)
+    @accessories= Accessory.all.where(user_id: current_user.id)
+    @garments= Garment.all.where(user_id: current_user.id)
   end
 
 
@@ -32,7 +33,7 @@ class OutfitsController < ApplicationController
       else
     outfit = Outfit.where(user_id: current_user.id).order('random()').first
      @shoes = [outfit.shoe]
-     @accessories= [outfit.accessory]
+        @accessories= [outfit.accessory]
      @garments = [outfit.garment]
       render 'new'
        # 'Need to send this undressed person somewhere'

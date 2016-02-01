@@ -1,11 +1,27 @@
-<h2>Your Accessory</h2>
-<%= @accessory.name %><br>
-<%= @accessory.style %><br>
-<%= @accessory.color %><br>
-<%= @accessory.occasion %><br>
-<%= @accessory.season %> <br>
-<%= @accessory.worn %><br>
+<h1>Your New Accessory</h1>
+<div class="container">
+  <ul>
+      <h4><%= @accessory.name %></h4>
+      <li><%= @accessory.style %></li>
+      <li><%= @accessory.color %></li>
+      <li><%= @accessory.occasion %></li>
+      <li><%= @accessory.season %> </li>
+      <li><%= @accessory.worn %></li>
+  </ul>
+</div>
 
-<%= link_to 'Go back', accessories_path %>
-<%= link_to 'These diamonds lost their sparkle.', accessory_delete_path(@accessory) %>
-<%= link_to 'Add another accessory', new_accessory_path %>
+<div class="container center">
+
+<%= link_to accessories_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
+<%= link_to accessory_delete_path(@accessory), class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-remove"></i>
+<% end %>
+
+
+<%= link_to new_accessory_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-pencil"></i>
+<% end %>
+</div>
