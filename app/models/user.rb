@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :shoes
   has_many :garments
   has_many :accessories
+  has_many :outfits
 
  before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }
