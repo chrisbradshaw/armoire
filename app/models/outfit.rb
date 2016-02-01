@@ -1,8 +1,9 @@
 class Outfit < ActiveRecord::Base
-
-  has_many :garments
-  has_many :accessories
-  has_many :shoes
-  has_many :users, through: :garments
+  validates :user_id, :garment_id, :shoe_id, :accessory_id, presence: true
+  
+  belongs_to :garment
+  belongs_to :accessory
+  belongs_to :shoe
+  belongs_to :user
   
 end

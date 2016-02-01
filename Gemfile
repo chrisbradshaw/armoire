@@ -41,6 +41,7 @@ group :development, :test do
   gem "binding_of_caller"
   gem 'pry'
   gem 'rails-pry', '~> 0.0.1'
+  gem 'rubycritic'
 end
 
 group :development do
@@ -51,7 +52,7 @@ group :development do
   gem 'spring'
 end
 
-gem "font-awesome-rails"
+gem 'font-awesome-sass'
 
 gem "rails_12factor"
 
@@ -60,6 +61,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'puma'
 
 gem 'font-awesome-sass', '~> 4.5.0'
-
 
 

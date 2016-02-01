@@ -1,15 +1,27 @@
-<h2>Your Accessory</h2>
+<h1> Your New Accessory</h1>
 <div class="container">
-<ul>
-  <li><%= @accessory.name %></li>
-  <li><%= @accessory.style %></li>
-  <li><%= @accessory.color %></li>
-  <li><%= @accessory.occasion %></li>
-  <li><%= @accessory.season %> </li>
-  <li><%= @accessory.worn %></li>
-</ul>
+  <ul>
+      <h4><%= @accessory.name %></h4>
+      <li><strong>Style:</strong> <%= @accessory.style %></li>
+      <li><strong>Color:</strong> <%= @accessory.color %></li>
+      <li><strong>Occasion:</strong> <%= @accessory.occasion %></li>
+      <li><strong>Season:</strong> <%= @accessory.season %> </li>
+      <li><strong>Worn:</strong> <%= @accessory.worn %></li>
+  </ul>
 </div>
 
-<%= link_to 'Go back', accessories_path %>
-<%= link_to 'These diamonds lost their sparkle.', accessory_delete_path(@accessory) %>
-<%= link_to 'Add another accessory', new_accessory_path %>
+<div class="container center">
+
+<%= link_to accessories_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
+<%= link_to accessory_delete_path(@accessory), class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-remove"></i>
+<% end %>
+
+
+<%= link_to new_accessory_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-pencil"></i>
+<% end %>
+</div>

@@ -47,9 +47,12 @@ ActiveRecord::Schema.define(version: 20160131025720) do
   add_index "garments", ["user_id"], name: "index_garments_on_user_id", using: :btree
 
   create_table "outfits", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
+    t.integer  "garment_id"
+    t.integer  "shoe_id"
+    t.integer  "accessory_id"
   end
 
   add_index "outfits", ["user_id"], name: "index_outfits_on_user_id", using: :btree
