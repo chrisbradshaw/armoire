@@ -8,6 +8,5 @@ class User < ActiveRecord::Base
   has_many :garments
   has_many :accessories
   has_many :outfits
-  # attr_accessor :email, :password, :password_confirmation, :remember_me
 
 end

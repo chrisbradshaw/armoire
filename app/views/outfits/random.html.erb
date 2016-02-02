@@ -1,0 +1,31 @@
+<h1>Random Outfits!</h1>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <h2>Garment</h2>
+    <ul>
+       <li><%= link_to @random_garment.name, @random_garment  %></li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Shoe</h2>
+  <ul>
+    <li><%= link_to @random_shoe.name, @random_shoe  %></li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Accessory</h2>
+    <ul>
+      <li><%= link_to @random_accessory.name, @random_accessory  %></li>
+    </ul>
+  </div>
+
+  <form>
+    <input type=button value="Get another random outfit!" onClick="window.location.reload()">
+  </form>
+
+
+</div>

@@ -1,12 +1,8 @@
-<%= @outfit.garment.name %>
-<%= @outfit.shoe.name %>
-<%= @outfit.accessory.name %>
-
 <h1>Presenting.. Your New Outfit!</h1>
 
 <div class="container">
   <div class="row">
-<div class="col-md-4">    
+<div class="col-md-4">
     <h2><%= @outfit.shoe.name %></h2>
       <li><strong>Style: </strong> <%= @outfit.shoe.style %></li>
       <li><strong>Color: </strong> <%= @outfit.shoe.color %></li>
@@ -16,21 +12,21 @@
   </div>
 
     <div class="col-md-4">
-          
+
       <h2><%= @outfit.accessory.name %></h2>
 
       <li><strong>Style: </strong><%= @outfit.accessory.style %></li>
       <li><strong>Color: </strong><%= @outfit.accessory.color %></li>
       <li><strong>Occasion: </strong><%= @outfit.accessory.occasion %></li>
       <li><strong>Season: </strong><%= @outfit.accessory.season %></li>
- 
+
 
   </div>
 
 <div class="col-md-4">
 
   <h2><%= @outfit.garment.name %></h2>
-  
+
   <div class="container">
     <li><strong>Style: </strong> <%= @outfit.garment.style %></li>
     <li><strong>Color: </strong> <%= @outfit.garment.color %></li>
@@ -40,6 +36,11 @@
 </div>
 </div>
 
-  
+
   </div>
+
+  <%= link_to outfits_path, class: "btn btn-default", id: "save_outfit" do %>
+      <span>Save this outfit</span>
+  <% end %>
+
 </div>

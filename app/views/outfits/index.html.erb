@@ -1,19 +1,15 @@
-<h1>Outfits</h1>
-
-
-<div class="row">
- <div class="col-md-4">
-    <%= render partial: 'shoes/shoe' %>
+<div class="container">
+  <% Outfit.where(:user_id => current_user.id).limit(1).each do |f|%>
+  <div class="row">
+    <div class="col-md-4">
+      <p><%= f.garment.name%></p>
     </div>
-byebug
-  <div class="col-md-4">
-     <ul>
-        <% @shoes.each do |shoe| %>
-            <li> <%= link_to shoe.name, shoe %> </li><br>
-        <% end %>
-      </ul>
-     </div>
+    <div class="col-md-4">
+      <p><%= f.shoe.name%></p>
+    </div>
+    <div class="col-md-4">
+      <p><%= f.accessory.name%></p>
+    </div>
   </div>
-
-
-
+  <%end%>
+</div>

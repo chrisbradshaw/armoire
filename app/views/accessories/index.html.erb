@@ -1,12 +1,14 @@
 <h1>Your Accessories</h1>
 
+<div class="container">
 
-<%= render @accessories %>
+<ul>
+  <% current_user.accessories.each do |acc| %>
+    <li><%= link_to acc.name, acc %></li>
+  <% end %>
+  </ul>
 
-
-<%= link_to new_accessory_path, class: "btn btn-default" do %>
-    <span>Add Accessories!</span>
-<% end %>
+</div>
 
 
 <%= link_to root_path, class: "btn btn-default" do %>
@@ -14,11 +16,15 @@
 <% end %>
 
 
+<%= link_to new_accessory_path, class: "btn btn-default" do %>
+    <span>Add An Accessory!</span>
+<% end %>
+
+
 <%= link_to shoes_path, class: "btn btn-default" do %>
-    <span>Add/View Shoes!</span>
+    <span>View Shoes!</span>
 <% end %>
 
 <%= link_to garments_path, class: "btn btn-default" do %>
-    <span>Add/View Garments!</span>
+    <span>View Garments!</span>
 <% end %>
-

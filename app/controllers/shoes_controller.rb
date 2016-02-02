@@ -1,9 +1,4 @@
 class ShoesController < ApplicationController
-
-  def index
-    @shoes = Shoe.all
-  end
-
   def new
     @shoe = Shoe.new
   end
@@ -18,18 +13,18 @@ class ShoesController < ApplicationController
   def create
     @shoe = Shoe.new(shoe_params)
     @shoe.user_id = current_user.id
-      if @shoe.save
-        flash[:success] = "Your shoe added to your Armoire!"
-        redirect_to @shoe
-      else
+    if @shoe.save
+      flash[:success] = 'Your shoe added to your Armoire!'
+      redirect_to @shoe
+    else
       render 'new'
-    end
+  end
   end
 
   def update
     @shoe.user_id = current_user.id
     if @shoe.update(shoe_params)
-      flash[:success] = "Your shoe has been updated!"
+      flash[:success] = 'Your shoe has been updated!'
     else
       render 'new'
     end
@@ -43,8 +38,8 @@ class ShoesController < ApplicationController
   end
 
   private
-  def shoe_params
-    params.require(:shoe).permit(:name, :element, :style, :color, :occasion, :season, :worn)
-  end
 
+  def shoe_params
+    params.require(:shoe).permit(:user_id, :name, :element, :style, :color, :occasion, :season, :worn, :image, :image_name, :image_url)
+  end
 end

@@ -1,17 +1,10 @@
 class OutfitsController < ApplicationController
-
-  #outfits last only while they are on-screen should be created and shown but not saved.
+  # outfits last only while they are on-screen should be created and shown but not saved.
 
 
   def new
-    # @outfit = Outfit.new(user_id: current_user.id)
-    # outfit = Outfit.where(user_id: current_user.id).order('random()').first
-
-    @shoes=Shoe.all.where(user_id: current_user.id)
-    @accessories= Accessory.all.where(user_id: current_user.id)
-    @garments= Garment.all.where(user_id: current_user.id)
+    @outfit = Outfit.new
   end
-
 
   def destroy
     @outfit.destroy
@@ -19,30 +12,37 @@ class OutfitsController < ApplicationController
     render 'new'
   end
 
-
   def show
-    @outfit = Outfit.find(params[:id])
+    @outfit = Outfit.find_by(id: params[:id])
+  end
+
+  def random
+    @random_accessory = Accessory.where(:user_id => current_user.id).random_accessory
+    @random_garment = Garment.where(:user_id => current_user.id).random_garment
+    @random_shoe = Shoe.where(:user_id => current_user.id).random_shoe
   end
 
   def create
     @outfit = Outfit.new(outfits_params)
-    @outfit.user = current_user
-      if @outfit.save
-        flash[:success] = "Get dressed, not stressed!"
-        redirect_to @outfit
-      else
-    outfit = Outfit.where(user_id: current_user.id).order('random()').first
-     @shoes = [outfit.shoe]
-        @accessories= [outfit.accessory]
-     @garments = [outfit.garment]
+    @outfit.user_id = current_user.id
+    if @outfit.save
+      flash[:success] = 'Get dressed, not stressed!'
+      redirect_to @outfit
+    else
       render 'new'
-       # 'Need to send this undressed person somewhere'
+    end
+  end
+
+  def index
+      @saved_outfits = []
+    if Outfit.create
+        @saved_outfits << "out"
     end
   end
 
   private
+
   def outfits_params
     params.require(:outfit).permit(:garment_id, :shoe_id, :accessory_id)
-
   end
 end
