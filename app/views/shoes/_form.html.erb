@@ -1,3 +1,12 @@
+<%= form_for @shoe, html: { multipart: true } do |f| %>
+  <p>
+    <label>My Shoes</label>
+    
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </p>
+<% end %>
+
 <%= form_for(@shoe) do |f| %>
   <% if @shoe.errors.any? %>
     <div id="error_explanation">
@@ -34,6 +43,7 @@
     <%= f.check_box :worn %><br>
 
     <%= hidden_field_tag "shoe_id", @shoe.id %>
+
 
   </div>
 
