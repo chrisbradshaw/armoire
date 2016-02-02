@@ -1,16 +1,23 @@
 <h1>Your Accessories</h1>
 
+<div class="container">
+  
+<ul>
+  <% current_user.accessories.each do |acc| %>
+    <li><%= link_to acc.name, acc %></li>
+  <% end %>
+  </ul>
 
-<%= render @accessories %>
-
-
-<%= link_to new_accessory_path, class: "btn btn-default" do %>
-    <span>Add Accessories!</span>
-<% end %>
+</div>
 
 
 <%= link_to root_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
+
+<%= link_to new_accessory_path, class: "btn btn-default" do %>
+    <span>Add Accessories!</span>
 <% end %>
 
 

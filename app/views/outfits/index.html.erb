@@ -1,19 +1,6 @@
 <h1>Outfits</h1>
 
+<div class="container">
+  <p><%= @random_outfit.inspect %></p>
 
-<div class="row">
- <div class="col-md-4">
-    <%= render partial: 'shoes/shoe' %>
-    </div>
-byebug
-  <div class="col-md-4">
-     <ul>
-        <% @shoes.each do |shoe| %>
-            <li> <%= link_to shoe.name, shoe %> </li><br>
-        <% end %>
-      </ul>
-     </div>
-  </div>
-
-
-
+</div>

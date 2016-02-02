@@ -1,10 +1,5 @@
 class GarmentsController < ApplicationController
-  def index
-    @garments = Garment.all
-  end
-
   def show
-
     @garment = Garment.find_by(id: params[:id])
   end
 
@@ -29,7 +24,6 @@ class GarmentsController < ApplicationController
   end
 
   def destroy
-
     @garment = Garment.find_by(id: params[:id])
 
     @garment.destroy
@@ -38,8 +32,8 @@ class GarmentsController < ApplicationController
   end
 
   private
+
   def garment_params
     params.require(:garment).permit(:name, :element, :style, :color, :occasion, :season, :worn)
   end
-
 end
