@@ -28,11 +28,10 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @random_accessory = Outfit.random_accessory
-    @random_garment = Outfit.random_garment
-    @random_shoe = Outfit.random_shoe
-
-
+      @random_accessory = Accessory.where(:user_id => current_user.id).random_accessory
+      @random_garment = Garment.where(:user_id => current_user.id).random_garment
+      @random_shoe = Shoe.where(:user_id => current_user.id).random_shoe
+      # binding.pry
   end
 
   private
