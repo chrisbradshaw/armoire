@@ -1,8 +1,10 @@
 class OutfitsController < ApplicationController
+<<<<<<< HEAD
   # outfits last only while they are on-screen should be created and shown but not saved.
 
   def new
     @outfit = Outfit.new
+
   end
 
   def destroy
@@ -16,13 +18,14 @@ class OutfitsController < ApplicationController
   end
 
   def create
-    @outfit = Outfit.new(outfits_params)
+
     @outfit.user_id = current_user.id
 
     if @outfit.save
       flash[:success] = 'Get dressed, not stressed!'
       redirect_to @outfit
     else
+
       render 'new'
     end
   end

@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_many :garments
   has_many :accessories
   has_many :outfits
+
 end

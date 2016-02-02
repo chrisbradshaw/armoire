@@ -1,6 +1,7 @@
 class GarmentsController < ApplicationController
   def show
     @garment = Garment.find_by(id: params[:id])
+
   end
 
   def new
@@ -12,11 +13,12 @@ class GarmentsController < ApplicationController
 
   def create
     @garment = Garment.new(garment_params)
-    @garment.user_id = current_user.id
+    @garment.user = current_user
     if @garment.save
       flash[:success] = "You've added a garment to your Armoire."
       redirect_to @garment
     end
+    # binding.pry
   end
 
   def update
@@ -34,6 +36,6 @@ class GarmentsController < ApplicationController
   private
 
   def garment_params
-    params.require(:garment).permit(:name, :element, :style, :color, :occasion, :season, :worn)
+    params.require(:garment).permit(:name, :element, :style, :color, :occasion, :season, :worn, :user_id)
   end
 end

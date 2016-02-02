@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
   end
@@ -8,7 +9,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new(user_params)
+    @garment = current_user.garments.build(params[:garment])
     if @user.save
       log_in @user
       flash[:success] = 'Welcome to Armoire. Prepare to look amazing.'
@@ -36,8 +39,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  # def correct_user?
-  #   @user = User.find(params[:id])
-  #   redirect_to(root_path) unless current_user?(@user)
-  # end
 end
