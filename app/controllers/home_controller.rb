@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     render 'index'
   end
@@ -10,5 +11,4 @@ class HomeController < ApplicationController
   def about
     render 'about'
   end
-  
 end

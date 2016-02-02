@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def show
     @user = User.find(params[:id])
   end
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to Armoire. Prepare to look amazing."
+      flash[:success] = 'Welcome to Armoire. Prepare to look amazing.'
       redirect_to @user
     else
       render 'new'
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Your profile has been taken in!"
+      flash[:success] = 'Your profile has been taken in!'
     else
       render 'new'
     end
@@ -33,13 +32,12 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 
-    # def correct_user?
-    #   @user = User.find(params[:id])
-    #   redirect_to(root_path) unless current_user?(@user)
-    # end
-
+  # def correct_user?
+  #   @user = User.find(params[:id])
+  #   redirect_to(root_path) unless current_user?(@user)
+  # end
 end

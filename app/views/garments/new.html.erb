@@ -1,10 +1,9 @@
 <h1>Add a New Garment!</h1>
+
 <%= render 'form' %>
 
-<%#link back to garments%>
-
-<%= link_to 'Go back', garments_path %> 
-
-<%= link_to garments_path, class: "btn btn-default" do %>
-    <i class="glyphicon glyphicon-arrow-left"></i>
-<% end %>
+<div class="container">
+  <%= link_to garments_path, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-arrow-left"></i>
+  <% end %>
+</div>
