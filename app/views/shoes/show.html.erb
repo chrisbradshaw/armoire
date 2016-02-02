@@ -6,7 +6,7 @@
   <h4><%= @shoe.name %></h4>
      <div class="image" >
       <strong>Image: </strong>
-      <%= image_tag @shoe.image_url %>
+      <%= image_tag (@shoe.image.thumb.url) if @shoe.image? %>
 
     <li><strong>Style: </strong> <%= @shoe.style %></li>
     <li><strong>Color: </strong> <%= @shoe.color %></li>

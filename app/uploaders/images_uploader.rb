@@ -33,8 +33,16 @@ class ImagesUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  # version :normal do
+  #   process :resize_to_fit => [200, 200]
+  # end
+  # version :show do
+  #   process :resize_to_limit => [500, 500]
+  #   process :store_dimensions
+  # end
+
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    # process :resize_to_fill => [500, 500]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -43,10 +51,30 @@ class ImagesUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  # process :store_dimensions
+
+  # If you like, you can call this inside a version like this
+  # instead of at the top level.
+  # That will store the dimensions for this version.
+  version :show do
+    process :resize_to_limit => [500, 500]
+    process :store_dimensions
+  end
+
+  private
+
+  def store_dimensions
+    if file && model
+      model.width, model.height = `identify -format "%wx%h" #{file.path}`.split(/x/)
+    end
+  end
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+  def is_image? picture
+    image = MiniMagick::Image.open(picture.path)
+    image[width: 200] > image[height: 200]
+  end
 end
