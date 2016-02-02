@@ -2,9 +2,5 @@
 
 <%= render 'form' %>
 
-<%def random%>
-<%redirect_to outfits%>
-<%end%>
-
-<%= link_to outfits_path, class: "btn btn-default" do %>
+<%= link_to random_outfit_path, class: "btn btn-default" do %>
 Get a random outfit<% end %>

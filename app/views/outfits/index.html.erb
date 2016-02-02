@@ -1,30 +1,15 @@
-<h1>Random Outfits!</h1>
-
-<div class="row">
-
-  <div class="col-md-4">
-    <ul>
-    <li><%= link_to @random_accessory.name, @random_accessory  %></li>
-    </ul>
+<div class="container">
+  <% Outfit.where(:user_id => current_user.id).limit(1).each do |f|%>
+  <div class="row">
+    <div class="col-md-4">
+      <p><%= f.garment.name%></p>
+    </div>
+    <div class="col-md-4">
+      <p><%= f.shoe.name%></p>
+    </div>
+    <div class="col-md-4">
+      <p><%= f.accessory.name%></p>
+    </div>
   </div>
-
-  <div class="col-md-4">
-
-    <ul>
-       <li><%= link_to @random_garment.name, @random_garment  %></li>
-    </ul>
-  </div>
-
-  <div class="col-md-4">
-
-  <ul>
-    <li><%= link_to @random_garment.name, @random_garment  %></li>
-    </ul>
-  </div>
-
-  <form>
-    <input type=button value="Get another random outfit!" onClick="window.location.reload()">
-  </form>
-
-
+  <%end%>
 </div>
