@@ -7,14 +7,13 @@ class Outfit < ActiveRecord::Base
   belongs_to :user
 
   def self.random_accessory
-    random_accessory_id = Accessory.pluck(:id).sample
-    Accessory.find(random_accessory_id)
+      random_accessory_id = Accessory.pluck(:id).sample
+      Accessory.find(random_accessory_id)
   end
 
     def self.random_garment
     random_garment_id = Garment.pluck(:id).sample
     Garment.find(random_garment_id)
-
   end
 
     def self.random_shoe
