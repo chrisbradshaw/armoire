@@ -17,13 +17,6 @@ ActiveRecord::Schema.define(version: 20160131233348) do
   enable_extension "plpgsql"
 
   create_table "accessories", force: :cascade do |t|
-    t.string   "name"
-    t.string   "element"
-    t.string   "style"
-    t.string   "color"
-    t.string   "occasion"
-    t.string   "season"
-    t.boolean  "worn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
@@ -32,13 +25,6 @@ ActiveRecord::Schema.define(version: 20160131233348) do
   add_index "accessories", ["user_id"], name: "index_accessories_on_user_id", using: :btree
 
   create_table "garments", force: :cascade do |t|
-    t.string   "name"
-    t.string   "element"
-    t.string   "style"
-    t.string   "color"
-    t.string   "occasion"
-    t.string   "season"
-    t.boolean  "worn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"

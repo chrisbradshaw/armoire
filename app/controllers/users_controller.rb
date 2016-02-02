@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     binding.pry
     @user = User.new(user_params)
-    @garment = current_user.garments.build(params[:garment])
+    @user = current_user
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Armoire. Prepare to look amazing."
