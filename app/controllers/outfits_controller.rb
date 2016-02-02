@@ -28,7 +28,11 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @random_outfit = Outfit.random_outfit
+    @random_accessory = Outfit.random_accessory
+    @random_garment = Outfit.random_garment
+    @random_shoe = Outfit.random_shoe
+
+
   end
 
   private

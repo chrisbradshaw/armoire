@@ -1,6 +1,29 @@
-<h1>Outfits</h1>
+<h1>Random Outfits!</h1>
 
-<div class="container">
-  <p><%= @random_outfit.inspect %></p>
+<div class="row">
+
+  <div class="col-md-4">
+    <ul>
+    <li><%= link_to @random_accessory.name, @random_accessory  %></li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+
+    <ul>
+       <li><%= link_to @random_garment.name, @random_garment  %></li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+
+  <ul>
+    <li><%= link_to @random_garment.name, @random_garment  %></li>
+    </ul>
+  </div>
+  
+
 
 </div>
+
+
