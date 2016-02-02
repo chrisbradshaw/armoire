@@ -6,10 +6,19 @@ class Outfit < ActiveRecord::Base
   belongs_to :shoe
   belongs_to :user
 
-  def self.random_outfit
+  def self.random_accessory
+    random_accessory_id = Accessory.pluck(:id).sample
+    Accessory.find(random_accessory_id)
+  end
+
+    def self.random_garment
     random_garment_id = Garment.pluck(:id).sample
+    Garment.find(random_garment_id)
+
+  end
+
+    def self.random_shoe
     random_shoe_id = Shoe.pluck(:id).sample
-    random_accesory_id = Accessory.pluck(:id).sample
-    Outfit.new(garment_id: random_garment_id, shoe_id: random_shoe_id, accessory_id: random_accesory_id)
+    Shoe.find(random_shoe_id)
   end
 end
