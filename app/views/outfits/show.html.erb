@@ -15,7 +15,7 @@
           
       <h2><%= @outfit.accessory.name %></h2>
 
-      <li><strong>Style: </strong><%= @outfit.accessory.style %></li>
+      <li><strong>Style: </strong><%= binding.pry @outfit.accessory.style %></li>
       <li><strong>Color: </strong><%= @outfit.accessory.color %></li>
       <li><strong>Occasion: </strong><%= @outfit.accessory.occasion %></li>
       <li><strong>Season: </strong><%= @outfit.accessory.season %></li>
