@@ -27,9 +27,8 @@ class OutfitsController < ApplicationController
     end
   end
 
-  def random
-    # create route
-    # @random_outfit = Outfit.random_outfit
+  def index
+    @random_outfit = Outfit.random_outfit
   end
 
   private

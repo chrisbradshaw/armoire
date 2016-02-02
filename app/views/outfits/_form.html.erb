@@ -19,7 +19,7 @@
     <%= f.label :garments %><br>
     <%= f.collection_select(:garment_id, current_user.garments, :id, :name, prompt: true)%><br>
 
-    <%= f.label :shoes %><br>
+    <%= f.label :accessories %><br>
     <%= f.collection_select(:accessory_id, current_user.accessories, :id, :name, prompt: true)%><br>
 
 
