@@ -1,9 +1,13 @@
 <%= form_for @shoe, html: { multipart: true } do |f| %>
   <p>
     <label>My Shoes</label>
-    
+    <br>
+    <%= f.label :image_name %><br />
+    <%= f.text_field :name %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
+    <p>
+  
   </p>
 <% end %>
 
