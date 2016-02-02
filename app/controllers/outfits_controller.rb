@@ -1,6 +1,7 @@
 class OutfitsController < ApplicationController
   # outfits last only while they are on-screen should be created and shown but not saved.
 
+
   def new
     @outfit = Outfit.new
   end
@@ -12,13 +13,18 @@ class OutfitsController < ApplicationController
   end
 
   def show
-    @outfit = Outfit.find(params[:id])
+    @outfit = Outfit.find_by(id: params[:id])
+  end
+
+  def random
+    @random_accessory = Accessory.where(:user_id => current_user.id).random_accessory
+    @random_garment = Garment.where(:user_id => current_user.id).random_garment
+    @random_shoe = Shoe.where(:user_id => current_user.id).random_shoe
   end
 
   def create
     @outfit = Outfit.new(outfits_params)
     @outfit.user_id = current_user.id
-
     if @outfit.save
       flash[:success] = 'Get dressed, not stressed!'
       redirect_to @outfit
@@ -28,10 +34,10 @@ class OutfitsController < ApplicationController
   end
 
   def index
-      @random_accessory = Accessory.where(:user_id => current_user.id).random_accessory
-      @random_garment = Garment.where(:user_id => current_user.id).random_garment
-      @random_shoe = Shoe.where(:user_id => current_user.id).random_shoe
-      # binding.pry
+      @saved_outfits = []
+    if Outfit.create
+        @saved_outfits << "out"
+    end
   end
 
   private

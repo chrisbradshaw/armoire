@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.new(user_params)
     @garment = current_user.garments.build(params[:garment])
     if @user.save
