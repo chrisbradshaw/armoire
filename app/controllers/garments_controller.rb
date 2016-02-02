@@ -1,7 +1,6 @@
 class GarmentsController < ApplicationController
   def show
     @garment = Garment.find_by(id: params[:id])
-
   end
 
   def new

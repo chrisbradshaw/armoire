@@ -11,14 +11,13 @@ class Outfit < ActiveRecord::Base
     Accessory.find(random_accessory_id)
   end
 
-    def self.random_garment
+  def self.random_garment
     random_garment_id = Garment.pluck(:id).sample
     Garment.find(random_garment_id)
+end
 
-  end
-
-    def self.random_shoe
+  def self.random_shoe
     random_shoe_id = Shoe.pluck(:id).sample
     Shoe.find(random_shoe_id)
-  end
+end
 end

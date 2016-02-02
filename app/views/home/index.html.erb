@@ -1,5 +1,5 @@
 <% if signed_in? %>
-  <div class="navbar">
+  <div class="navbar center">
     <%= link_to garments_path, class: "btn btn-default" do %>
     My Garments
     <% end %>
@@ -11,6 +11,10 @@
     <% end %>
     <%= link_to new_outfit_path, class: "btn btn-default" do %>
     Create an Outfit
+    <% end %>
+
+     <%= link_to users_path, class: "btn btn-default" do %>
+    Connect With Other Users
     <% end %>
     
 <% else %>
