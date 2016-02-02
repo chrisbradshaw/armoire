@@ -8,7 +8,7 @@ class CreateAccessories < ActiveRecord::Migration
       t.string :occasion
       t.string :season
       t.boolean :worn
-      
+
       t.timestamps null: false
     end
   end

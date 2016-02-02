@@ -3,8 +3,8 @@
 
 <div class="container">
 <ul>
-  <% @garments.each do |i| %>
-    <li><%= link_to i.name, i %></li>
+  <% current_user.garments.each do |garment| %>
+    <li><%= link_to garment.name, garment %></li>
   <% end %>
   
   </ul>

@@ -1,19 +1,19 @@
 <h1>Your Shoes</h1>
 
+<div class="container">
+<ul>
+  <% current_user.shoes.each do |i| %>
+    <li><%= link_to i.name, i %></li>
+  <% end %>
+  </ul>
+</div>
 
-<%if signed_in?%>
-  <%= render @shoes %> <br>
-<%# render partial: 'outfits/outfit' %>
-
-<%else%>
-  <%= "Please " %> <%=link_to "log in", new_user_session_path%> <%=" to view your shoes"%><br>
-<% end %>
 
 <%= link_to root_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>
 <% end %>
 
-<%= link_to shoes_path, class: "btn btn-default" do %>
+<%= link_to new_shoe_path, class: "btn btn-default" do %>
     <span>Add/View Shoes!</span>
 <% end %>
 
@@ -25,4 +25,3 @@
 <%= link_to garments_path, class: "btn btn-default" do %>
     <span>Add/View Garments!</span>
 <% end %>
-
