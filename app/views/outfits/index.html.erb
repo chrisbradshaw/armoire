@@ -1,5 +1,5 @@
 <div class="container">
-  <% Outfit.where(:user_id => current_user.id).limit(1).each do |f|%>
+  <% @outfits.each do |f|%>
   <div class="row">
     <div class="col-md-4">
       <p><%= f.garment.name%></p>
@@ -13,3 +13,4 @@
   </div>
   <%end%>
 </div>
+

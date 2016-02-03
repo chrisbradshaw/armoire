@@ -6,7 +6,8 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new
   end
 
-  def destroy
+ def destroy
+    @outfit = Outfit.find_by(id: params[:id])
     @outfit.destroy
     flash[:success] = "Let's find you another outfit."
     render 'new'
@@ -29,21 +30,28 @@ class OutfitsController < ApplicationController
       flash[:success] = 'Get dressed, not stressed!'
       redirect_to @outfit
     else
+      flash[:error] =  @outfit.errors.full_messages.join("\n")
       render 'new'
     end
   end
 
   def index
 
-    @random_accessory = Outfit.random_accessory
-    @random_garment = Outfit.random_garment
-    @random_shoe = Outfit.random_shoe
+ 
 
-      @saved_outfits = []
-    if Outfit.create
-        @saved_outfits << "out"
-    end
+    @outfits = Outfit.where(user_id: current_user.id, action: 1)
 
+  end
+
+  def pending
+    @outfits = Outfit.where(user_id: current_user.id, action: 0)
+  end
+
+  def status
+    @outfit = Outfit.find(params[:id])
+    @outfit.update(action: Outfit.actions[ params[:status] ])
+
+    redirect_to outfits_path
   end
 
   private

@@ -1,0 +1,9 @@
+
+
+<% @outfits.each do |outfit|  %>
+
+  <%= outfit.id %>
+  <%= button_to "Approve",status_outfit_path(outfit), method: :put, params: {status: 'approve'} %>
+  <%= button_to "Reject", status_outfit_path(outfit), method: :put, params: {status: 'reject'} %>
+
+<% end %>

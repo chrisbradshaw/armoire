@@ -1,28 +1,19 @@
 <h1><%=@shoe.name.capitalize %></h1><br>
-
-  <div class="container">
+  <div class="container center">
     <div class="image" >
       <td><%= image_tag @shoe.image %></td><br>
-
         <strong>Style: </strong> <%= @shoe.style %><br>
         <strong>Color: </strong> <%= @shoe.color %><br>
         <strong>Occasion: </strong> <%= @shoe.occasion %><br>
         <strong>Season: </strong> <%= @shoe.season %><br> 
         <strong>Ready to wear: </strong> <%= @shoe.worn %><br>
     </div>
-  </div>
-
-<div class="container center">
-
 <%= link_to shoes_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>
 <% end %>
-
 <%= link_to shoes_delete_path(@shoe), class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-remove"></i>
 <% end %>
-
-
 <%= link_to new_shoe_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-pencil"></i>
 <% end %>

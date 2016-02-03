@@ -1,6 +1,6 @@
 <h1><%=@garment.name.capitalize %></h1>
 
-  <div class="container">
+  <div class="container center">
     <ul>
 
      <div class="image" >
@@ -12,9 +12,7 @@
     <strong>Season: </strong> <%= @garment.season %> 
     <strong>Ready to wear: </strong> <%= @garment.worn %>
     </ul>
-</div>
 
-<div class="container center">
 
 <%= link_to garments_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>

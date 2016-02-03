@@ -1,6 +1,6 @@
 <h1><%=@accessory.name.capitalize%></h1><br>
 
-  <div class="container">
+  <div class="container center">
     <div class="image" >
       <td><%= image_tag @accessory.image %></td><br>
 
@@ -10,9 +10,7 @@
         <strong>Season:</strong> <%= @accessory.season %><br> 
         <strong>Ready to wear:</strong> <%= @accessory.worn %><br>
     </div>
-  </div>
 
-  <div class="container center">
 
 <%= link_to accessories_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>

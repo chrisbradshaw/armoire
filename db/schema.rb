@@ -49,13 +49,14 @@ ActiveRecord::Schema.define(version: 20160203153308) do
   add_index "garments", ["user_id"], name: "index_garments_on_user_id", using: :btree
 
   create_table "outfits", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.integer  "garment_id"
     t.integer  "shoe_id"
     t.integer  "accessory_id"
     t.string   "image"
+    t.integer  "action",       default: 0
   end
 
   add_index "outfits", ["user_id"], name: "index_outfits_on_user_id", using: :btree
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(version: 20160203153308) do
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
