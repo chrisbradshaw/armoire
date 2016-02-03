@@ -3,7 +3,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :outfits
+  resources :outfits do
+    collection do
+      get :pending
+    end
+
+     member do
+      put :status
+     end
+  end
   resources :accessories
   resources :shoes
   resources :garments
