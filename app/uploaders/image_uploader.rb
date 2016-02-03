@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-
   include CarrierWave::MiniMagick
   # include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -26,11 +25,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process :scale => [200, 300]
-  
+
   def scale(width=200, height=300)
-    
+
   end
- 
+
   process :store_dimensions
 
   version :show do
@@ -38,9 +37,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :store_dimensions
   end
 
-  version :thumb do
-    process :resize_to_fill => [100, 100]
-  end
+
 
   def extension_white_list
     %w(jpg jpeg gif png)
