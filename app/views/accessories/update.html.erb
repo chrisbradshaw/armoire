@@ -1,28 +1,21 @@
-<h1><%=@accessory.name.capitalize%></h1><br>
-
+<h1><%=@accessory.name.capitalize %></h1><br>
   <div class="container center">
     <div class="image" >
       <p>
         <img width="400" height="325" src="<%= @accessory.image%>">
       </p>
-
-        <strong>Style:</strong> <%= @accessory.style %><br>
-        <strong>Color:</strong> <%= @accessory.color %><br>
-        <strong>Occasion:</strong> <%= @accessory.occasion %><br>
-        <strong>Season:</strong> <%= @accessory.season %><br>
-        <strong>Ready to wear:</strong> <%= @accessory.worn %><br>
+        <strong>Style: </strong> <%= @accessory.style %><br>
+        <strong>Color: </strong> <%= @accessory.color %><br>
+        <strong>Occasion: </strong> <%= @accessory.occasion %><br>
+        <strong>Season: </strong> <%= @accessory.season %><br>
+        <strong>Ready to wear: </strong> <%= @accessory.worn %><br>
     </div>
-
-
-<%= link_to accessories_path, class: "btn btn-default" do %>
+<%= link_to accessory_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>
 <% end %>
-
 <%= link_to accessory_delete_path(@accessory), class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-remove"></i>
 <% end %>
-
-
 <%= link_to edit_accessory_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-pencil"></i>
 <% end %>

@@ -1,5 +1,5 @@
 class ShoesController < ApplicationController
-  
+
   def new
     @shoe = Shoe.new
   end
@@ -9,6 +9,7 @@ class ShoesController < ApplicationController
   end
 
   def edit
+    @shoe = Shoe.find(params[:id])
   end
 
   def create
@@ -23,6 +24,7 @@ class ShoesController < ApplicationController
   end
 
   def update
+    @shoe = Shoe.find(params[:id])
     @shoe.user_id = current_user.id
     if @shoe.update(shoe_params)
       flash[:success] = 'Your shoe has been updated!'
