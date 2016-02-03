@@ -1,13 +1,5 @@
 <%= form_for @shoe, html: { multipart: true } do |f| %>
-  <p>
-    <label>My Shoes</label>
-    
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
-  </p>
-<% end %>
 
-<%= form_for(@shoe) do |f| %>
   <% if @shoe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@shoe.errors.count, "error") %> prohibited this shoe from being put in your Armoire:</h2>
@@ -19,6 +11,17 @@
       </ul>
     </div>
   <% end %>
+
+  <p>
+    <label>My Shoes</label>
+    <br>
+
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+
+
+
 
   <div class="field">
     <%= f.label :name %><br>
@@ -44,14 +47,9 @@
 
     <%= hidden_field_tag "shoe_id", @shoe.id %>
 
-
-  </div>
-
-  <div class="field">
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
-
 <% end %>

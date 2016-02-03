@@ -1,9 +1,13 @@
 <h1>Add New Shoes</h1>
 
+
 <div class="container">
   <ul>
   <h4><%= @shoe.name %></h4>
-    <li><strong>Image: </strong> <%= @shoe.image_cache %></li>
+     <div class="image" >
+      <strong>Image: </strong>
+      <%= image_tag (@shoe.image.thumb.url) if @shoe.image? %>
+
     <li><strong>Style: </strong> <%= @shoe.style %></li>
     <li><strong>Color: </strong> <%= @shoe.color %></li>
     <li><strong>Occasion: </strong> <%= @shoe.occasion %></li>
@@ -26,4 +30,5 @@
     <i class="glyphicon glyphicon-pencil"></i>
 <% end %>
 
+</div>
 </div>

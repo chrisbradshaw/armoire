@@ -6,7 +6,7 @@
   <% current_user.garments.each do |garment| %>
     <li><%= link_to garment.name, garment %></li>
   <% end %>
-  
+
   </ul>
 </div>
 
@@ -16,16 +16,24 @@
 <% end %>
 
 <%= link_to new_garment_path, class: "btn btn-default" do %>
+<<<<<<< HEAD
     <span>Add Another Garment!</span>
 <% end %>
 
 <%= link_to new_accessory_path, class: "btn btn-default" do %>
     <span>Add/View Accessories!</span>
+=======
+    <span>Add A Garment!</span>
+<% end %>
+
+<%= link_to accessories_path, class: "btn btn-default" do %>
+    <span>View Accessories!</span>
+>>>>>>> master
 <% end %>
 
 
 <%= link_to shoes_path, class: "btn btn-default" do %>
-    <span>Add/View Shoes!</span>
+    <span>View Shoes!</span>
 <% end %>
 
 

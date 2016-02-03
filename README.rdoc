@@ -1,0 +1,26 @@
+AMOIRE
+
+Rails application deployed on Heroku, fashion and outfit planner!
+
+Database
+
+Application is configured to utilize postgres database, resources include but are not liimted to:
+:Users
+:Garments
+:Accessories
+:Shoes
+:Outfits
+
+Features
+Features include:
+carrier wave integration for easy uploading of pictures (for outfits or individual elements)
+weather API integration for recommended outfits based on season/weather reports.
+devise for secure sign up/authentication.
+bootstrap snappy design.
+
+Security
+So far:
+devise, for secure sign up, log in/log out/authentication.
+
+Authors
+Jen Abella, Chris McGuigan, Chris Bradshaw, Maisie...

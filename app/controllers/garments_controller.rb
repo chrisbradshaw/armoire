@@ -1,7 +1,8 @@
 class GarmentsController < ApplicationController
   def show
     @garment = Garment.find_by(id: params[:id])
-  end
+  end 
+
 
   def new
     @garment = Garment.new
@@ -17,7 +18,6 @@ class GarmentsController < ApplicationController
       flash[:success] = "You've added a garment to your Armoire."
       redirect_to @garment
     end
-    # binding.pry
   end
 
   def update
