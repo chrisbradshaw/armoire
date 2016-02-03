@@ -1,0 +1,33 @@
+
+<div class="container">
+
+<h1>User Profile</h1>
+
+<h3> You are currently viewing:</h3><br>
+<h3><%= @user.email %></h3><br>
+
+<h4>Add this user to your watch list or like items from their Armoire below</h4><br>
+
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<%= link_to users_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
+
+<%= link_to users_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-plus"></i>
+<% end %>
+
+<%= link_to users_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-heart"></i>
+<% end %>
+
+
+</div>
+</div>

@@ -3,6 +3,7 @@ class GarmentsController < ApplicationController
     @garment = Garment.find_by(id: params[:id])
   end 
 
+
   def new
     @garment = Garment.new
   end
