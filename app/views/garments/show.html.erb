@@ -4,13 +4,15 @@
     <ul>
 
      <div class="image" >
-      <td><%= image_tag @garment.image %></td><br>
+       <p>
+         <img width="400" height="325" src="<%= @garment.image%>">
+       </p>
 
-    <strong>Style: </strong> <%= @garment.style %>
-    <strong>Color: </strong> <%= @garment.color %>
-    <strong>Occasion: </strong> <%= @garment.occasion %>
-    <strong>Season: </strong> <%= @garment.season %> 
-    <strong>Ready to wear: </strong> <%= @garment.worn %>
+    <strong>Style: </strong> <%= @garment.style %><br>
+    <strong>Color: </strong> <%= @garment.color %><br>
+    <strong>Occasion: </strong> <%= @garment.occasion %><br>
+    <strong>Season: </strong> <%= @garment.season %><br>
+    <strong>Ready to wear: </strong> <%= @garment.worn %><br>
     </ul>
 
 

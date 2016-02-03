@@ -1,15 +1,18 @@
 <h1>Your Accessories</h1>
 
-<div class="container">
-
-<ul>
-  <% current_user.accessories.each do |acc| %>
-    <li><%= link_to acc.name, acc %></li>
-  <% end %>
-  </ul>
-
+<div class="container ">
+  <div class="row center">
+  <ul>
+    <% current_user.accessories.each do |acc| %>
+      <div class="col-md-2">
+        <a href="/accessories/<%=acc.id%>">
+          <img src="<%=acc.image%>", img width="150" height="150">
+        </a>
+      </div>
+    </ul>
+    <%end%>
+  </div><br>
 </div>
-
 
 <%= link_to root_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>

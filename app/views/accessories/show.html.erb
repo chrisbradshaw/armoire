@@ -2,12 +2,14 @@
 
   <div class="container center">
     <div class="image" >
-      <td><%= image_tag @accessory.image %></td><br>
+      <p>
+        <img width="400" height="325" src="<%= @accessory.image%>">
+      </p>
 
         <strong>Style:</strong> <%= @accessory.style %><br>
         <strong>Color:</strong> <%= @accessory.color %><br>
         <strong>Occasion:</strong> <%= @accessory.occasion %><br>
-        <strong>Season:</strong> <%= @accessory.season %><br> 
+        <strong>Season:</strong> <%= @accessory.season %><br>
         <strong>Ready to wear:</strong> <%= @accessory.worn %><br>
     </div>
 

@@ -2,8 +2,12 @@
 
 <div class="container">
 <ul>
-  <% current_user.shoes.each do |i| %>
-    <li><%= link_to i.name, i %></li>
+  <% current_user.shoes.each do |shoe| %>
+    <p>
+      <a href="/shoes/<%=shoe.id%>">
+        <img src="<%=shoe.image%>", img width="150" height="150">
+      </a>
+    </p>
   <% end %>
   </ul>
 </div>
@@ -18,7 +22,7 @@
 <% end %>
 
 
-<%= link_to new_accessory_path, class: "btn btn-default" do %>
+<%= link_to accessories_path, class: "btn btn-default" do %>
     <span>View Accessories!</span>
 <% end %>
 
