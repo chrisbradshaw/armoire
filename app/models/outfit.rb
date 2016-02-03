@@ -5,6 +5,9 @@ class Outfit < ActiveRecord::Base
   belongs_to :accessory
   belongs_to :shoe
   belongs_to :user
+  mount_uploader :image, ImageUploader
+  
+  attr_accessor :image_cache
 
 
   def self.random_accessory

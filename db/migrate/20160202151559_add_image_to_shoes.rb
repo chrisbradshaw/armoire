@@ -1,4 +1,4 @@
-class AddImagesToShoes < ActiveRecord::Migration
+class AddImageToShoes < ActiveRecord::Migration
   def change
     add_column :shoes, :image, :string
   end
