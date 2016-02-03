@@ -34,10 +34,16 @@ class OutfitsController < ApplicationController
   end
 
   def index
+
+    @random_accessory = Outfit.random_accessory
+    @random_garment = Outfit.random_garment
+    @random_shoe = Outfit.random_shoe
+
       @saved_outfits = []
     if Outfit.create
         @saved_outfits << "out"
     end
+
   end
 
   private

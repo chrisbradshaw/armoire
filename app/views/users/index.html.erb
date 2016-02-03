@@ -1,0 +1,28 @@
+<div class="container">
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>User Email</th>
+            <th>Home Page</th>
+        </tr>
+    </thead>
+    <tbody>
+
+<% @users.each do |user| %>
+
+<tr>
+    <td> <%= user.email %></td>
+    <td><%= link_to user.email, user %></td>
+</tr>
+
+<% end %>
+
+    </tbody>
+</table>
+
+  <%= link_to "show_index_of_users", users_path %>
+  <%= link_to "current_user_show", current_user %>
+</div>
+
