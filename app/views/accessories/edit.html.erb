@@ -5,6 +5,12 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @accessory do |f| %>
 
+    <div class="image field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %><br>
+    </div><br>
+    
     <%= f.label :name %><br>
     <%= f.text_area :name %><br>
 

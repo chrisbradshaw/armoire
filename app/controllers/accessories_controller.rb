@@ -28,9 +28,10 @@ class AccessoriesController < ApplicationController
   end
 
   def update
+    @accessory = Accessory.find(params[:id])
     @accessory.user_id = current_user.id
     if @accessory.update(accessory_params)
-      flash[:success] = 'changed accessory'
+      flash[:success] = 'Your accessory has been updated!'
     else
       render 'new'
     end

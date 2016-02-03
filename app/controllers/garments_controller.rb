@@ -1,7 +1,7 @@
 class GarmentsController < ApplicationController
   def show
     @garment = Garment.find_by(id: params[:id])
-  end 
+  end
 
 
   def new
@@ -9,6 +9,7 @@ class GarmentsController < ApplicationController
   end
 
   def edit
+    @garment = Garment.find(params[:id])
   end
 
   def create
@@ -21,7 +22,13 @@ class GarmentsController < ApplicationController
   end
 
   def update
+    @garment = Garment.find(params[:id])
     @garment.user_id = current_user.id
+    if @garment.update(garment_params)
+      flash[:success] = 'Your garment has been updated!'
+    else
+      render 'new'
+    end
   end
 
   def destroy
