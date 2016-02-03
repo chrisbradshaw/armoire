@@ -66,3 +66,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'fog'
+
+gem 'figaro'
