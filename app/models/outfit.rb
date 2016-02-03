@@ -6,6 +6,7 @@ class Outfit < ActiveRecord::Base
   belongs_to :shoe
   belongs_to :user
 
+
   def self.random_accessory
       random_accessory_id = Accessory.pluck(:id).sample
       Accessory.find(random_accessory_id)
