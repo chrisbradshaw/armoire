@@ -1,18 +1,16 @@
-<h1> Your New Accessory</h1>
-<div class="container">
-  <ul>
+<h1><%=@accessory.name.capitalize%></h1><br>
 
-      <h4><%= @accessory.name %></h4>
-      <li><strong>Style:</strong> <%= @accessory.style %></li>
-      <li><strong>Color:</strong> <%= @accessory.color %></li>
-      <li><strong>Occasion:</strong> <%= @accessory.occasion %></li>
-      <li><strong>Season:</strong> <%= @accessory.season %> </li>
-      <li><strong>Worn:</strong> <%= @accessory.worn %></li>
-  </ul>
-</div>
+  <div class="container center">
+    <div class="image" >
+      <td><%= image_tag @accessory.image %></td><br>
 
+        <strong>Style:</strong> <%= @accessory.style %><br>
+        <strong>Color:</strong> <%= @accessory.color %><br>
+        <strong>Occasion:</strong> <%= @accessory.occasion %><br>
+        <strong>Season:</strong> <%= @accessory.season %><br> 
+        <strong>Ready to wear:</strong> <%= @accessory.worn %><br>
+    </div>
 
-<div class="container center">
 
 <%= link_to accessories_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>

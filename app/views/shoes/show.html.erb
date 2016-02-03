@@ -1,34 +1,20 @@
-<h1>Add New Shoes</h1>
-
-
-<div class="container">
-  <ul>
-  <h4><%= @shoe.name %></h4>
-     <div class="image" >
-      <strong>Image: </strong>
-      <%# image_tag (@shoe.image.thumb.url) if @shoe.image? %>
-
-    <li><strong>Style: </strong> <%= @shoe.style %></li>
-    <li><strong>Color: </strong> <%= @shoe.color %></li>
-    <li><strong>Occasion: </strong> <%= @shoe.occasion %></li>
-    <li><strong>Season: </strong> <%= @shoe.season %> </li>
-    <li><strong>Ready to wear: </strong> <%= @shoe.worn %></li>
-  </div>
-
-<div class="container center">
-
+<h1><%=@shoe.name.capitalize %></h1><br>
+  <div class="container center">
+    <div class="image" >
+      <td><%= image_tag @shoe.image %></td><br>
+        <strong>Style: </strong> <%= @shoe.style %><br>
+        <strong>Color: </strong> <%= @shoe.color %><br>
+        <strong>Occasion: </strong> <%= @shoe.occasion %><br>
+        <strong>Season: </strong> <%= @shoe.season %><br> 
+        <strong>Ready to wear: </strong> <%= @shoe.worn %><br>
+    </div>
 <%= link_to shoes_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-arrow-left"></i>
 <% end %>
-
 <%= link_to shoes_delete_path(@shoe), class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-remove"></i>
 <% end %>
-
-
 <%= link_to new_shoe_path, class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-pencil"></i>
 <% end %>
-
-</div>
 </div>

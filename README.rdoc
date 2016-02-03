@@ -1,4 +1,4 @@
-AMOIRE
+ARMOIRE
 
 Rails application deployed on Heroku, fashion and outfit planner!
 

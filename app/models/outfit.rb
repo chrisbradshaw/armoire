@@ -6,6 +6,7 @@ class Outfit < ActiveRecord::Base
   belongs_to :shoe
   belongs_to :user
 
+
   validates_uniqueness_of(
     :user_id,
     scope: [ :garment_id, :accessory_id, :shoe_id],
@@ -29,9 +30,9 @@ class Outfit < ActiveRecord::Base
     Garment.find(random_garment_id)
 end
 
+def self.random_shoe
+  random_shoe_id = Shoe.pluck(:id).sample
+  Shoe.find(random_shoe_id)
+end
 
-    def self.random_shoe
-    random_shoe_id = Shoe.pluck(:id).sample
-    Shoe.find(random_shoe_id)
-    end
 end

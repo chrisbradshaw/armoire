@@ -1,4 +1,5 @@
 class ShoesController < ApplicationController
+  
   def new
     @shoe = Shoe.new
   end
@@ -40,6 +41,6 @@ class ShoesController < ApplicationController
   private
 
   def shoe_params
-    params.require(:shoe).permit(:user_id, :name, :element, :style, :color, :occasion, :season, :worn, :image, :image_name, :image_url)
+    params.require(:shoe).permit(:user_id, :name, :element, :style, :color, :occasion, :season, :worn, :image)
   end
 end
