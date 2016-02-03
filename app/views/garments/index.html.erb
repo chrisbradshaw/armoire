@@ -4,9 +4,12 @@
 <div class="container">
 <ul>
   <% current_user.garments.each do |garment| %>
-    <li><%= link_to garment.name, garment %></li>
+    <p>
+      <a href="/garments/<%=garment.id%>">
+        <img src="<%=garment.image%>", img width="150" height="150">
+      </a>
+    </p>
   <% end %>
-
   </ul>
 </div>
 
@@ -16,7 +19,6 @@
 <% end %>
 
 <%= link_to new_garment_path, class: "btn btn-default" do %>
-
     <span>Add A Garment!</span>
 <% end %>
 
@@ -30,5 +32,6 @@
     <span>View Shoes!</span>
 <% end %>
 
-
+<p>
+</p>
 </div>
