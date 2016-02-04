@@ -1,26 +1,23 @@
-ARMOIRE
+ARMOIRE: look great so you can focus on what matters. 
 
-Rails application deployed on Heroku, fashion and outfit planner!
+Armoire is an intuitive real time apparel planner and scheduling platform. It optimizes your daily outfit selection based on outfits you actually have in your closet, your current geocoordinates, amongst other factors (time since last worn, color coordination, amount of likes by friends etc.).  
 
-Database
+Incorporates: 
+Ruby on Rails
+Relational mapping: PostgreSQL
+User authentication and session: Devise 
+Bootstrap customized with SASS
+Early Beta currently located on Heroku: https://intense-harbor-75235.herokuapp.com/
 
-Application is configured to utilize postgres database, resources include but are not liimted to:
-:Users
-:Garments
-:Accessories
-:Shoes
-:Outfits
+Features:
 
-Features
-Features include:
-carrier wave integration for easy uploading of pictures (for outfits or individual elements)
-weather API integration for recommended outfits based on season/weather reports.
-devise for secure sign up/authentication.
-bootstrap snappy design.
+-Users can uploaded pictures, set attributes of their favorite garments, shoes and accessories. 
+-Users can create their own unique outfits, and preview before adding to their Armoire. 
+-Alternatively users can generate random outfits, or view customized recommendations based on a proprietary algorithm.
+-Users can friend, favorite outfits and communicate with other users. 
+-Weather API integration (Forecast.io) for real time updates based on season/weather reports.
+-Clean, user friendly interface 
 
-Security
-So far:
-devise, for secure sign up, log in/log out/authentication.
 
-Authors
-Jen Abella, Chris McGuigan, Chris Bradshaw, Maisie...
+Authors:
+Jen Abella, Chris McGuigan, Chris Bradshaw, Maisie Athens
