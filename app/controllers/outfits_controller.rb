@@ -36,9 +36,6 @@ class OutfitsController < ApplicationController
   end
 
   def index
-
- 
-
     @outfits = Outfit.where(user_id: current_user.id, action: 1)
 
   end
@@ -53,6 +50,14 @@ class OutfitsController < ApplicationController
 
     redirect_to outfits_path
   end
+
+  def update
+    @outfit = Outfit.find(params[:id])
+    @outfit.name = params[:name]
+    @outfit.save
+    redirect_to outfit_path(@outfit), :notice => "Outfit name updated successfully."
+  end
+
 
   private
 

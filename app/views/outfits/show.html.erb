@@ -3,6 +3,12 @@
 <div class="container">
   <div class="row">
 
+ <%= form_tag url_for(:controller => 'outfits', :action => 'update'), :method => 'put', remote: true do %>
+ 
+     <%= text_field_tag 'name', nil, placeholder: 'Enter an outfit name...' %>
+      <%= submit_tag 'Name Your Outfit' %>u
+  <% end %>
+
     <div class="col-md-4">
       <h2><%= @outfit.garment.name %></h2>
       <div class="image">
