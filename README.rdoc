@@ -1,6 +1,8 @@
 ARMOIRE: look great so you can focus on what matters. 
 
-Armoire is an intuitive real time apparel planner and scheduling platform. It optimizes your daily outfit selection based on outfits you actually have in your closet, your current geocoordinates, amongst other factors (time since last worn, color coordination, amount of likes by friends etc.).  
+Armoire is an intuitive real time apparel planner and scheduling platform. It optimizes your daily outfit selection based on:
+
+Apparel/Accessories/Shoes you already own, your current geocoordinates, amongst other factors (time since last worn, color coordination, amount of likes by friends etc.).  
 
 Incorporates: 
 Ruby on Rails
