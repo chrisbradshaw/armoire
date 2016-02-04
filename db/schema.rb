@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20160203153308) do
     t.integer  "garment_id"
     t.integer  "shoe_id"
     t.integer  "accessory_id"
-    t.string   "image"
     t.integer  "action",       default: 0
+    t.string   "image"
   end
 
   add_index "outfits", ["user_id"], name: "index_outfits_on_user_id", using: :btree
