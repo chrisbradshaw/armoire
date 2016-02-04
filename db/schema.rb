@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203153308) do
+ActiveRecord::Schema.define(version: 20160204043356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160203153308) do
     t.integer  "accessory_id"
     t.integer  "action",       default: 0
     t.string   "image"
+    t.string   "name"
   end
 
   add_index "outfits", ["user_id"], name: "index_outfits_on_user_id", using: :btree

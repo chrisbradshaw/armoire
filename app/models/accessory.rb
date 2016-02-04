@@ -3,6 +3,8 @@ class Accessory < ActiveRecord::Base
   has_many :outfits
   mount_uploader :image, ImageUploader
 
+  validates :image, presence: true
+
   attr_accessor :image_cache
 
   def self.random_accessory

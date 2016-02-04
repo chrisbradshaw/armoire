@@ -1,16 +1,23 @@
 <div class="container">
-  <% @outfits.each do |f|%>
+  <% @outfits.each do |outfit|%>
   <div class="row">
     <div class="col-md-4">
-      <p><%= f.garment.name%></p>
+         <div class="image">
+        <div>
+          <img width="275" height="225" src="<%= outfit.garment.image%>">
+        </div>
+      </div>
+      <p><%= outfit.garment.name%></p>
     </div>
     <div class="col-md-4">
-      <p><%= f.shoe.name%></p>
+      <p><%= outfit.shoe.name%></p>
     </div>
     <div class="col-md-4">
-      <p><%= f.accessory.name%></p>
+      <p><%= outfit.accessory.name%></p>
     </div>
   </div>
+      <%= button_to "DELETE OUTFIT",outfit_path(outfit), method: :delete %>
   <%end%>
+
 </div>
 
