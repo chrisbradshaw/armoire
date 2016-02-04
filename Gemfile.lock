@@ -64,6 +64,10 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    carrierwave_direct (0.0.15)
+      carrierwave
+      fog
+      uuidtools
     codeclimate-engine-rb (0.1.0)
       virtus (~> 1.0)
     coderay (1.1.0)
@@ -93,6 +97,8 @@ GEM
     excon (0.45.4)
     execjs (2.6.0)
       railties (>= 3.2, < 5.0)
+    faker (1.6.1)
+      i18n (~> 0.5)
     figaro (1.1.1)
       thor (~> 0.14)
     fission (0.5.0)
@@ -349,6 +355,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.5)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -373,8 +380,10 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   carrierwave
+  carrierwave_direct
   coffee-rails (~> 4.1.0)
   devise
+  faker
   figaro
   fog
   font-awesome-sass (~> 4.5.0)
