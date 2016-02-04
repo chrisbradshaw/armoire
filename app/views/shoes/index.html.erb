@@ -1,15 +1,16 @@
 <h1>Your Shoes</h1>
 
 <div class="container">
-<ul>
+  <div class="row">
   <% current_user.shoes.each do |shoe| %>
-    <p>
+  <div class="col-md-4">
+
       <a href="/shoes/<%=shoe.id%>">
         <img src="<%=shoe.image%>", img width="150" height="150">
       </a>
-    </p>
+    </div>
   <% end %>
-  </ul>
+  </div>
 </div>
 
 

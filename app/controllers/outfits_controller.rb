@@ -1,26 +1,25 @@
 class OutfitsController < ApplicationController
   # outfits last only while they are on-screen should be created and shown but not saved.
 
-
   def new
     @outfit = Outfit.new
   end
 
- def destroy
+  def destroy
     @outfit = Outfit.find_by(id: params[:id])
     @outfit.destroy
     flash[:success] = "Let's find you another outfit."
     render 'new'
-  end
+   end
 
   def show
     @outfit = Outfit.find_by(id: params[:id])
   end
 
   def random
-    @random_accessory = Accessory.where(:user_id => current_user.id).random_accessory
-    @random_garment = Garment.where(:user_id => current_user.id).random_garment
-    @random_shoe = Shoe.where(:user_id => current_user.id).random_shoe
+    @random_accessory = Accessory.where(user_id: current_user.id).random_accessory
+    @random_garment = Garment.where(user_id: current_user.id).random_garment
+    @random_shoe = Shoe.where(user_id: current_user.id).random_shoe
   end
 
   def create
@@ -30,14 +29,13 @@ class OutfitsController < ApplicationController
       flash[:success] = 'Get dressed, not stressed!'
       redirect_to @outfit
     else
-      flash[:error] =  @outfit.errors.full_messages.join("\n")
+      flash[:error] = @outfit.errors.full_messages.join("\n")
       render 'new'
     end
   end
 
   def index
     @outfits = Outfit.where(user_id: current_user.id, action: 1)
-
   end
 
   def pending
@@ -46,7 +44,7 @@ class OutfitsController < ApplicationController
 
   def status
     @outfit = Outfit.find(params[:id])
-    @outfit.update(action: Outfit.actions[ params[:status] ])
+    @outfit.update(action: Outfit.actions[params[:status]])
 
     redirect_to outfits_path
   end
@@ -55,9 +53,8 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.find(params[:id])
     @outfit.name = params[:name]
     @outfit.save
-    redirect_to outfit_path(@outfit), :notice => "Outfit name updated successfully."
+    redirect_to outfit_path(@outfit), notice: 'Outfit name updated successfully.'
   end
-
 
   private
 

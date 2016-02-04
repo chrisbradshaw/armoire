@@ -9,5 +9,4 @@ class Shoe < ActiveRecord::Base
     random_accessory_id = Shoe.pluck(:id).sample
     Shoe.find(random_accessory_id)
   end
-
 end

@@ -2,13 +2,12 @@
 
 
 <div class="container">
-<ul>
   <% current_user.garments.each do |garment| %>
-    <p>
+  <div class="col-md-4">
       <a href="/garments/<%=garment.id%>">
         <img src="<%=garment.image%>", img width="150" height="150">
       </a>
-    </p>
+   </div>
   <% end %>
   </ul>
 </div>

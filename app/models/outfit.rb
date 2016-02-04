@@ -6,14 +6,13 @@ class Outfit < ActiveRecord::Base
   belongs_to :shoe
   belongs_to :user
   mount_uploader :image, ImageUploader
-  
-  attr_accessor :image_cache
 
+  attr_accessor :image_cache
 
   validates_uniqueness_of(
     :user_id,
-    scope: [ :garment_id, :accessory_id, :shoe_id],
-    message: "This combination is saved already for the current user."
+    scope: [:garment_id, :accessory_id, :shoe_id],
+    message: 'This combination is saved already for the current user.'
   )
 
   enum action: [:pending, :approve, :reject]
@@ -22,10 +21,10 @@ class Outfit < ActiveRecord::Base
   # user selects 1 for approve, 2 for reject
 
   def self.random_accessory
-      random_accessory_id = Accessory.pluck(:id).sample
+    random_accessory_id = Accessory.pluck(:id).sample
     # we're using pluck because we want an array w available accessory ids
     # then sample because we want just 1
-      Accessory.find(random_accessory_id)
+    Accessory.find(random_accessory_id)
   end
 
   def self.random_garment
@@ -33,9 +32,8 @@ class Outfit < ActiveRecord::Base
     Garment.find(random_garment_id)
 end
 
-def self.random_shoe
-  random_shoe_id = Shoe.pluck(:id).sample
-  Shoe.find(random_shoe_id)
-end
-
+  def self.random_shoe
+    random_shoe_id = Shoe.pluck(:id).sample
+    Shoe.find(random_shoe_id)
+  end
 end

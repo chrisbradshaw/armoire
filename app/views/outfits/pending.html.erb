@@ -1,9 +1,18 @@
 
+<div class="row">
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
 
 <% @outfits.each do |outfit|  %>
+  <h4><%= outfit.name || "default_name" %></h4>
 
-  <%= outfit.name || "default_name" %>
   <%= button_to "Approve",status_outfit_path(outfit), method: :put, params: {status: 'approve'} %>
   <%= button_to "Reject", status_outfit_path(outfit), method: :put, params: {status: 'reject'} %>
 
 <% end %>
+</div>
+
+<div class="col-md-4"></div>
+
+</div>

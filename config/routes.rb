@@ -8,9 +8,9 @@ Rails.application.routes.draw do
       get :pending
     end
 
-     member do
+    member do
       put :status
-     end
+    end
   end
   resources :accessories
   resources :shoes
@@ -23,6 +23,4 @@ Rails.application.routes.draw do
   get 'delete/:id' => 'garments#destroy', as: 'garment_destroy'
   get 'delete_accessories/:id' => 'accessories#destroy', as: 'accessory_delete'
   get 'delete_shoes/:id' => 'shoes#destroy', as: 'shoes_delete'
-
-
 end

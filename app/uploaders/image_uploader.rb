@@ -16,19 +16,17 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Process files as they are uploaded:
-  process :scale => [200, 300]
+  process scale: [200, 300]
 
-  def scale(width=200, height=300)
+  def scale(width = 200, height = 300)
   end
 
   process :store_dimensions
 
   version :show do
-    process :resize_to_limit => [500, 500]
+    process resize_to_limit: [500, 500]
     process :store_dimensions
   end
-
-
 
   def extension_white_list
     %w(jpg jpeg gif png)
@@ -38,6 +36,4 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def store_dimensions
   end
-
-
 end
