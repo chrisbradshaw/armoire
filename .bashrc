@@ -1,3 +1,0 @@
-export AWS_ACCESS_KEY=AKIAIBJKOQNZCKDBYAXQ
-export AWS_SECRET_KEY=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
-export AWS_BUCKET=armoire-army
