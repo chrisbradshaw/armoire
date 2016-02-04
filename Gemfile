@@ -63,8 +63,12 @@ gem 'font-awesome-sass', '~> 4.5.0'
 
 gem 'carrierwave'
 
+gem 'carrierwave_direct'
+
 gem 'mini_magick'
 
 gem 'fog'
 
 gem 'figaro'
+
+gem 'faker'
