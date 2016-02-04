@@ -2,26 +2,44 @@
 
 <div class="row">
 
-  <div class="col-md-4">
-    <h2>Garment</h2>
-    <ul>
-       <li><%= link_to @random_garment.name, @random_garment  %></li>
-    </ul>
-  </div>
+<div class="col-md-4">
 
-  <div class="col-md-4">
-    <h2>Shoe</h2>
-  <ul>
-    <li><%= link_to @random_shoe.name, @random_shoe  %></li>
-    </ul>
-  </div>
+    <h2><%= @random_garment.name%></h2>
+         <div class="image">    
+        <div>
+          <img width="275" height="225" src="<%= @random_garment.image%>">
+        </div>
+      </div>
+    
+    </div>
 
-  <div class="col-md-4">
+
+<div class="col-md-4">
+
+    <h2><%= @random_shoe.name%></h2>
+         <div class="image">    
+        <div>
+          <img width="275" height="225" src="<%= @random_shoe.image%>">
+        </div>
+      </div>
+    
+    </div>
+
+
+<div class="col-md-4">
+
     <h2>Accessory</h2>
-    <ul>
-      <li><%= link_to @random_accessory.name, @random_accessory  %></li>
-    </ul>
-  </div>
+
+    <h2><%= @random_accessory.name%></h2>
+         <div class="image">    
+        <div>
+          <img width="275" height="225" src="<%= @random_accessory.image%>">
+        </div>
+      </div>
+    
+    </div>
+
+
 
   <form>
     <input type=button value="Get another random outfit!" onClick="window.location.reload()">
