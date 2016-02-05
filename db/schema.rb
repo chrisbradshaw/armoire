@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20160205042619) do
     t.integer  "garment_id"
     t.integer  "shoe_id"
     t.integer  "accessory_id"
-    t.integer  "action",       default: 0
     t.string   "image"
+    t.integer  "action",       default: 0
     t.string   "name"
   end
 

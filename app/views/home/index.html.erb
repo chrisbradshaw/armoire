@@ -1,5 +1,6 @@
 <% if signed_in? %>
   <div class="navbar center">
+
     <%= link_to outfits_path, class: "btn btn-default" do %>
     Your Armoire
     <% end %>
@@ -19,7 +20,7 @@
      <%= link_to users_path, class: "btn btn-default" do %>
     Connect With Other Users
     <% end %>
-    
+
 <% else %>
   <%= "Please " %> <%=link_to "log in", user_session_path%> <%=" to view your armoire!"%>
 <% end %>
