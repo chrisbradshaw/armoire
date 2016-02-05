@@ -72,4 +72,3 @@ gem 'fog'
 gem 'figaro'
 
 gem 'faker'
-

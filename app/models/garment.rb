@@ -7,6 +7,9 @@ class Garment < ActiveRecord::Base
 
   validates :image, presence: true
 
+  enum season: [:summer, :fall, :winter, :spring]
+
+
   def self.random_garment
     random_accessory_id = Garment.pluck(:id).sample
     Garment.find(random_accessory_id)
