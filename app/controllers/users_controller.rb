@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :follow, :unfollow]
+
   def show
-    @user = User.find(params[:id])
   end
 
   def new
@@ -20,10 +21,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
+    @user = current_user
     if @user.update(user_params)
       flash[:success] = 'Your profile has been taken in!'
     else
@@ -31,17 +33,30 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
+  def index
+    @users = User.where('id != ?', current_user.id)
   end
 
-  def index
-    @users = User.all
+  def follow
+    if current_user.follow(@user)
+      redirect_to users_path, notice: "You have successfully followed #{@user.username}"
+    else
+      redirect_to users_path, alert: "You are already following #{@user.username}"
+    end
+  end
+
+  def unfollow
+    current_user.unfollow(@user)
+    redirect_to users_path, notice: "You have unfollowed #{@user.username}"
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

@@ -4,8 +4,9 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>User Email</th>
+            <th>User Name</th>
             <th>Home Page</th>
+            <th>Follow Armoire?</th>
         </tr>
     </thead>
     <tbody>
@@ -13,8 +14,18 @@
 <% @users.each do |user| %>
 
 <tr>
-    <td> <%= user.email %></td>
-    <td><%= link_to user.email, user %></td>
+    <td> <%= user.username %></td>
+    <td><%= link_to user.username, user %></td>
+    <td>
+        <% if current_user.is_following?(user) %>
+            <%= link_to 'Unfollow', unfollow_user_path(user),
+            method: :delete, data: {confirm: 'Are you sure?'} %>
+        <% else %>
+            <%= link_to 'Follow', follow_user_path(user),
+            method: :put, data: {confirm: 'Are you sure?'} %>
+        <% end %>
+    </td>
+
 </tr>
 
 <% end %>

@@ -5,6 +5,8 @@ class Shoe < ActiveRecord::Base
 
   attr_accessor :image_cache
 
+    enum season: [:summer, :fall, :winter, :spring]
+
   def self.random_shoe
     random_accessory_id = Shoe.pluck(:id).sample
     Shoe.find(random_accessory_id)

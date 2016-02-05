@@ -2,12 +2,20 @@ Rails.application.routes.draw do
   root to: 'home#index'
   devise_for :users
 
-  resources :users
+  resources :users do
+    member do
+      put :follow
+      delete :unfollow
+    end
+  end
+
   resources :outfits do
+    # /outfits/pending
     collection do
       get :pending
     end
 
+    # /outfits/:id/pending
     member do
       put :status
     end
