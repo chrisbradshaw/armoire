@@ -72,3 +72,5 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
 
 gem 'geocoder', '~> 1.3'
+
+gem 'acts_as_commentable'

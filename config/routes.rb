@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     # /outfits/:id/pending
     member do
       put :status
+      post :add_comment
+      delete :delete_comment
     end
   end
   resources :accessories

@@ -35,7 +35,30 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @outfits = Outfit.where(user_id: current_user.id, action: 1)
+    if params[:other_user_id].present?
+      @outfits = Outfit.where(user_id: params[:other_user_id], action: 1)
+    #@outfits.map{|o| o.comments.new}
+
+    else
+      @outfits = Outfit.where(user_id: current_user.id, action: 1)
+    end
+  end
+
+  def add_comment
+    @outfit = Outfit.find(params[:id])
+    comment =@outfit.comments.new
+    comment.comment = params[:comment][:comment]
+    comment.user_id = current_user.id
+    comment.save
+    redirect_to :back
+  end  
+
+
+  def delete_comment
+      @outfit = Outfit.find(params[:id])
+    @comment= @outfit.comments.where(id: params[:comment_id]).first
+    @comment.destroy
+    redirect_to :back
   end
 
   def pending
@@ -59,6 +82,6 @@ class OutfitsController < ApplicationController
   private
 
   def outfits_params
-    params.require(:outfit).permit(:garment_id, :shoe_id, :accessory_id)
+    params.require(:outfit).permit(:garment_id, :shoe_id, :accessory_id, comment: [])
   end
 end

@@ -23,6 +23,20 @@
 </table>
 
 
+<table class= "table table-hover">
+  <% current_user.all_outfits.each do |outfit| %>
+<tr>
+<p>Outfit</p>
+<td><%= link_to image_tag(outfit.garment.image), outfits_path(other_user_id: outfit.user.id) %></td>
+<td><%= link_to image_tag(outfit.shoe.image), outfit %></td>
+<td><%= link_to image_tag(outfit.accessory.image), outfit %></td>
+
+</tr>
+
+    <% end %>
+</table>
+
+
 </div>
 
 

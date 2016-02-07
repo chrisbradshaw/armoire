@@ -67,6 +67,14 @@ class User < ActiveRecord::Base
     @login || username || email
   end
 
+  def all_friends
+    [followed_users.pluck(:id), following_users.pluck(:id)].uniq
+  end  
+
+  def all_outfits
+     Outfit.where(:user_id => [self.id,all_friends])
+  end
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
