@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( girl-pose.svg )
 # Rails.application.config.assets.precompile += %w( man-post.svg )
 # Rails.application.config.assets.precompile += %w( wardrobe.psd )
+
