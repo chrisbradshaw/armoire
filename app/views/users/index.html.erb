@@ -5,7 +5,8 @@
     <thead>
         <tr>
             <th>User Name</th>
-            <th>Home Page</th>
+            <th>Followers</th>
+            <th>Following</th>
             <th>Follow Armoire?</th>
         </tr>
     </thead>
@@ -14,8 +15,9 @@
 <% @users.each do |user| %>
 
 <tr>
-    <td> <%= user.username %></td>
     <td><%= link_to user.username, user %></td>
+    <td><%= user.followers_count %></td>
+    <td><%= user.following_count %></td>
     <td>
         <% if current_user.is_following?(user) %>
             <%= link_to 'Unfollow', unfollow_user_path(user),
@@ -33,7 +35,12 @@
     </tbody>
 </table>
 
-  <%= link_to "show_index_of_users", users_path %>
-  <%= link_to "current_user_show", current_user %>
+<%= link_to root_path, class: "btn btn-default" do %>
+ <i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
+<%= link_to outfits_path, class: "btn btn-default" do %>
+    <%= fa_icon "chevron-left", text: "Your Armoire", left: true %>
+    <% end %>
 </div>
 
