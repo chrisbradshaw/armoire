@@ -10,24 +10,24 @@ class User < ActiveRecord::Base
   has_many :accessories
   has_many :outfits
   has_many :follower_friendships,
-    foreign_key: 'follower_id',
-    class_name: 'Friendship'
+           foreign_key: 'follower_id',
+           class_name: 'Friendship'
 
   # users that are followed by this user
   has_many :followed_users,
-    through: :follower_friendships,
-    source: 'followed',
-    class_name: 'User'
+           through: :follower_friendships,
+           source: 'followed',
+           class_name: 'User'
 
   has_many :followed_friendships,
-    foreign_key: 'followed_id',
-    class_name: 'Friendship'
+           foreign_key: 'followed_id',
+           class_name: 'Friendship'
 
   # users who follow this user
   has_many :following_users,
-    through: :followed_friendships,
-    source: 'follower',
-    class_name: 'User'
+           through: :followed_friendships,
+           source: 'follower',
+           class_name: 'User'
 
   validates :username,
             presence: true,
