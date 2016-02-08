@@ -74,3 +74,5 @@ gem 'faker'
 gem 'geocoder', '~> 1.3'
 
 gem 'acts_as_commentable'
+
+gem 'forecast_io'

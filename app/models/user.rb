@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
 
+  geocoded_by :current_sign_in_ip
+  # :latitude => :lat, :longitude => :lon
+  after_validation :geocode
+
   attr_writer :login
 
   def follow(another_user)
