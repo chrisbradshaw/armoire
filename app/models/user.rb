@@ -39,8 +39,12 @@ class User < ActiveRecord::Base
 
   geocoded_by :current_sign_in_ip
   # :latitude => :lat, :longitude => :lon
-  after_validation :geocode
+  after_validation :geocode_user
 
+ def geocode_user
+   self.latitude, self.longitude = self.geocode.first, self.geocode.last
+   self.save
+ end
   attr_writer :login
 
   def follow(another_user)
