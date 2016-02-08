@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="utf-8">
+    <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
-    <meta name="author" content="Chris Bradshaw, Jen, Maisie">
-    <title><%= full_title(yield(:title)) %></title>
+    <meta name="author" content="Chris Bradshaw, Chris McGuigan, Jen Abella, Maisie Athens">
+
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
 
     <!-- Retina.js - Load first for faster HQ mobile images. -->
-    <%# javascript_include_tag 'plugins/retina/retina.min' %>
+
+    <%= javascript_include_tag "plugins/retina/retina.min.js" %>
    
     <!-- Default Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -30,20 +32,18 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<!-- Alternate Body Classes: .modern and .vintage -->
 
-<body id="page-top" class="vintage">
-
+<body id="page-top" class="modern">
 
     <div class="container">
      
     <!-- Navigation -->
-    <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
+   
     <nav class="navbar navbar-inverse navbar-fixed-top navbar-expanded">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"><%= fa_icon "fa fa-archive", text: "Your Armoire" %></span>
                     <span class="icon-bar"></span>
@@ -53,398 +53,285 @@
                     <%= image_tag 'fashion/logo.png', class: 'img-responsive'%>
                 </a>
                 
-            </div>
+            </div><!-- navbar-header -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-<%= render 'layouts/header' %>
+            <%= render 'layouts/header' %>
 
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
+            
+        </div><!-- /.container -->
     </nav>
+
     <!-- Instructions: Set your background image using the URL below. -->
-    <header style="background-image: url('<%= asset_path("fashion/bg-header.jpg") %>')">
+    <header style="background-image: url('<%= asset_path("fashion/triple_doors.jpg") %>')">
         <div class="intro-content">
-            <%= image_tag 'fashion/profile.png', class: 'img-responsive' %>
-        </div>
-        <div class="scroll-down">
-            <a class="btn page-scroll" href="#about"><i class="fa fa-angle-down fa-fw"></i></a>
-        </div>
+            <div class="scroll-down">
+                <a class="btn page-scroll" href="#about"><i class="fa fa-angle-down fa-fw"></i></a>
+            </div><!-- scroll-down -->
+        </div><!-- intro-content -->
     </header>
-    <section id="about">
+                
 
 
+    <section id="about"><!-- this is the original home page -->
        <%= yield %>
 
+    </section><!-- about -->
+
+    <section id="intro">
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-lg-12 wow fadeIn">
-                   
-                    <h1>A Fashion Themed Sample</h1>
-                    <p>Vitality is the perfect theme for a fashion related business.</p>
+                    <h1>A R M O I R E</h1>
+                    <p>Get dressed, not stressed.</p><br><br><br><br>
                     <hr class="colored">
-                </div>
-            </div>
-            <div class="row text-center content-row">
-                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".2s">
-                    <div class="about-content">
-                        <i class="fa fa-eye fa-4x"></i>
-                        <h3>Retina Ready</h3>
-                        <p>This theme includes the retina.js plugin for easy retina image support so your images and graphics will look great on mobile devices!</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".4s">
-                    <div class="about-content">
-                        <i class="fa fa-edit fa-4x"></i>
-                        <h3>Easy to Edit</h3>
-                        <p>Vitality is built using Bootstrap 3, and is easy to edit and customize. LESS files are included as well for deeper customization.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".6s">
-                    <div class="about-content">
-                        <i class="fa fa-tablet fa-4x"></i>
-                        <h3>Responsive</h3>
-                        <p>When building this theme, we've paid close attention to how it looks on various screen sizes. Try it out on a phone or tablet!</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".8s">
-                    <div class="about-content">
-                        <i class="fa fa-heart fa-4x"></i>
-                        <h3>Built with Love</h3>
-                        <p>All of our themes are crafted with care, and we strive to make your experience as one of our customers the best as possible.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="team" class="bg-gray">
+                </div><!-- col-12 wow fadeIn -->
+            </div><!-- row text-center -->
+        </div><!-- container-fluid -->
+    </section><!-- intro -->
+
+    <section id="outfits" class="bg-gray">
         <div class="container text-center wow fadeIn">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Our Team</h2>
-                    <p>We are a group of fashion experts with a passion for setting new trends.</p>
+                    <h2>Outfits</h2>
                     <hr class="colored">
-                </div>
-            </div>
+                </div><!-- col-lg-12 -->
+            </div><!-- row -->
+
             <div class="row content-row">
                 <div class="col-lg-12">
-                    <div class="about-carousel">
-                        <div class="item">
-                            <%= image_tag 'people/1.jpg', class: 'img-responsive' %>
-                            <div class="caption">
-                                <h3>Patricia West</h3>
-                                <hr class="colored">
-                                <p>Owner &amp; Founder</p>
-                                <ul class="list-inline social">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <%= image_tag 'people/3.jpg', class: 'img-responsive', alt: '' %>
-                            <div class="caption">
-                                <h3>Kate Williams</h3>
-                                <hr class="colored">
-                                <p>Head Fashion Buyer</p>
-                                <ul class="list-inline social">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-pinterest fa-fw"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <%= image_tag 'people/2.jpg', class:'img-responsive', alt:'' %>
-                            <div class="caption">
-                                <h3>Howard Scott</h3>
-                                <hr class="colored">
-                                <p>Sales Manager</p>
-                                <ul class="list-inline social">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <%= image_tag 'people/4.jpg', class: 'img-responsive', alt: '' %>
-                            <div class="caption">
-                                <h3>Amy Vanderbute</h3>
-                                <hr class="colored">
-                                <p>Marketing Coordinator</p>
-                                <ul class="list-inline social">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <%= image_tag 'people/5.jpg', class: 'img-responsive' %>
-                            <div class="caption">
-                                <h3>Jeremy Davidson</h3>
-                                <hr class="colored">
-                                <p>Style Expert</p>
-                                <ul class="list-inline social">
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-pinterest fa-fw"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <aside class="cta-quote" style="background-image: url('<%= asset_path("fashion/bg-aside.jpg")%>')">
+                    <div class="carousel slide" data-ride="carousel" id='outfit'>
+                        <div class='container'>
+                            <div class="carousel-inner">
+                            <%= div_for(@outfit) do %>
+                                <%= @outfit.name %>
+                                <% end %>
+                                <div class="item active">
+                                    <%= image_tag ('fashion/if_steven_was_a_girl.jpg'), class: 'img-responsive', alt: "" %>
+                                        <div class="caption">
+                                            <h3>The outfit pictured's name</h3>
+                                            <hr class="colored">
+                                            <p>Date worn?</p>
+                                            <ul class="list-inline social">
+                                                <li>
+                                                    <p>This should be render 'outfits/_index' if we make index a partial OR we might have to do some inline ruby with each etc... but the carousel works. </p>
+                                                </li>
+                                            </ul><!-- list-inline social -->
+                                        </div><!-- caption -->
+                                </div><!-- item -->
+
+                                <div class="item">
+                                <%= image_tag ('fashion/blue_poncho.jpg'), class: 'img-responsive', alt: "" %>
+                                    <div class="caption">
+                                        <h3>The outfit pictured's name</h3>
+                                        <hr class="colored">
+                                        <p>Date Worn?</p>
+                                        <ul class="list-inline social">
+                                            <li>
+                                                <p>This should be another outfit </p>
+                                            </li>
+                                            
+                                        </ul><!-- list-inline social -->
+                                    </div><!-- caption -->
+                                </div><!-- item -->
+
+                                <div class="item">
+                                <%= image_tag ('fashion/bw_flower_shirt.jpg'), class: 'img-responsive', alt: "" %>
+                                    <div class="caption">
+                                        <h3>The outfit pictured's name</h3>
+                                        <hr class="colored">
+                                        <p>Date worn? </p>
+                                        <ul class="list-inline social">
+                                            <li>
+                                                <p>This should be another outfit </p>
+                                            </li>
+                                        </ul><!-- list-inline social -->
+                                    </div><!-- caption -->
+                                </div><!-- item -->
+
+                                <div class="item">
+                                <%= image_tag ('fashion/shirt_sleeve_lace_top.jpg'), class: 'img-responsive', alt: "" %>
+                                    <div class="caption">
+                                        <h3>The outfit pictured's name</h3>
+                                        <hr class="colored">
+                                        <p>Date worn?</p>
+                                        <ul class="list-inline social">
+                                            <li>
+                                                <p>All the saved outfits </p>
+                                            </li>
+                                        </ul><!-- list-inline social -->
+                                    </div><!-- caption -->
+                                </div><!-- item -->
+
+                            </div><!-- carousel-inner -->
+                            <a class="left carousel-control" href="#outfit" role="button" data-slide="prev"></a>
+                            <a class="right carousel-control" href="#outfit" role="button" data-slide="next"></a>
+                        </div><!-- container -->
+                    </div><!-- carousel slide -->
+                </div><!-- col-lg-12 -->
+            </div><!-- row content-row -->
+        </div><!-- container text-center wow fadeIn -->
+    </section><!-- outfits -->
+
+
+    <aside class="cta-quote" style="background-image: url('<%= asset_path ("fashion/triple_doors.jpg") %>')"  class="img-responsive" alt="">
         <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <span class="quote">Fashion design is more than just making clothes. It's about <span class="text-primary">pushing boundaries</span> and creating something unique and exciting.</span>
+                    <span class="quote">Dressing well is a form of <span class="text-primary">good manners.</span> ~ Tom Ford</span>
                     <hr class=" colored">
-                    <a class="btn btn-outline-light page-scroll" href="#collection">See Our Work</a>
+                    <a class="btn btn-outline-light page-scroll" href="#connections">Nothing happens when you press this button yet</a>
                 </div>
             </div>
         </div>
     </aside>
-    <section id="process" class="services">
+
+    <section id="armoire">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-12 wow fadeIn">
-                    <h2>Our Process</h2>
-                    <hr class="colored">
-                    <p>Here is an overview of how we approach each new collection or design.</p>
-                </div>
-            </div>
-            <div class="row content-row">
-                <div class="col-md-4 wow fadeIn" data-wow-delay=".2s">
-                    <div class="media">
-                        <div class="pull-left">
-                            <i class="fa fa-clipboard"></i>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Plan</h3>
-                            <ul>
-                                <li>
-                                    <em>Design concept</em>
-                                </li>
-                                <li>
-                                    <em>Artistic rendering</em>
-                                </li>
-                                <li>
-                                    <em>Materials selection</em>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 wow fadeIn" data-wow-delay=".4s">
-                    <div class="media">
-                        <div class="pull-left">
-                            <i class="fa fa-magic"></i>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Create</h3>
-                            <ul>
-                                <li>
-                                    <em>Prototype production</em>
-                                </li>
-                                <li>
-                                    <em>View on live models</em>
-                                </li>
-                                <li>
-                                    <em>Add to collection</em>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 wow fadeIn" data-wow-delay=".6s">
-                    <div class="media">
-                        <div class="pull-left">
-                            <i class="fa fa-tag"></i>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Reveal</h3>
-                            <ul>
-                                <li>
-                                    <em>Reveal at fashion show</em>
-                                </li>
-                                <li>
-                                    <em>Analyze feedback</em>
-                                </li>
-                                <li>
-                                    <em>Bring to market</em>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="collection" class="bg-gray">
+            <div class="row text-center content-row">
+
+                <div id="garments" class="armoire-content">
+                    <div class="col-sm-4 wow fadeIn" data-wow-delay=".4s">
+                    <%= image_tag ('fashion/black_sweater_with_heart.jpg'), class: 'img-responsive', alt: "" %>
+                        <h3>Garments</h3>
+                        <p>garment carousel? could do render 'garments/index' or inline ruby to show all the garments. </p>
+                    </div><!-- col 4 wow fadeIn -->
+                </div><!-- garments armoire-content -->
+
+                <div id="accessories" class="armoire-content">
+                    <div class="col-sm-4 wow fadeIn" data-wow-delay=".6s">
+                    <%= image_tag ('fashion/white_pleated_skirt.jpg'), class: 'img-responsive', alt: "" %>
+                        <h3>Accessories</h3>
+                        <p>accessory carousel? could render 'accessories/index'...</p>
+                        </div><!-- col 4 wow fadeIn -->
+                    </div><!-- accessories armoire-content -->
+
+                <div id="shoes" class="armoire-content">
+                    <div class="col-sm-4 wow fadeIn" data-wow-delay=".8s">
+                    <%= image_tag ('fashion/bronze_metallic_pump.jpg'), class: 'img-responsive', alt: "" %>
+                        <h3>Shoes</h3>
+                        <p>shoes carousel...</p>
+                    </div><!-- col 4 wow fadeIn -->
+                </div><!-- shoes armoire-content -->
+
+            </div><!-- row text-center content-row -->
+        </div><!-- container -->
+    </section><!-- armoire -->
+
+    <section id="add-new">
         <div class="container wow fadeIn">
             <div class="row text-center">
                 <div class="col-lg-12">
-                    <h2>Collection</h2>
+                <%= image_tag ('fashion/purple_door.jpg'), class: 'img-responsive', alt: "" %>
+                    <h2>This could be where you can add an item to your Armoire</h2>
                     <hr class="colored">
-                    <p>Here is a sample of items from our Spring 2015 collection.</p>
-                </div>
-            </div>
+                    <p>Can we make the form work with a dropdown to say if it is garment/accessory/shoe then fill in the spaces?</p>
+                </div><!-- col-lg-12 -->
+            </div><!-- row text-center -->
+        </div><!-- container wow fadeIn -->
+    </section>
+
+    <section id="user" class="services">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-lg-12 wow fadeIn">
+                    <h2>Profile</h2>
+                    <hr class="colored">
+                    <p>Profile section.</p>
+                </div><!-- col-lg-12 wow fadeIn -->
+            </div><!-- row text-center -->
+
+            <div class="row content-row">
+                <div class="col-sm-4 wow fadeIn" data-wow-delay=".2s">
+                    <div class="media">
+                    <i class="fa fa-clipboard"></i>
+                        <div class="media-body">
+                            <h3 class="media-heading">All About You</h3>
+                            <ul>
+                                <li><em>Email</em></li>
+                                <li><em>Password</em></li>
+                                <li><em>Should they be able to put up a picture?</em></li>
+                            </ul>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </div><!-- col-sm-4 wow fadeIn -->
+
+                <div class="col-sm-4 wow fadeIn" data-wow-delay=".4s">
+                    <div class="media">
+                    <i class="fa fa-magic"></i>
+                        <div class="media-body">
+                            <h3 class="media-heading">More Profile?</h3>
+                            <ul>
+                                <li><em>Email</em></li>
+                                <li><em>Password</em></li>
+                                <li><em>Another thing?</em></li>
+                            </ul>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </div><!-- col-sm-4 wow fadeIn -->
+
+                <div class="col-sm-4 wow fadeIn" data-wow-delay=".6s">
+                    <div class="media">
+                    <i class="fa fa-tag"></i>
+                        <div class="media-body">
+                            <h3 class="media-heading">Even More?</h3>
+                            <ul>
+                                <li><em>Email</em></li>
+                                <li><em>Password</em></li>
+                                <li><em>Another thing?</em></li>
+                            </ul>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </div><!-- col-sm-4 wow fadeIn -->
+            </div><!-- row content-row -->
+        </div><!-- container -->
+    </section><!-- user -->
+
+    <section id="users" class="bg-gray">
+        <div class="container text-center wow fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Connect</h2>
+                    <hr class="colored">
+                    <p>Friends, followers, fashionistas.</p>
+                    <p>Would render the users/following template here. Can also do template: as a keyword.</p> 
+                </div><!-- col-lg-12 -->
+            </div><!-- row  -->
+
             <div class="row content-row">
                 <div class="col-lg-12">
                     <div class="portfolio-gallery">
+                        <div class="item active">
+                            <%= image_tag ('fashion/timgunn.jpeg'), class: 'img-responsive', alt: "" %>
+                        </div><!-- item active -->
+                        <div class="item"> 
+                            <%= image_tag ('fashion/steven.png'), class: 'img-responsive', alt: "" %>
+                        </div><!-- item -->
                         <div class="item">
-                
-                                <%= image_tag 'fashion/gallery/1.jpg', class: 'img-responsive img-centered' %>
-                            </a>
-                        </div>
+                            <%= image_tag ('fashion/mathens.png'), class: 'img-responsive', alt: "" %>
+                        </div><!-- item -->
                         <div class="item">
-                        
-                                <%= image_tag 'fashion/gallery/2.jpg', class: 'img-responsive img-centered' %>
-                            </a>
-                        </div>
+                            <%= image_tag ('fashion/cdeasy.jpg'), class: 'img-responsive', alt: "" %>
+                        </div><!-- item -->
                         <div class="item">
-                       
-                                <%= image_tag 'fashion/gallery/3.jpg', class: 'img-responsive img-centered' %>
-                            </a>
-                        </div>
+                            <%= image_tag ('fashion/grace.jpg'), class: 'img-responsive', alt: "" %>
+                        </div><!-- item -->
                         <div class="item">
-                     
-                                <%= image_tag 'fashion/gallery/4.jpg', class: 'img-responsive img-centered' %>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="assets/img/fashion/gallery/5.jpg" class="gallery-link" title="Earthy Wrap">
-                                <%= image_tag 'fashion/gallery/5.jpg', class: 'img-responsive img-centered' %>
-                            </a>
-                        </div>
-                        <div class="item">
-                     
-                                <%= image_tag 'fashion/gallery/6.jpg', class: 'img-responsive img-centered' %>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="locations" class="pricing" style="background-image: url('<%= asset_path("fashion/bg-locations.jpg")%>')">
-        <div class="container wow fadeIn">
-            <div class="row text-center">
-                <div class="col-lg-12">
-                    <h2>Locations</h2>
-                    <hr class="colored">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, quae, laborum, voluptate delectus odio doloremque error porro obcaecati nemo animi ducimus quaerat nostrum? Ab molestiae eaque et atque architecto reiciendis.</p>
-                </div>
-            </div>
-            <div class="row content-row">
-                <div class="col-md-4">
-                    <div class="pricing-item">
-                        <h3>Beaumont</h3>
-                        <hr class="colored">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <em>Hours:</em>
-                                <br>Mon - Fri: 9:00am to 7:00pm
-                                <br>Sat - Sun: 10:00am to 8:00pm</li>
-                            <li class="list-group-item">
-                                <em>Phone:</em>
-                                <br>394-555-5555</li>
-                            <li class="list-group-item">
-                                <em>Address:</em>
-                                <br>8372 Greenway Ct.
-                                <br>Beaumont, CA 49204</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pricing-item">
-                        <h3>Bakersville</h3>
-                        <hr class="colored">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <em>Hours:</em>
-                                <br>Mon - Fri: 9:00am to 7:00pm
-                                <br>Sat - Sun: 10:00am to 8:00pm</li>
-                            <li class="list-group-item">
-                                <em>Phone:</em>
-                                <br>526-555-5555</li>
-                            <li class="list-group-item">
-                                <em>Address:</em>
-                                <br>324 Kingston Dr.
-                                <br>Santa Monica, CA 49204</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pricing-item">
-                        <h3>Downtown</h3>
-                        <hr class="colored">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <em>Hours:</em>
-                                <br>Mon - Fri: 9:00am to 8:00pm
-                                <br>Sat - Sun: 11:00am to 11:00pm</li>
-                            <li class="list-group-item">
-                                <em>Phone:</em>
-                                <br>474-555-5555</li>
-                            <li class="list-group-item">
-                                <em>Address:</em>
-                                <br>74 Main St. Suite #2
-                                <br>Los Angeles, CA 49204</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="testimonials" class="testimonials">
+                        <%= image_tag ('fashion/cb.jpg'), class: 'img-responsive', alt: "" %>
+                        </div><!-- item -->
+                    </div><!-- portfolio-gallery -->
+                </div><!-- col-lg-12 -->
+            </div><!-- row content-row -->
+        </div><!-- container text row wow fadeIn-->
+    </section><!-- users -->
+
+    <section id="inspiration" class="testimonials">
         <div class="container wow fadeIn">
             <div class="row">
-                <h2>Testimonials</h2>
+                <h2>Wardrobe Wisdom</h2>
                 <hr class="colored">
-                <p>Kind words from some of our past clients.</p>
+                <p>We can toss this section.</p>
             </div>
             <div class="row content-row">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -452,15 +339,15 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <p class="lead">"Truly one of a kind."</p>
-                                    <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, temporibus, laborum, dignissimos doloremque corporis alias nostrum recusandae culpa id quisquam harum impedit sed sunt non obcaecati vero ipsam aut fugit?</p>
+                                    <p class="lead">Sparkling advice.</p>
+                                    <p class="quote">"People will stare. Make it worth their while."</p>
                                     <div class="testimonial-info">
                                         <div class="testimonial-img">
-                                            <%= image_tag 'testimonials/1.jpg', class:'img-circle img-responsive', alt:'' %>
+                                        <%= image_tag ('fashion/Harry_Winston.jpg'), class: 'img-responsive', alt: "" %>
                                         </div>
                                         <div class="testimonial-author">
-                                            <span class="name">Jim Walker</span>
-                                            <p class="small">CEO of GeneriCorp</p>
+                                            <span class="name">Harry Winston</span>
+                                            <p class="small">jeweler</p>
                                             <div class="stars">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -476,15 +363,111 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <p class="lead">"I haven't found better."</p>
-                                    <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, temporibus, laborum, dignissimos doloremque corporis alias nostrum recusandae culpa id quisquam harum impedit sed sunt non obcaecati vero ipsam aut fugit?</p>
+                                    <p class="lead">Outfit take the mic.</p>
+                                    <p class="quote">"Style is a way to say who you are without having to speak."</p>
                                     <div class="testimonial-info">
                                         <div class="testimonial-img">
-                                            <%= image_tag 'testimonials/1.jpg', class: 'img-circleimg-responsive', alt: '' %>
+                                        <%= image_tag ('fashion/Rachel_Zoe.jpg'), class: 'img-responsive', alt: "" %>
                                         </div>
                                         <div class="testimonial-author">
-                                            <span class="name">Jim Walker</span>
-                                            <p class="small">CEO of GeneriCorp</p>
+                                            <span class="name">Rachel Zoe</span>
+                                            <p class="small">stylist</p>
+                                            <div class="stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p class="lead">Defining style.</p>
+                                    <p class="quote">"Style has nothing to do with fashion. Fashion is over quickly. Style is forever."</p>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-img">
+                                        <%= image_tag ('fashion/Ralph_Lauren.jpg'), class: 'img-responsive', alt: "" %>
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <span class="name">Ralph Lauren</span>
+                                            <p class="small">designer</p>
+                                            <div class="stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p class="lead">Lessons learned.</p>
+                                    <p class="quote">"Over the years I have learned that what is important in a dress is the woman who is wearing it."</p>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-img">
+                                        <%= image_tag ('fashion/Yves_St_Laurent.jpg'), class: 'img-responsive', alt: "" %>
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <span class="name">Yves Saint Laurent</span>
+                                            <p class="small">designer</p>
+                                            <div class="stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p class="lead">Hmmm?</p>
+                                    <p class="quote">"Why fit in when you were born to stand out!"</p>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-img">
+                                        <%= image_tag ('fashion/Dr_Seuss.jpg'), class: 'img-responsive', alt: "" %>
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <span class="name">Dr. Seuss</span>
+                                            <p class="small">wise, but not a real doctor</p>
+                                            <div class="stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p class="lead">Be bold.</p>
+                                    <p class="quote">"Everyday is a fashion show and the world is the runway."</p>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-img">
+                                        <%= image_tag ('fashion/Coco_Chanel.jpg'), class: 'img-responsive', alt: "" %>
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <span class="name">Coco Chanel</span>
+                                            <p class="small">designer</p>
                                             <div class="stars">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -502,9 +485,10 @@
             </div>
         </div>
     </section>
+
     <section class="cta-form bg-dark">
         <div class="container text-center">
-            <h3>Subscribe to our newsletter!</h3>
+            <h3>This could be the signup/signin section because with the form stuff maybe it'll work better with Devise?  Need to read up. Contact has a form profile as well that might work? </h3>
             <hr class="colored">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -529,6 +513,7 @@
             </div>
         </div>
     </section>
+
     <section id="contact" class="bg-gray">
         <div class="container wow fadeIn">
             <div class="row">
@@ -581,18 +566,18 @@
             </div>
         </div>
     </section>
-          <%= render 'layouts/footer' %>
-    <footer class="footer" style="background-image: url('<%= asset_path("fashion/bg-footer.jpg") %>')">
+
+    <footer class="footer" style="background-image: url('<%= asset_path ("fashion/Coco_Chanel.jpg") %>')" class="img-responsive" alt="">
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-4 contact-details">
                     <h4><i class="fa fa-phone"></i> Call</h4>
-                    <p>555-213-4567</p>
+                    <p>555-867-5309</p>
                 </div>
                 <div class="col-md-4 contact-details">
                     <h4><i class="fa fa-map-marker"></i> Visit</h4>
-                    <p>3481 Melrose Place
-                        <br>Beverly Hills, CA 90210</p>
+                    <p>11 Broadway
+                        <br>New York, NY 10004</p>
                 </div>
                 <div class="col-md-4 contact-details">
                     <h4><i class="fa fa-envelope"></i> Email</h4>
@@ -614,15 +599,12 @@
             </div>
             <div class="row copyright">
                 <div class="col-lg-12">
-                    <p class="small">&copy; Armoire 2016</p>
+                     <a href="#/">&#169;Armoire 2016</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 
 </html>
-
-
