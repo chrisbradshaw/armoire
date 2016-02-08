@@ -1,37 +1,51 @@
 <div class="container">
 <h1>Your Armoire</h1>
-
-  <% @outfits.each do |outfit|%>
-  <div class="row">
-    <div class="col-md-4">
-    <p><%= outfit.garment.name%></p>
-         <div class="image">    
-        <div>
-          <img width="275" height="225" src="<%= outfit.garment.image%>">
-        </div>
+<% @outfits.each do |outfit|%>
+<div class="row">
+  <h3 class="center"><%=outfit.name %></h3>
+  <div class="col-md-4">
+    <h4><%= outfit.garment.name%></h4>
+    <div class="image">
+      <div>
+        <img width="275" height="225" src="<%= outfit.garment.image%>">
       </div>
-    
     </div>
-   <div class="col-md-4">
-    <p><%= outfit.shoe.name%></p>
-         <div class="image">    
-        <div>
-          <img width="275" height="225" src="<%= outfit.shoe.image%>">
-        </div>
+  </div>
+  <div class="col-md-4">
+    <h4><%= outfit.shoe.name%></h4>
+    <div class="image">
+      <div>
+        <img width="275" height="225" src="<%= outfit.shoe.image%>">
       </div>
-    
     </div>
-    <div class="col-md-4">
-    <p><%= outfit.accessory.name%></p>
-         <div class="image">    
-        <div>
-          <img width="275" height="225" src="<%= outfit.accessory.image%>">
-        </div>
+  </div>
+  <div class="col-md-4">
+    <h4><%= outfit.accessory.name%></h4>
+    <div class="image">
+      <div>
+        <img width="275" height="225" src="<%= outfit.accessory.image%>">
       </div>
-    
     </div>
-      <%= button_to "Delete Outfit", outfit_path(outfit), method: :delete %>
+  </div>
+  </div>
+  <div class="container">
+    <div class="row">
+  <% if current_user == outfit.user %>
+    <%= button_to "Delete Outfit", outfit_path(outfit), method: :delete, class: "btn pull-right" %>
   <%end%>
-
+  
+  <% outfit.comments.each do |comment|%>
+    <%= comment.comment%> By <% comment.user.email%>
+  
+  <% if current_user == comment.user%>
+    <%= link_to "Delete Comment", delete_comment_outfit_path(outfit,comment_id: comment.id), method: :delete %>
+    <% end %>
+  <% end %>
+  <%= form_for Comment.new, url: add_comment_outfit_path(outfit) do |f|%>
+    <%= f.text_area :comment %>
+    <%= f.submit("Add Comment") %>
+    <% end %>
+  <%end%>
+    </div>
+  </div>
 </div>
-

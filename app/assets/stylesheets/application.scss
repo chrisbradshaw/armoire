@@ -1,144 +1,52 @@
 $btn-primary-bg: #FF5640;
 $gray-medium-light: #eaeaea;
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
+@import "plugins/owl-carousel/owl.carousel.css";
+@import "plugins/owl-carousel/owl.theme.css";
+@import "plugins/owl-carousel/owl.transitions.css";
+@import "plugins/magnific-popup.css";
+@import "plugins/background.css";
+@import "plugins/animate.css";
+@import "vitality-pink.css";
 
+#phone {
+  font-size: 7em;
+  color: #fff;
+  margin-left: 36%;
+  margin-bottom: 15%;
 
-
-
-/* elements */
-
-body {
-  padding-top: 60px;
 }
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-    margin-bottom: 10px;
-    color: #5C4B51;
-  }
-}
-
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-  margin-bottom: 10px;
-    color: #5C4B51;
-}
-
-
-/* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
-/* typography */
 
 .italic-h2 {
     font-family: "adelle-sans",sans-serif;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 500;
     color: #F06060;
+    margin-left: 40%;
     font-size: 1.8em;
 }
 
-.bold-header {
+.jumbotron p {
+  font-family: "adelle-sans",sans-serif;
+  color: #fff;
+  text-align: center;
+  margin: 2em 1em;
 
+}
+
+#armoire {
   font-family: "adelle-sans",sans-serif;
   font-style: normal;
   font-weight: 700;
   color: #FFF;
+  margin-left: 36%;
 }
 
-/* forms */
-
-input, textarea {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-
-}
-
-input {
-  height: auto !important;
-}
-
-#phone {
-    margin-top: 15%;
-    font-size: 10em;
-
-}
 
 #error_explanation {
   color: red;

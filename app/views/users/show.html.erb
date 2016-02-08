@@ -3,15 +3,59 @@
 
 <h1>User Profile</h1>
 
-<h3> You are currently viewing:</h3><br>
-<h3><%= @user.email %></h3><br>
+<div class="row">
 
-<h4>Add this user to your watch list or like items from their Armoire below</h4><br>
+<div class="col-md-4">
+  <h3>User:<%= @user.username %></h3>
+  <h4>Email <%= @user.email  %></h3>
+</div>
+
+<div class="col-md-4">
+  <h3>Follows: <%=@user.following_count %> Users</h3>
+
+
+<table class= "table table-hover">
+  <% @user.follower_friendships. each do |follower| %>
+<tr>
+<td><%= User.find(follower.followed_id).username %></td>
+</tr>
+    <% end %>
+</table>
+
+
+<table class= "table table-hover">
+  <% current_user.all_outfits.each do |outfit| %>
+<tr>
+<p>Outfit</p>
+<td><%= link_to image_tag(outfit.garment.image), outfits_path(other_user_id: outfit.user.id) %></td>
+<td><%= link_to image_tag(outfit.shoe.image), outfit %></td>
+<td><%= link_to image_tag(outfit.accessory.image), outfit %></td>
+
+</tr>
+
+    <% end %>
+</table>
+
+
+</div>
+
+
+<div class="col-md-4">
+    <h3>Followers: <%= @user.followers_count %></h3>
+
+  <table class= "table table-hover">
+  <% @user.followed_friendships. each do |follower| %>
+<tr>
+<td><%= User.find(follower.follower_id).username %></td>
+</tr>
+    <% end %>
+</table>
+</div>
 
 </div>
 
 <div class="row">
-
+<div class="col-md-4"></div>
 <div class="col-md-4">
 
 <%= link_to users_path, class: "btn btn-default" do %>
@@ -26,6 +70,7 @@
     <i class="glyphicon glyphicon-heart"></i>
 <% end %>
 
+</div>
+<div class="col-md-4"></div>
+</div>
 
-</div>
-</div>

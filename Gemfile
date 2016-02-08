@@ -59,7 +59,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'puma'
 
-gem 'font-awesome-sass', '~> 4.5.0'
+gem "font-awesome-rails"
 
 gem 'carrierwave'
 
@@ -67,6 +67,12 @@ gem 'mini_magick'
 
 gem 'fog'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'faker'
+
+gem 'geocoder', '~> 1.3'
+
+gem 'acts_as_commentable'
+
+gem 'forecast_io'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205042619) do
+ActiveRecord::Schema.define(version: 20160208014914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,21 @@ ActiveRecord::Schema.define(version: 20160205042619) do
   end
 
   add_index "accessories", ["user_id"], name: "index_accessories_on_user_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "title",            limit: 50, default: ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.string   "role",                        default: "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "follower_id"
@@ -65,8 +80,8 @@ ActiveRecord::Schema.define(version: 20160205042619) do
     t.integer  "garment_id"
     t.integer  "shoe_id"
     t.integer  "accessory_id"
-    t.string   "image"
     t.integer  "action",       default: 0
+    t.string   "image"
     t.string   "name"
   end
 
@@ -111,6 +126,8 @@ ActiveRecord::Schema.define(version: 20160205042619) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "username"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

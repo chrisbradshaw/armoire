@@ -17,6 +17,8 @@ class Outfit < ActiveRecord::Base
 
   enum action: [:pending, :approve, :reject]
 
+  acts_as_commentable
+
   # ActiveRecord:Enum default is 0 (pending) set in migration
   # user selects 1 for approve, 2 for reject
 

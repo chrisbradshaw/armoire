@@ -26,8 +26,8 @@
 <% end %>
   </div>
 
-<div class="center jumbotron">
-<h1 class="center bold-header">Armoire</h1>
+<div class="center jumbotron" style="background-image: url('<%= asset_path("fashion/bg-header.jpg")%>')">
+<h1 class="center bold-header" id="armoire">Armoire</h1>
 
 <h2 class="center italic-h2">Style your life</h2>
 
@@ -39,8 +39,20 @@
             '#' %>
       </div>
         <div class="col-md-4">
+
             <p>Text Alerts</p>
+              
+
               <span class="glyphicon glyphicon-phone" id="phone" aria-hidden="true"></span>
+
+<p>Temperature: <%= @temperature %></p>
+<p>Weather: <%= @summary %></p>
+
+      <% if !signed_in? %>
+          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+          <% else %>
+           <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-md btn-primary" %>
+      <% end %>
           </div>
 
         <div class="col-md-4"><p>Focus on What Matters</p>
@@ -53,11 +65,6 @@
       <!-- facebook huge block of login in js goes here -->
 
 
-<% if !signed_in? %>
-    <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-    <% else %>
-     <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-lg btn-primary" %>
-<% end %>
 </div>
 
 

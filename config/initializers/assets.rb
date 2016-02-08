@@ -9,6 +9,8 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+# Rails.application.config.assets.precompile += %w( *.png, *.jpg, *.jpeg, *.gif )
 # Rails.application.config.assets.precompile += %w( girl-pose.svg )
 # Rails.application.config.assets.precompile += %w( man-post.svg )
 # Rails.application.config.assets.precompile += %w( wardrobe.psd )
+
