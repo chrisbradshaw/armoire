@@ -44,7 +44,8 @@
               
 
               <span class="glyphicon glyphicon-phone" id="phone" aria-hidden="true"></span>
-
+<p>Temperature: <%= @temperature %></p>
+<p>Summary: <%= @summary %></p>
 
       <% if !signed_in? %>
           <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
