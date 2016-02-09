@@ -2,8 +2,20 @@
 
 <%= render 'form' %>
 
+<% if current_user.garments.present? && current_user.shoes.present? && current_user.accessories.present? %>
 <%= link_to random_outfit_path, class: "btn btn-default" do %>
 Get a random outfit<% end %>
 
 <%= link_to outfits_path, class: "btn btn-default" do %>
 Look at My Outfits<% end %>
+
+<% else %>
+
+<%= link_to "Add Garment", new_garment_path %><br>
+<%= link_to "Add Shoe", new_shoe_path %><br>
+<%= link_to "Add Accessory", new_accessory_path %><br>
+
+
+<% end %>
+
+<%= link_to "Get Personalized Recommendation", seasonal_outfit_path %><br>

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :shoes
   resources :garments
   get 'random', to: 'outfits#random', as: 'random_outfit'
+  get 'seasonal', to: 'outfits#seasonal', as: 'seasonal_outfit'
   get 'help'    => 'home#help'
   get 'about'   => 'home#about'
   get 'contact' => 'home#contact'

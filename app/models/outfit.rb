@@ -38,4 +38,17 @@ end
     random_shoe_id = Shoe.pluck(:id).sample
     Shoe.find(random_shoe_id)
   end
+
+  def self.get_seasonal_outfit(current_user_temp)
+     if current_user_temp <= 32 # winter
+        [Accessory.where(season: 1).sample, Garment.where(season: 1).sample, Shoe.where(season: 1).sample]
+      elsif  current_user_temp > 33 && current_user_temp < 55 # 2
+        [Accessory.where(season: 2).sample, Garment.where(season: 2).sample, Shoe.where(season: 2).sample]
+      elsif  current_user_temp >= 55 && current_user_temp <= 70 # 2
+       [Accessory.where(season: 3).sample, Garment.where(season: 3).sample, Shoe.where(season: 3).sample]
+      else
+        [Accessory.where(season: 4).sample, Garment.where(season: 4).sample, Shoe.where(season: 4).sample]
+    end
+end
+
 end

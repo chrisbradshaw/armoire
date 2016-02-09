@@ -7,8 +7,8 @@ class Shoe < ActiveRecord::Base
 
   enum season: [:summer, :fall, :winter, :spring]
 
-  def self.random_shoe
-    random_accessory_id = Shoe.pluck(:id).sample
-    Shoe.find(random_accessory_id)
+  def self.random_shoe(user_id)
+    Shoe.where(user_id: user_id).sample
   end
+
 end

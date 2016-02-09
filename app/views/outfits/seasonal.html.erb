@@ -1,0 +1,63 @@
+<h1>Seasonal Outfits!</h1>
+
+<div class="row">
+
+<div class="col-md-4">
+
+    <h2><%= @seasonal_garment.try(:name)%></h2>
+         <div class="image">
+        <div>
+          <img width="275" height="225" src="<%= @seasonal_garment.try(:image)%>">
+        </div>
+      </div>
+
+
+
+<div class="col-md-4">
+
+    <h2><%= @seasonal_shoe.try(:name)%></h2>
+         <div class="image">
+        <div>
+          <img width="275" height="225" src="<%= @seasonal_shoe.try(:image)%>">
+        </div>
+      </div>
+
+    </div>
+
+
+<div class="col-md-4">
+
+    <h2><%= @seasonal_accessory.try(:name)%></h2>
+         <div class="image">
+        <div>
+          <img width="275" height="225" src="<%= @seasonal_accessory.try(:image)%>">
+        </div>
+      </div>
+
+    </div>
+
+<%= form_for Outfit.new, html: { multipart: true } do |f| %>
+<%= form_for(Outfit.new) do |f| %>
+  <div class="field">
+    <%= f.hidden_field :garment_id, value: @seasonal_garment.id %><br>
+    <%= f.hidden_field :shoe_id, value: @seasonal_shoe.id %><br>
+    <%= f.hidden_field :accessory_id, value: @seasonal_accessory.id %><br>
+
+  </div>
+
+  <div class="field">
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add to Armoire" %>
+  </div>
+  <% end %>
+  <% end %>
+
+
+  <%= link_to pending_outfits_path, class: "btn btn-default", id: "pending_outfit" do %>
+      <span>Keep or Reject This Outfit?</span>
+  <% end %>
+
+
+</div>

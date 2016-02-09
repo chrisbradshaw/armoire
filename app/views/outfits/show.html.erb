@@ -10,10 +10,10 @@
   <% end %>
 
     <div class="col-md-4">
-      <h2><%= @outfit.garment.name %></h2>
+      <h2><%= @outfit.garment.try(:name) %></h2>
       <div class="image">
         <p>
-          <img width="275" height="225" src="<%= @outfit.garment.image%>">
+          <img width="275" height="225" src="<%= @outfit.garment.try(:image)%>">
         </p>
       </div>
     </div>

@@ -9,8 +9,7 @@ class Garment < ActiveRecord::Base
 
   enum season: [:summer, :fall, :winter, :spring]
 
-  def self.random_garment
-    random_accessory_id = Garment.pluck(:id).sample
-    Garment.find(random_accessory_id)
+ def self.random_garment(user_id)
+    Garment.where(user_id: user_id).sample
   end
 end
