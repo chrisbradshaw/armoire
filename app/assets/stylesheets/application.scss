@@ -24,11 +24,11 @@ $opened-height: 160px;
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
-.btn.is-open ~ .description {
+.btn-1.is-open ~ .description {
   opacity: 0;
 }
 
-.btn {
+.btn-1 {
   display: block;
   position: relative;
   width: $closed-width;
@@ -58,7 +58,7 @@ $opened-height: 160px;
 .btn-front:hover {
   background-color: lighten(#F44336, 10%);
 }
-.btn.is-open .btn-front {
+.btn-1.is-open .btn-front {
   pointer-events: none;
   line-height: $opened-height;
 }
@@ -112,25 +112,25 @@ $opened-height: 160px;
   }
 }
 
-.btn.is-open .btn-back {
+.btn-1    .is-open .btn-back {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-.btn[data-direction="left"] .btn-back,
-.btn[data-direction="right"] .btn-back {
+.btn-1[data-direction="left"] .btn-back,
+.btn-1[data-direction="right"] .btn-back {
   transform: translateZ(-2px) rotateY(180deg);
 }
 
-.btn.is-open {
+.btn-1.is-open {
   width: $opened-width;
   height: $opened-height;
 }
 
-.btn[data-direction="top"].is-open {
+.btn-1[data-direction="top"].is-open {
   transform: rotateX(180deg);
 }
 
-.btn[data-direction="right"].is-open {
+.btn-1[data-direction="right"].is-open {
   transform: rotateY(180deg);
 }
 
@@ -138,7 +138,7 @@ $opened-height: 160px;
   transform: rotateX(-180deg);
 }
 
-.btn[data-direction="left"].is-open {
+.btn-1[data-direction="left"].is-open {
   transform: rotateY(-180deg);
 }
 

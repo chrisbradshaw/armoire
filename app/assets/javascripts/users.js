@@ -1,5 +1,5 @@
 $(document).on('page:update', function(event) {
-  var $btn = $( '.btn' );
+  var $btn = $( '.btn-1' );
   var $btnFront = $btn.find( 'a' ),
     $btnYes = $btn.find( '.btn-back .yes' ),
     $btnNo = $btn.find( '.btn-back .no' );
@@ -22,8 +22,8 @@ $btnFront.on( 'click', '.btn-front', function( event ) {
     return distance( mx, my, a.x, a.y ) - distance( mx, my, b.x, b.y );
   } );
   
-  $(this).closest('.btn').attr( 'data-direction', directions.shift().id );
-  $(this).closest('.btn').addClass( 'is-open' );
+  $(this).closest('.btn-1').attr( 'data-direction', directions.shift().id );
+  $(this).closest('.btn-1').addClass( 'is-open' );
   linkEvent = event;
   event.preventDefault();
   event.stopImmediatePropagation();
@@ -35,7 +35,7 @@ $btnYes.on( 'click', function( event ) {
   $.ajax({
    method: "PUT",
     url: $link.attr('href') + '.js',
-  })
+  });ˇ
 } );
 
 
