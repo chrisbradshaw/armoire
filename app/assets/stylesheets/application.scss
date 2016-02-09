@@ -24,11 +24,11 @@ $opened-height: 160px;
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
-.btn.is-open ~ .description {
+.btn-1.is-open ~ .description {
   opacity: 0;
 }
 
-.btn {
+.btn-1 {
   display: block;
   position: relative;
   width: $closed-width;
@@ -58,7 +58,7 @@ $opened-height: 160px;
 .btn-front:hover {
   background-color: lighten(#F44336, 10%);
 }
-.btn.is-open .btn-front {
+.btn-1.is-open .btn-front {
   pointer-events: none;
   line-height: $opened-height;
 }
@@ -112,25 +112,25 @@ $opened-height: 160px;
   }
 }
 
-.btn.is-open .btn-back {
+.btn-1    .is-open .btn-back {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-.btn[data-direction="left"] .btn-back,
-.btn[data-direction="right"] .btn-back {
+.btn-1[data-direction="left"] .btn-back,
+.btn-1[data-direction="right"] .btn-back {
   transform: translateZ(-2px) rotateY(180deg);
 }
 
-.btn.is-open {
+.btn-1.is-open {
   width: $opened-width;
   height: $opened-height;
 }
 
-.btn[data-direction="top"].is-open {
+.btn-1[data-direction="top"].is-open {
   transform: rotateX(180deg);
 }
 
-.btn[data-direction="right"].is-open {
+.btn-1[data-direction="right"].is-open {
   transform: rotateY(180deg);
 }
 
@@ -138,7 +138,7 @@ $opened-height: 160px;
   transform: rotateX(-180deg);
 }
 
-.btn[data-direction="left"].is-open {
+.btn-1[data-direction="left"].is-open {
   transform: rotateY(-180deg);
 }
 
@@ -228,3 +228,46 @@ $opened-height: 160px;
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+html {
+  background: #ddd;
+}
+.widget {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+  color: #eee;
+  background: #1e5799;
+  background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 49%,#207cca 50%,#7db9e8 100%);
+  border-bottom: 2px solid #1e5799;
+  border-left: 1px solid #207cca;
+  border-right: 1px solid #207cca;
+  border-radius: 20px;
+  box-shadow: 0 0 8px -1px #555;
+  text-shadow: 1px 1px 5px #194372;
+  overflow: auto;
+}
+.date, .weather {
+  width:50%; 
+  float: left;
+  text-align: center;
+  min-height: 80px;
+}
+.date {
+  border-right: 1px solid #1e5799;
+  padding-right: 6%
+}
+.weather {
+  padding: 60px 0 0 6%;
+  border-left: 1px solid #7db9e8;
+  background: url(http://79webdesign.co.uk/play/weatherSprite.png)32px 0 no-repeat;
+}
+#day {
+  font-size: 510%;
+  display: block;
+  margin: -10px 0 -12px 0;
+}

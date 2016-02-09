@@ -11,6 +11,7 @@
           <thead>
             <tr>
             <th>User Name</th>
+            <th>Outfits</th>
             <th>Followers</th>
             <th>Following</th>
             <th>Follow Armoire?</th>
@@ -22,10 +23,11 @@
 
 <tr>
     <td><%= link_to user.username, user %></td>
+    <td><%= user.outfits.count %></td>
     <td><%= user.followers_count %></td>
     <td><%= user.following_count %></td>
     <td>
-    <div class="btn" id="follow-unfollow-<%= user.id %>">
+    <div class="btn-1" id="follow-unfollow-<%= user.id %>">
        <%= render partial: 'follow_unfollow', locals: {user: user} %>
     </div>
 

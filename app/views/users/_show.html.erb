@@ -42,15 +42,23 @@
       <%= @user.username%>'s Outfits</h2>
   <br>
   <% @outfits.each do |outfit| %>
+
       <div class="col-md-4">
-        <%= link_to image_tag(outfit.garment.image), class: 'img-responsive' %>
+      <div class="image">
+        <img width="275" height="225"src="<%= outfit.garment.try(:image)%>">
       </div>
-      <div class="col-md-4">
-        <%= link_to image_tag(outfit.shoe.image), class: 'img-responsive' %>
       </div>
 
       <div class="col-md-4">
-        <%= link_to image_tag(outfit.accessory.image), class: 'img-responsive' %>
+        <div class="image">
+       <img width="275" height="225"src="<%= outfit.shoe.try(:image)%>">
+       </div>
+       </div>
+
+      <div class="col-md-4">
+      <div class="image">
+        <img width="275" height="225"src="<%= outfit.accessory.try(:image)%>">
+        </div>
       </div>
       </div>
 

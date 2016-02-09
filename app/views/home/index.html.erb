@@ -11,15 +11,32 @@
                 '#' %>
         </div><!-- col-md-4 -->
 
-        <div class="col-md-4">
-          <p>Temperature: <%= @temperature %></p>
-          <p>Weather: <%= @summary %></p>
-        </div><!-- col-md-4 -->
+         <div class="widget">
+         
+            <div class="date">
+                <% t =Time.now %>
+              <span><%= t.strftime( "%A" ) %></span>
+              <span id="month"><%= t.strftime("%B") %></span>
+              <span id="month"><%= t.strftime("%d") %></span>
+            </div>
+          <div>
+        <span><%= @summary %></span>
+        <span><%= @temperature %></span>
 
-        <div class="col-md-4"><p>Focus on What Matters</p>
-                <%= link_to image_tag("man-pose.svg", alt: "Wardrobe"),
-              '#' %>
-        </div><!-- col-md-4 -->
+    <!-- 
+      need to insert weather dynamically!
+      yahoo API? 
+     -->
+  </div>
+</div>
+
+
+      <% if !signed_in? %>
+          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg-secondary" %>
+          <% else %>
+           <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-md btn-primary" %>
+      <% end %>
+          </div>
 
       </div><!-- row -->
 
