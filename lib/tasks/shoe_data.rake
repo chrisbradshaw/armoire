@@ -18,7 +18,7 @@ namespace :db do
       shoe.element = "whatever"
       shoe.style = "ugly"
       shoe.color = "green"
-      shoe.user_id = User.pluck(:id).sample
+      shoe.user_id = 16
     end
     Shoe.all.each { |shoe| shoe.image = File.open(Dir.glob(File.join(Rails.root, 'sample_images', '*')).sample); shoe.save! }
 
@@ -28,7 +28,7 @@ namespace :db do
       garment.element = "whatever"
       garment.style = "ugly"
       garment.color = "green"
-      garment.user_id = User.pluck(:id).sample
+      garment.user_id = 16
     end
 
     Garment.all.each { |garment| garment.image = File.open(Dir.glob(File.join(Rails.root, 'sample_images', '*')).sample); garment.save! }
@@ -39,18 +39,10 @@ namespace :db do
       accessory.element = "whatever"
       accessory.style = "ugly"
       accessory.color = "green"
-      accessory.user_id = User.pluck(:id).sample
+      accessory.user_id = 16
     end
 
     Accessory.all.each { |accessory| accessory.image = File.open(Dir.glob(File.join(Rails.root, 'sample_images', '*')).sample); accessory.save! }
-
-  Outfit.populate 3 do |outfit|
-    outfit.accessory_id = Accessory.pluck(:id).sample
-    outfit.shoe_id = Shoe.pluck(:id).sample
-    outfit.garment_id = Garment.pluck(:id).sample
-    outfit.user_id = 16
-    outfit.name = "#{Random.rand(100)}-Outfit"
-    outfit.action = 1
-  end 
 end
+
 end

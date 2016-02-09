@@ -25,11 +25,12 @@ Rails.application.routes.draw do
   resources :accessories
   resources :shoes
   resources :garments
+
   get 'random', to: 'outfits#random', as: 'random_outfit'
-  get 'seasonal', to: 'outfits#seasonal', as: 'seasonal_outfit'
+  post 'seasonal', to: 'outfits#seasonal', as: 'seasonal_outfit'
   get 'help'    => 'home#help'
   get 'about'   => 'home#about'
-  get 'contact' => 'home#contact'
+  get 'contact' => 'hlome#contact'
 
   get 'delete/:id' => 'garments#destroy', as: 'garment_destroy'
   get 'delete_accessories/:id' => 'accessories#destroy', as: 'accessory_delete'

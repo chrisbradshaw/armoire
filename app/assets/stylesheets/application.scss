@@ -229,3 +229,46 @@ $opened-height: 160px;
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+html {
+  background: #ddd;
+}
+.widget {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+  color: #eee;
+  background: #1e5799;
+  background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 49%,#207cca 50%,#7db9e8 100%);
+  border-bottom: 2px solid #1e5799;
+  border-left: 1px solid #207cca;
+  border-right: 1px solid #207cca;
+  border-radius: 20px;
+  box-shadow: 0 0 8px -1px #555;
+  text-shadow: 1px 1px 5px #194372;
+  overflow: auto;
+}
+.date, .weather {
+  width:50%; 
+  float: left;
+  text-align: center;
+  min-height: 80px;
+}
+.date {
+  border-right: 1px solid #1e5799;
+  padding-right: 6%
+}
+.weather {
+  padding: 60px 0 0 6%;
+  border-left: 1px solid #7db9e8;
+  background: url(http://79webdesign.co.uk/play/weatherSprite.png)32px 0 no-repeat;
+}
+#day {
+  font-size: 510%;
+  display: block;
+  margin: -10px 0 -12px 0;
+}

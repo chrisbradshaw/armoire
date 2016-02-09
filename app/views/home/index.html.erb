@@ -40,13 +40,25 @@
       </div>
         <div class="col-md-4">
 
-            <p>Text Alerts</p>
-              
+         <div class="widget">
+         
+            <div class="date">
+                <% t =Time.now %>
+              <span><%= t.strftime( "%A" ) %></span>
+              <span id="month"><%= t.strftime("%B") %></span>
+              <span id="month"><%= t.strftime("%d") %></span>
+            </div>
+          <div>
+        <span><%= @summary %></span>
+        <span><%= @temperature %></span>
 
-              <span class="glyphicon glyphicon-phone" id="phone" aria-hidden="true"></span>
+    <!-- 
+      need to insert weather dynamically!
+      yahoo API? 
+     -->
+  </div>
+</div>
 
-<p>Temperature: <%= @temperature %></p>
-<p>Weather: <%= @summary %></p>
 
       <% if !signed_in? %>
           <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg-secondary" %>
