@@ -1,13 +1,13 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+
    FORECAST_KEY = "52257016e380daa78bdba4b79225ab6e"
 def index
   if current_user
   set_temperature
-end
+  end
   render 'index'
-end  
+end
 
 def set_temperature
 
