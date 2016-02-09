@@ -1,36 +1,32 @@
   <h1>Your Garments</h1>
 
-
-<div class="container">
-  <% current_user.garments.each do |garment| %>
-  <div class="col-md-4">
-      <a href="/garments/<%=garment.id%>">
-        <img src="<%=garment.image%>", img width="150" height="150">
+<section id="garments">
+  <div id="garments carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% current_user.garments.each_with_index do |garment, index| %>
+       <li data-target="#garments carousel" data-slide-to="<% index + 1 %>" class="<%= index == 0 ? 'active' : ''%>"></li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+        <% current_user.garments.each_with_index do |garment, index| %>
+          <div class="<%= index == 0 ? 'item active' : 'item' %>">
+            
+            <a href="/garments/<%=garment.id%>"><img src="<%=garment.image%>", img width="150" height="150">
+         </div><!-- index -->
+         <% end %>
+      </div><!-- carousel-inner -->
+      <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
       </a>
-   </div>
-  <% end %>
-  </ul>
-</div>
-
-<div class="container">
-<%= link_to root_path, class: "btn btn-default" do %>
-    <i class="glyphicon glyphicon-arrow-left"></i>
-<% end %>
-
-<%= link_to new_garment_path, class: "btn btn-default" do %>
-    <span>Add A Garment!</span>
-<% end %>
-
-<%= link_to accessories_path, class: "btn btn-default" do %>
-    <span>View Accessories!</span>
-
-<% end %>
+      <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- carousel --> 
+</section>
 
 
-<%= link_to shoes_path, class: "btn btn-default" do %>
-    <span>View Shoes!</span>
-<% end %>
 
-<p>
-</p>
-</div>
+
+

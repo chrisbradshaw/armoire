@@ -1,17 +1,25 @@
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+  <div class="collapse navbar-collapse" id="collapse">
+      <ul class="nav navbar-nav navbar-right">
 
-  <li><%= link_to "Home", root_path, :class => "page-scroll" %></li>
-        <li><%= link_to "Help", help_path, :class => "page-scroll" %></li>
+        <li><%= link_to "Home", root_path, :class => "page-scroll" %></li>
 
+        <li class="dropdown">
           <% if user_signed_in? %>
-            <li><%= link_to current_user.email, edit_user_registration_path, :class => "page-scroll" %></li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Armoire<span class="caret"></span></a>
+              <ul class="dropdown-menu"> 
+                  <li><a class="page-scroll" href="#outfits" >Outfits</a></li>
+                  <li><a class="page-scroll" href="#garments">Garments</a></li>
+                  <li><a class="page-scroll" href="#accessories">Accessories</a></li>
+                  <li><a class="page-scroll" href="#shoes">Shoes</a></li>
+                </ul>
+          </li>
+          <li><a class="page-scroll" href="#users">Connect</a></li>
+
+            <li><%= link_to current_user.username, edit_user_registration_path, :class => "page-scroll" %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => "page-scroll" %></li>
           <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path, :class => "page-scroll" %></li>
-            <li><%= link_to "Log In", user_session_path, :class => "page-scroll" %></li>
+            <li><%= link_to "Please Log In", user_session_path, :class => "page-scroll" %></li>
         <% end %>
       </ul>
-
-            </div>
-
+    </div><!-- collapse navbar-collapse -->
