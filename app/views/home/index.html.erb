@@ -49,7 +49,7 @@
 <p>Weather: <%= @summary %></p>
 
       <% if !signed_in? %>
-          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg-secondary" %>
           <% else %>
            <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-md btn-primary" %>
       <% end %>

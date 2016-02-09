@@ -1,9 +1,15 @@
 <div class="container">
-
-
-<table class="table table-hover">
-    <thead>
-        <tr>
+    <div class="col-md-4">
+    <h2 class="center">Armoire Users</h2>
+    </div>
+    <div class="col-md-4"></div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+          <caption class="text-center">Follow your friends:</caption>
+          <thead>
+            <tr>
             <th>User Name</th>
             <th>Followers</th>
             <th>Following</th>
@@ -31,9 +37,13 @@
 </tr>
 
 <% end %>
-
-    </tbody>
-</table>
+</tr>
+          </tfoot>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
 
 <%= link_to root_path, class: "btn btn-default" do %>
  <i class="glyphicon glyphicon-arrow-left"></i>

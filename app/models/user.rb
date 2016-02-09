@@ -36,16 +36,16 @@ class User < ActiveRecord::Base
             }
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
-
+ 
   geocoded_by :current_sign_in_ip
-  # :latitude => :lat, :longitude => :lon
-  after_validation :geocode
+  
+  before_save :geocode_user, if: :current_sign_in_ip_changed?
 
-  # def geocode_user
-  # g = self.geocode
-  # puts "g: #{g.inspect}"
-  #  self.update_attributes(latitude: g.try(:first), longitude: g.try(:last))
- # end
+  def geocode_user
+    g = self.geocode
+    self.latitude = g.try(:first)
+    self.longitude = g.try(:last)
+  end
 
   attr_writer :login
 

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :follow, :unfollow]
 
   def show
+    @outfits = Outfit.where(user_id: params[:id])
   end
 
   def new
