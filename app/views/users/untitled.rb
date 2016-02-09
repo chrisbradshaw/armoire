@@ -39,19 +39,16 @@ class UsersController < ApplicationController
   end
 
   def follow
-    current_user.follow(@user)
-
-    respond_to do |format|
-      format.js 
+    if current_user.follow(@user)
+      redirect_to users_path, notice: "You have successfully followed #{@user.username}"
+    else
+      redirect_to users_path, alert: "You are already following #{@user.username}"
     end
   end
 
   def unfollow
     current_user.unfollow(@user)
-    
-    respond_to do |format|
-      format.js 
-    end
+    redirect_to users_path, notice: "You have unfollowed #{@user.username}"
   end
 
   private
@@ -64,3 +61,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
+

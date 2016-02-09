@@ -1,0 +1,15 @@
+<div class="btn-back">
+    <p>Are you ?</p>
+    <button class="yes">Yes</button>
+    <button class="no">No</button>
+  </div>
+
+    <% if current_user.is_following?(user) %>
+      <%= link_to unfollow_user_path(user), method: :put do %>
+      <div class="btn-front">Unfollow</div>
+      <% end %>
+        <% else %>
+            <%= link_to follow_user_path(user),method: :put do %>
+            <div class="btn-front">Follow</div>
+            <% end %>
+        <% end %>

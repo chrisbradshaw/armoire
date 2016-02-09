@@ -25,13 +25,12 @@
     <td><%= user.followers_count %></td>
     <td><%= user.following_count %></td>
     <td>
-        <% if current_user.is_following?(user) %>
-            <%= link_to 'Unfollow', unfollow_user_path(user),
-            method: :delete, data: {confirm: 'Are you sure?'} %>
-        <% else %>
-            <%= link_to 'Follow', follow_user_path(user),
-            method: :put, data: {confirm: 'Are you sure?'} %>
-        <% end %>
+    <div class="btn" id="follow-unfollow-<%= user.id %>">
+       <%= render partial: 'follow_unfollow', locals: {user: user} %>
+    </div>
+
+
+
     </td>
 
 </tr>

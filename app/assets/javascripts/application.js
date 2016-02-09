@@ -16,3 +16,4 @@
 //= require plugins/jqBootstrapValidation
 //= require vitality
 //= require_tree .
+

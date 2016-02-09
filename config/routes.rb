@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       put :follow
-      delete :unfollow
+      put :unfollow
     end
   end
 
