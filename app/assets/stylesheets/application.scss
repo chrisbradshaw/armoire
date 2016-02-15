@@ -1,6 +1,4 @@
-$btn-primary-bg: #FF5640;
-$gray-medium-light: #eaeaea;
-
+$btn-primary-bg: #8E2800;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -23,6 +21,51 @@ $opened-width: 400px;
 $opened-height: 160px;
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+html, body, section {
+  background-color: #F8FCEE;
+}
+
+#about {
+  padding: 10px 0;
+}
+
+#home-nav {
+  margin-right: 3%;
+
+}
+
+#color, #color1, #bg-color {
+  background-color: #F8FCEE;
+
+}
+
+#bs-example-navbar-collapse-1 {
+  background-color: #F8FCEE;
+
+}
+
+#bs-example-navbar-collapse-1 a {
+  color: black;
+  font: 1.5em;
+}
+
+.navbar-brand page-scroll {
+  color:black;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: black;
+}
+
+a.page-scroll {
+  color: black;
+}
 
 .btn-1.is-open ~ .description {
   opacity: 0;
@@ -192,14 +235,15 @@ $opened-height: 160px;
     font-family: "adelle-sans",sans-serif;
     font-style: italic;
     font-weight: 500;
-    color: #F06060;
+    color: #F8FCEE;
     margin-left: 40%;
     font-size: 1.8em;
 }
 
 .jumbotron p {
   font-family: "adelle-sans",sans-serif;
-  color: #fff;
+  color: #F8FCEE;
+  font-weight: 500;
   text-align: center;
   margin: 2em 1em;
 
@@ -209,7 +253,7 @@ $opened-height: 160px;
   font-family: "adelle-sans",sans-serif;
   font-style: normal;
   font-weight: 700;
-  color: #FFF;
+  color: #F8FCEE;
   margin-left: 36%;
 }
 

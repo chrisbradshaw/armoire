@@ -35,11 +35,11 @@
 <body id="page-top" class="vintage">
 
 
-    <div class="container">
+    <div class="container" id="color1">
      
     <!-- Navigation -->
     <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-expanded">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -50,7 +50,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <%= image_tag 'fashion/armoire-logo.png', class: 'img-responsive'%>
+                    <%= image_tag 'fashion/armoire-logo.png', height: '32px', width: '32px', class: 'img-responsive'%>
+                ARMOIRE
                 </a>
                 
             </div>
@@ -65,7 +66,7 @@
     <!-- Instructions: Set your background image using the URL below. -->
     <header style="background-image: url('<%= asset_path("fashion/bg-header.jpg") %>')">
         <div class="intro-content">
-            <%= image_tag 'fashion/profile.png', class: 'img-responsive' %>
+       
         </div>
         <div class="scroll-down">
             <a class="btn page-scroll" href="#about"><i class="fa fa-angle-down fa-fw"></i></a>
@@ -76,7 +77,7 @@
 
        <%= yield %>
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="color">
             <div class="row text-center">
                 <div class="col-lg-12 wow fadeIn">
                    

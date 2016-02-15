@@ -20,7 +20,7 @@ namespace :db do
       shoe.color = "green"
       shoe.user_id = 16
     end
-    Shoe.all.each { |shoe| shoe.image = File.open(Dir.glob(File.join(Rails.root, 'sample_images', '*')).sample); shoe.save! }
+    Shoe.all.each { |shoe| shoe.image = File.open(Dir.glob(File.join(Rails.root, 'sample_shoes', '*')).sample); shoe.save! }
 
     Garment.populate 3 do |garment|
       garment.name = "name"
@@ -31,7 +31,7 @@ namespace :db do
       garment.user_id = 16
     end
 
-    Garment.all.each { |garment| garment.image = File.open(Dir.glob(File.join(Rails.root, 'sample_images', '*')).sample); garment.save! }
+    Garment.all.each { |garment| garment.image = File.open(Dir.glob(File.join(Rails.root, 'sample_garments', '*')).sample); garment.save! }
 
     Accessory.populate 3 do |accessory|
       accessory.name = "name"
@@ -42,7 +42,7 @@ namespace :db do
       accessory.user_id = 16
     end
 
-    Accessory.all.each { |accessory| accessory.image = File.open(Dir.glob(File.join(Rails.root, 'sample_images', '*')).sample); accessory.save! }
+    Accessory.all.each { |accessory| accessory.image = File.open(Dir.glob(File.join(Rails.root, 'sample_accessories', '*')).sample); accessory.save! }
 end
 
 end
