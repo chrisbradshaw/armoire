@@ -177,12 +177,12 @@ hr.colored {
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #f62459;
+  color: #000;
   background-color: white;
   border-radius: 0;
 }
 .navbar-default {
-  background-color: #f62459;
+  background-color: #000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: white;
@@ -250,7 +250,7 @@ hr.colored {
   }
   .navbar-default.navbar-expanded,
   .navbar-inverse.navbar-expanded {
-    background: transparent;
+    background: black;
     border: none;
   }
 }
@@ -331,14 +331,14 @@ header .scroll-down .btn:hover {
   header .intro-content {
     color: white;
     text-align: center;
-    width: 50%;
+    width: 100%;
     margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    padding-top: 25px;
+    position: relative;
+
+  }
+  .intro-content .navbar .btn{
+    border: 1px solid white;
   }
   header .brand-name {
     font-size: 80px;

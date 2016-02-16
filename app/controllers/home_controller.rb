@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   
    
 def index
-  render 'index'
+  render 'index', layout:'homepage'
 end  
 
   def help

@@ -21,60 +21,28 @@
     Connect With Other Users
     <% end %>
 
-<% else %>
-  <%= "Please " %> <%=link_to "log in", user_session_path%> <%=" to view your armoire!"%>
-<% end %>
   </div>
+ 
+<% end %>
 
-<div class="center jumbotron" style="background-image: url('<%= asset_path("fashion/bg-header.jpg")%>')">
+<div class="center jumbotron">
 <h1 class="center bold-header" id="armoire">Armoire</h1>
 
 <h2 class="center italic-h2">Style your life</h2>
 
-
 <div class="row">
-<div class="col-md-4">
-      <p>Organized Wardrobe</p>
-         <%= link_to image_tag("girl-pose.svg", alt: "girl pose"),
-            '#' %>
-      </div>
-        <div class="col-md-4">
-
-        <p>Connect, Follow and Share</p>
-        <i class="glyphicon glyphicon-resize-full"></i>
-         <div class="widget">
-         
-            <div class="date">
-                <% t =Time.now %>
-              <span><%= t.strftime( "%A" ) %></span>
-              <span id="month"><%= t.strftime("%B") %></span>
-              <span id="month"><%= t.strftime("%d") %></span>
-            </div>
-          <div>
-        <span><%= @summary %></span>
-        <span><%= @temperature %></span>
-
-    <!-- 
-      need to insert weather dynamically!
-      yahoo API? 
-     -->
-  </div>
+<p class="col-md-4 col-md-offset-4 intro-description">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloremque libero perspiciatis tenetur dicta autem quis reprehenderit itaque, reiciendis aspernatur quidem quaerat asperiores expedita quos delectus, animi rerum deleniti laudantium?
+</p>
 </div>
-
-
       <% if !signed_in? %>
-          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg-secondary" %>
+      <%= "Please " %> <%=link_to "log in", user_session_path%> <%=" to view your armoire!"%>. Or
+          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary" %>
           <% else %>
-           <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-md btn-primary" %>
+           <%= link_to "Start building your wardrobe!", new_shoe_path, class: "btn btn-md btn-primary btn-cta" %>
       <% end %>
-          </div>
 
-        <div class="col-md-4"><p>Focus on What Matters</p>
-              <%= link_to image_tag("man-pose.svg", alt: "Wardrobe"),
-            '#' %>
-        </div>
 
-</div>
 
       <!-- facebook huge block of login in js goes here -->
 
@@ -83,3 +51,5 @@
 
 
 </div>
+
+

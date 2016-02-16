@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Chris Bradshaw, Chris McGuigan, Jen Abella, Maisie Athens">
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+
+    <!-- Retina.js - Load first for faster HQ mobile images. -->
+    <%# javascript_include_tag 'plugins/retina/retina.min' %>
+   
+    <!-- Default Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+    <!-- Modern Style Fonts (Include these is you are using body.modern!) -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+    <!-- Vintage Style Fonts (Include these if you are using body.vintage!) -->
+    <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- Alternate Body Classes: .modern and .vintage -->
+
+<body id="page-top" class="vintage header-dark">
+
+    <!-- Navigation -->
+    <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
+    <nav class="navbar navbar-inverse navbar-expanded">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"><%= fa_icon "fa fa-archive", text: "Your Armoire" %></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    
+<div class="" style="display:inline-block; padding: 5px; width:36px; height:36px;background: white; border-radius: 30px; margin-top:4px">
+    <%= image_tag 'fashion/armoire-logo.png', height: '36px', width: '36px', class: 'img-responsive'%>
+</div>
+
+<span style="height: 40px; vertical-align: middle; display: inline-block; margin-left: 5px">ARMOIRE</span>
+                </a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+<%= render 'layouts/header' %>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Instructions: Set your background image using the URL below. -->
+    <header style="background-image: url('<%= asset_path("fashion/bg-header.jpg") %>')">
+        <div class="intro-content">
+       <%= yield %>
+        </div>
+    </header>
+    
+
+    <section id="about">
+
+       
+
+        <div class="container-fluid" id="color">
+            <div class="row text-center">
+                <div class="col-lg-12 wow fadeIn">
+                   
+                    <h1>A Fashion Themed Sample</h1>
+                    <p>Vitality is the perfect theme for a fashion related business.</p>
+                    <hr class="colored">
+                </div>
+            </div>
+            <div class="row text-center content-row">
+                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".2s">
+                    <div class="about-content">
+                        <i class="fa fa-eye fa-4x"></i>
+                        <h3>Retina Ready</h3>
+                        <p>This theme includes the retina.js plugin for easy retina image support so your images and graphics will look great on mobile devices!</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".4s">
+                    <div class="about-content">
+                        <i class="fa fa-edit fa-4x"></i>
+                        <h3>Easy to Edit</h3>
+                        <p>Vitality is built using Bootstrap 3, and is easy to edit and customize. LESS files are included as well for deeper customization.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".6s">
+                    <div class="about-content">
+                        <i class="fa fa-tablet fa-4x"></i>
+                        <h3>Responsive</h3>
+                        <p>When building this theme, we've paid close attention to how it looks on various screen sizes. Try it out on a phone or tablet!</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay=".8s">
+                    <div class="about-content">
+                        <i class="fa fa-heart fa-4x"></i>
+                        <h3>Built with Love</h3>
+                        <p>All of our themes are crafted with care, and we strive to make your experience as one of our customers the best as possible.</p>
+                    </div>
+                </div>
+            </div><!-- end of row -->
+    </section>
+
+
+    <aside class="cta-quote" style="background-image: url('<%= asset_path("fashion/bg-locations.jpg")%>')">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <span class="quote">Fashion design is more than just making clothes. It's about <span class="text-primary">pushing boundaries</span> and creating something unique and exciting.</span>
+                    <hr class=" colored">
+                    <a class="btn btn-outline-light page-scroll" href="#collection">See Our Work</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+        <section id="process" class="services">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 wow fadeIn">
+                    <h2>Our Process</h2>
+                    <hr class="colored">
+                    <p>Here is an overview of how we approach each new collection or design.</p>
+                </div>
+            </div>
+            <div class="row content-row">
+                <div class="col-md-4 wow fadeIn" data-wow-delay=".2s">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-clipboard"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Plan</h3>
+                            <ul>
+                                <li>
+                                    <em>Design concept</em>
+                                </li>
+                                <li>
+                                    <em>Artistic rendering</em>
+                                </li>
+                                <li>
+                                    <em>Materials selection</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeIn" data-wow-delay=".4s">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-magic"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Create</h3>
+                            <ul>
+                                <li>
+                                    <em>Prototype production</em>
+                                </li>
+                                <li>
+                                    <em>View on live models</em>
+                                </li>
+                                <li>
+                                    <em>Add to collection</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeIn" data-wow-delay=".6s">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-tag"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Reveal</h3>
+                            <ul>
+                                <li>
+                                    <em>Reveal at fashion show</em>
+                                </li>
+                                <li>
+                                    <em>Analyze feedback</em>
+                                </li>
+                                <li>
+                                    <em>Bring to market</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <aside class="cta-quote" style="background-image: url('<%= asset_path("fashion/bg-aside.jpg")%>')">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <span class="quote">Fashion design is more than just making clothes. It's about <span class="text-primary">pushing boundaries</span> and creating something unique and exciting.</span>
+                    <hr class=" colored">
+                    <a class="btn btn-outline-light page-scroll" href="#collection">See Our Work</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section id="team" class="bg-gray">
+        <div class="container text-center wow fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Our Team</h2>
+                    <p>We are a group of fashion experts with a passion for setting new trends.</p>
+                    <hr class="colored">
+                </div>
+            </div>
+            <div class="row content-row">
+                <div class="col-lg-12">
+                    <div class="about-carousel">
+                        <div class="item">
+                            <%= image_tag 'people/1.jpg', class: 'img-responsive' %>
+                            <div class="caption">
+                                <h3>Patricia West</h3>
+                                <hr class="colored">
+                                <p>Owner &amp; Founder</p>
+                                <ul class="list-inline social">
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <%= image_tag 'people/3.jpg', class: 'img-responsive', alt: '' %>
+                            <div class="caption">
+                                <h3>Kate Williams</h3>
+                                <hr class="colored">
+                                <p>Head Fashion Buyer</p>
+                                <ul class="list-inline social">
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-pinterest fa-fw"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <%= image_tag 'people/2.jpg', class:'img-responsive', alt:'' %>
+                            <div class="caption">
+                                <h3>Howard Scott</h3>
+                                <hr class="colored">
+                                <p>Sales Manager</p>
+                                <ul class="list-inline social">
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <%= image_tag 'people/4.jpg', class: 'img-responsive', alt: '' %>
+                            <div class="caption">
+                                <h3>Amy Vanderbute</h3>
+                                <hr class="colored">
+                                <p>Marketing Coordinator</p>
+                                <ul class="list-inline social">
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <%= image_tag 'people/5.jpg', class: 'img-responsive' %>
+                            <div class="caption">
+                                <h3>Jeremy Davidson</h3>
+                                <hr class="colored">
+                                <p>Style Expert</p>
+                                <ul class="list-inline social">
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-linkedin fa-fw"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-pinterest fa-fw"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+          <%= render 'layouts/footer' %>
+    <footer class="footer" style="background-image: url('<%= asset_path("fashion/bg-footer.jpg") %>')">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-phone"></i> Call</h4>
+                    <p>555-213-4567</p>
+                </div>
+                <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-map-marker"></i> Visit</h4>
+                    <p>3481 Melrose Place
+                        <br>Beverly Hills, CA 90210</p>
+                </div>
+                <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-envelope"></i> Email</h4>
+                    <p><a href="mailto:mail@example.com">mail@example.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="col-lg-12">
+                    <p class="small">&copy; Armoire 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+
+</html>
+
+

@@ -1,4 +1,4 @@
-$btn-primary-bg: #8E2800;
+$btn-primary-bg: #000;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -35,19 +35,41 @@ html, body, section {
 
 }
 
+header .jumbotron{
+  background-color: transparent;
+  padding-top: 0;
+}
+
+.intro-description{
+  padding: 30px;
+    background: rgba(0, 0, 0, 0.34);
+}
+
+.btn-cta
+{
+  background-color: #B9121B;
+  padding: 20px 40px;
+  border-radius: 10px !important;
+    margin-top: 20px;
+    border: none;
+}
 #color, #color1, #bg-color {
   background-color: #F8FCEE;
 
 }
 
 #bs-example-navbar-collapse-1 {
-  background-color: #F8FCEE;
+  background-color: transparent;
 
 }
 
 #bs-example-navbar-collapse-1 a {
-  color: black;
+  color: white;
   font: 1.5em;
+}
+
+nav.navbar{
+  margin-bottom:0;
 }
 
 .navbar-brand page-scroll {
@@ -231,30 +253,19 @@ a.page-scroll {
 
 }
 
-.italic-h2 {
-    font-family: "adelle-sans",sans-serif;
+body h2.italic-h2 {
+    font-family: "PT Sans",sans-serif;
     font-style: italic;
     font-weight: 500;
     color: #F8FCEE;
-    margin-left: 40%;
     font-size: 1.8em;
 }
 
-.jumbotron p {
-  font-family: "adelle-sans",sans-serif;
-  color: #F8FCEE;
-  font-weight: 500;
-  text-align: center;
-  margin: 2em 1em;
-
-}
-
 #armoire {
-  font-family: "adelle-sans",sans-serif;
+  font-family: "PT Sans",sans-serif;
   font-style: normal;
   font-weight: 700;
   color: #F8FCEE;
-  margin-left: 36%;
 }
 
 
@@ -275,9 +286,6 @@ a.page-scroll {
 
 * {
   box-sizing: border-box;
-}
-html {
-  background: #ddd;
 }
 .widget {
   width: 300px;
