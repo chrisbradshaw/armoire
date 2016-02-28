@@ -35,7 +35,7 @@ $btnYes.on( 'click', function( event ) {
   $.ajax({
    method: "PUT",
     url: $link.attr('href') + '.js',
-  });ˇ
+  });
 } );
 
 
