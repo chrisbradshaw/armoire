@@ -18,7 +18,7 @@ namespace :db do
       shoe.element = "whatever"
       shoe.style = "ugly"
       shoe.color = "green"
-      shoe.user_id = 16
+      shoe.user_id = 17
     end
     Shoe.all.each { |shoe| shoe.image = File.open(Dir.glob(File.join(Rails.root, 'sample_shoes', '*')).sample); shoe.save! }
 
@@ -28,7 +28,7 @@ namespace :db do
       garment.element = "whatever"
       garment.style = "ugly"
       garment.color = "green"
-      garment.user_id = 16
+      garment.user_id = 17
     end
 
     Garment.all.each { |garment| garment.image = File.open(Dir.glob(File.join(Rails.root, 'sample_garments', '*')).sample); garment.save! }
@@ -39,7 +39,7 @@ namespace :db do
       accessory.element = "whatever"
       accessory.style = "ugly"
       accessory.color = "green"
-      accessory.user_id = 16
+      accessory.user_id = 17
     end
 
     Accessory.all.each { |accessory| accessory.image = File.open(Dir.glob(File.join(Rails.root, 'sample_accessories', '*')).sample); accessory.save! }

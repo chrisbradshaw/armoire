@@ -7,7 +7,6 @@ class OutfitsController < ApplicationController
 
    def destroy
     @outfit = Outfit.find(params[:id])
-    puts "@outfit: #{@outfit.inspect}"
     @outfit.destroy
     flash[:success] = "Let's find you another outfit."
     render 'new'
@@ -18,23 +17,18 @@ class OutfitsController < ApplicationController
   end
 
   def random
-    
+    # no longer on site
+
     @random_accessory = Accessory.random_accessory(current_user.id)
     @random_garment = Garment.random_garment(current_user.id)
     @random_shoe = Shoe.random_shoe(current_user.id)
-    puts "@random_accessory: #{@random_accessory.inspect}"
-    puts "@random_shoe: #{@random_shoe.inspect}"
-    puts "@random_garment: #{@random_garment.inspect}"
-
 
   end
 
   def seasonal
-    puts @temperature.inspect
-    puts "seasonal outfit!"
-    @seasonal_accessory = Outfit.get_seasonal_outfit(@temperature)[0]
-    @seasonal_garment = Outfit.get_seasonal_outfit(@temperature)[1]
-    @seasonal_shoe = Outfit.get_seasonal_outfit(@temperature)[2]
+    @seasonal_accessory = Outfit.get_seasonal_outfit(@temperature, current_user)[0]
+    @seasonal_garment = Outfit.get_seasonal_outfit(@temperature, current_user)[1]
+    @seasonal_shoe = Outfit.get_seasonal_outfit(@temperature, current_user)[2]
   end
 
   def create

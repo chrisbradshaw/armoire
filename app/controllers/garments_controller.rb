@@ -1,4 +1,5 @@
 class GarmentsController < ApplicationController
+
   def show
     @garment = Garment.find_by(id: params[:id])
   end
@@ -17,6 +18,11 @@ class GarmentsController < ApplicationController
     if @garment.save
       flash[:success] = "You've added a garment to your Armoire."
       redirect_to @garment
+
+    else
+      flash[:error] = "Cannot save garment!"
+      redirect_to new_garment_path
+
     end
   end
 

@@ -5,6 +5,9 @@ class Shoe < ActiveRecord::Base
 
   attr_accessor :image_cache
 
+  validates :image, presence: true
+
+
   enum season: [:summer, :fall, :winter, :spring]
 
   def self.random_shoe(user_id)

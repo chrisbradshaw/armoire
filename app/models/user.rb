@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          authentication_keys: [:login]
 
+# dependent: :destroy
+
   has_many :shoes
   has_many :garments
   has_many :accessories

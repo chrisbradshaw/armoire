@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   
+  # should put key in a .env file
+  
  FORECAST_KEY = "52257016e380daa78bdba4b79225ab6e"
 
   protect_from_forgery with: :exception
@@ -11,15 +13,16 @@ class ApplicationController < ActionController::Base
   before_action :set_temperature
   protected
 
+# could put into a background job using Resque
 def set_temperature
-if current_user.present?
-  geocode = current_user.geocode
-  lat, long = geocode.first, geocode.last
-   url = "https://api.forecast.io/forecast/#{FORECAST_KEY}/#{long},#{lat}"
-   results = JSON.parse(open(url).read)
-   @temperature = results['currently']['temperature']
-   @summary = results['currently']['summary']
- end
+  if current_user.present?
+    geocode = current_user.geocode
+    lat, long = geocode.first, geocode.last
+     url = "https://api.forecast.io/forecast/#{FORECAST_KEY}/#{long},#{lat}"
+     results = JSON.parse(open(url).read)
+     @temperature = results['currently']['temperature']
+     @summary = results['currently']['summary']
+   end
  end
 
 

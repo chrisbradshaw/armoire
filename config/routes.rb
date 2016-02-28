@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   post 'seasonal', to: 'outfits#seasonal', as: 'seasonal_outfit'
   get 'help'    => 'home#help'
   get 'about'   => 'home#about'
-  get 'contact' => 'hlome#contact'
+  get 'contact' => 'home#contact'
 
   get 'delete/:id' => 'garments#destroy', as: 'garment_destroy'
   get 'delete_accessories/:id' => 'accessories#destroy', as: 'accessory_delete'
