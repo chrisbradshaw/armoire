@@ -9,7 +9,7 @@ class Accessory < ActiveRecord::Base
 
   enum season: [:summer, :fall, :winter, :spring]
 
- def self.random_accessory(user_id)
+  def self.random_accessory(user_id)
     Accessory.where(user_id: user_id).sample
-  end
+   end
 end

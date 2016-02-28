@@ -42,15 +42,15 @@ class UsersController < ApplicationController
     current_user.follow(@user)
 
     respond_to do |format|
-      format.js 
+      format.js
     end
   end
 
   def unfollow
     current_user.unfollow(@user)
-    
+
     respond_to do |format|
-      format.js 
+      format.js
     end
   end
 

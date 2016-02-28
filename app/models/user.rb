@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          authentication_keys: [:login]
 
-# dependent: :destroy
+  # dependent: :destroy
 
   has_many :shoes
   has_many :garments
@@ -38,13 +38,13 @@ class User < ActiveRecord::Base
             }
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
- 
+
   geocoded_by :current_sign_in_ip
-  
+
   before_save :geocode_user, if: :current_sign_in_ip_changed?
 
   def geocode_user
-    g = self.geocode
+    g = geocode
     self.latitude = g.try(:first)
     self.longitude = g.try(:last)
   end
@@ -81,10 +81,10 @@ class User < ActiveRecord::Base
 
   def all_friends
     [followed_users.pluck(:id), following_users.pluck(:id)].uniq
-  end  
+  end
 
   def all_outfits
-     Outfit.where(:user_id => [self.id,all_friends])
+    Outfit.where(user_id: [id, all_friends])
   end
 
   def self.find_for_database_authentication(warden_conditions)

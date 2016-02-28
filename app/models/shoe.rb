@@ -7,11 +7,9 @@ class Shoe < ActiveRecord::Base
 
   validates :image, presence: true
 
-
   enum season: [:summer, :fall, :winter, :spring]
 
   def self.random_shoe(user_id)
     Shoe.where(user_id: user_id).sample
   end
-
 end

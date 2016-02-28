@@ -5,12 +5,12 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new
   end
 
-   def destroy
+  def destroy
     @outfit = Outfit.find(params[:id])
     @outfit.destroy
     flash[:success] = "Let's find you another outfit."
     render 'new'
-  end
+ end
 
   def show
     @outfit = Outfit.find(params[:id])
@@ -22,7 +22,6 @@ class OutfitsController < ApplicationController
     @random_accessory = Accessory.random_accessory(current_user.id)
     @random_garment = Garment.random_garment(current_user.id)
     @random_shoe = Shoe.random_shoe(current_user.id)
-
   end
 
   def seasonal
@@ -51,7 +50,6 @@ class OutfitsController < ApplicationController
     #   @outfits = Outfit.where(user_id: current_user.id, action: 1)
     # end
     @outfits = Outfit.where(user_id: current_user.id)
-
   end
 
   def add_comment
@@ -61,17 +59,16 @@ class OutfitsController < ApplicationController
     comment.user_id = current_user.id
     comment.save
     redirect_to :back
-  end  
-
+  end
 
   def delete_comment
     @outfit = Outfit.find(params[:id])
-    @comment= @outfit.comments.where(id: params[:comment_id]).first
+    @comment = @outfit.comments.where(id: params[:comment_id]).first
     @comment.destroy
     redirect_to :back
   end
 
-  def pending 
+  def pending
     @outfits = Outfit.where(user_id: current_user.id, action: 0)
     puts "outfits #{@outfits.inspect}"
   end

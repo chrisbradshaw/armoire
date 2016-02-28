@@ -3,10 +3,10 @@
 # end
 
 # 10.times.do
-#   Shoe.new() 
+#   Shoe.new()
 # end
 
-# 10.times.do 
+# 10.times.do
 
 # end
-# 
+#
