@@ -326,3 +326,12 @@ body h2.italic-h2 {
   margin: -10px 0 -12px 0;
 }
 
+#barack {
+  background-color: #000;
+  color: #fff;
+}
+
+#barack:hover {
+  background-color: #fff;
+  color: #000;
+}

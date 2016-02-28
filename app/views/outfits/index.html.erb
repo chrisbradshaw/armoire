@@ -1,9 +1,22 @@
 <div class="container">
 <h1>Your Armoire</h1>
 <h2>Outfits</h2>
+
+<%= link_to new_garment_path, class: "btn btn-default" do %>
+    <span>Add A Garment!</span>
+<% end %>
+
+<%= link_to new_shoe_path, class: "btn btn-default" do %>
+    <span>Add Shoes!</span>
+<% end %>
+
+<%= link_to new_garment_path, class: "btn btn-default" do %>
+    <span>Add Accessories!</span>
+<% end %>
+
 <% @outfits.each do |outfit|%>
 <div class="row">
-  <h3 class="center"><%=outfit.name %></h3>
+  <h3 class="center"><%= outfit.name %></h3>
   <div class="col-md-4">
     <h4><%= outfit.garment.try(:name)%></h4>
     <div class="image">
