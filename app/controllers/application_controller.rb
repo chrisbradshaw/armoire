@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   # should put key in a .env file
 
   FORECAST_KEY = '52257016e380daa78bdba4b79225ab6e'.freeze
+  DEFAULT_LAT =  '40.74'
+  DEFAULT_LONG = '-73.98'
 
   protect_from_forgery with: :exception
   include SessionsHelper
@@ -16,17 +18,25 @@ class ApplicationController < ActionController::Base
   protected
 
   # could put into a background job using Resque
-  def set_temperature
-    if current_user.present?
-      geocode = current_user.geocode
+def set_temperature
+  if current_user.present?
+    geocode = current_user.geocode
+    if geocode.present?
       lat = geocode.first
       long = geocode.last
+    else
+      lat = DEFAULT_LAT
+      long = DEFAULT_LONG
+    end
+    
+
+      
       url = "https://api.forecast.io/forecast/#{FORECAST_KEY}/#{long},#{lat}"
       results = JSON.parse(open(url).read)
       @temperature = results['currently']['temperature']
       @summary = results['currently']['summary']
-     end
-   end
+  end
+end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
