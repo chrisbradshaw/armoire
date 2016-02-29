@@ -45,12 +45,14 @@
               <%= f.hidden_field :shoe_id, value: @seasonal_shoe.id %><br>
               <%= f.hidden_field :accessory_id, value: @seasonal_accessory.id %><br>
             </div>
+              
+          <div class="actions">
+            <%= f.submit "Add to Armoire" %>
+          </div>
         <% end %>
     <% end %>
 
-    <div class="actions">
-      <%= f.submit "Add to Armoire" %>
-    </div>
+    
 <% elsif !@seasonal_accessory.present? %>
     <p>You do not have any accessories in your Armoire.</p>
     <%= link_to "Create Accessory", new_accessory_path %>
@@ -58,7 +60,7 @@
     <p>You do not have any shoes in your Armoire.</p>
     <%= link_to "Create Shoe", new_shoe_path %>
 <% elsif !@seasonal_garment.present? %>
-<p><strong>You do not have any garment in your Armoire.</strong></p>
+<p><strong>You do not have any garments in your Armoire.</strong></p>
 <%= link_to "Create Garment", new_garment_path %>
 <% end %>
 

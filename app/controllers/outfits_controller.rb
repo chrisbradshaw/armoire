@@ -25,9 +25,15 @@ class OutfitsController < ApplicationController
   end
 
   def seasonal
-    @seasonal_accessory = Outfit.get_seasonal_outfit(@temperature, current_user)[0]
-    @seasonal_garment = Outfit.get_seasonal_outfit(@temperature, current_user)[1]
-    @seasonal_shoe = Outfit.get_seasonal_outfit(@temperature, current_user)[2]
+    outfits = Outfit.get_seasonal_outfit(@temperature, current_user)
+    puts "outfits[0]: #{outfits[0].inspect}"
+    puts "outfits[1]: #{outfits[1].inspect}"
+    puts "outfits[2]: #{outfits[2].inspect}"
+    puts "@temperature: #{@temperature}"
+
+    @seasonal_accessory = outfits[0]
+    @seasonal_garment = outfits[1]
+    @seasonal_shoe = outfits[2]
   end
 
   def create
