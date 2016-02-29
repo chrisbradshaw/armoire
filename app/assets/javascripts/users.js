@@ -1,4 +1,4 @@
-ˇ$(document).on('page:update', function(event) {
+$(document).on('page:update', function(event) {
   var $btn = $( '.btn-1' );
   var $btnFront = $btn.find( 'a' ),
     $btnYes = $btn.find( '.btn-back .yes' ),
