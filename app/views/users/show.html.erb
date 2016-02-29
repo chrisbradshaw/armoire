@@ -43,24 +43,29 @@
   <br>
   <% @outfits.each do |outfit| %>
 
+<% if outfit.shoe.respond_to? :image %>
       <div class="col-md-4">
       <div class="image">
         <img width="275" height="225"src="<%= outfit.garment.try(:image)%>">
       </div>
       </div>
-
-      <div class="col-md-4">
+<% end %>
+<% if outfit.shoe.respond_to? :image %>
+        <div class="col-md-4">
         <div class="image">
-       <img width="275" height="225"src="<%= outfit.shoe.try(:image)%>">
+       <img width="275" height="225"src="<%= outfit.shoe.image %>">
        </div>
        </div>
+<% end %>
 
+<% if outfit.accessory.respond_to? :image %>
       <div class="col-md-4">
       <div class="image">
         <img width="275" height="225"src="<%= outfit.accessory.try(:image)%>">
         </div>
       </div>
       </div>
+      <% end %>
 
       <div class="container">
         <div class="row">
