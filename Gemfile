@@ -43,8 +43,10 @@ group :development, :test do
   gem 'rails-pry', '~> 0.0.1'
   gem 'rubycritic'
   gem 'rubocop', '~> 0.36.0'
-  gem 'populator', '~> 1.0'
+
 end
+
+  gem 'populator', '~> 1.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
