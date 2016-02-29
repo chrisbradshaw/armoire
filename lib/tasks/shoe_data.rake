@@ -19,6 +19,33 @@ namespace :db do
     User.pluck(:id).each do |user_id|
       Shoe.populate 3 do |shoe|
         shoe.name = "name"
+        shoe.season = 0
+        shoe.element = Faker::Commerce.department
+        shoe.style = "classic"
+        shoe.color = "blue"
+        shoe.user_id = user_id
+      end
+
+       Shoe.populate 3 do |shoe|
+        shoe.name = "name"
+        shoe.season = 2
+        shoe.element = Faker::Commerce.department
+        shoe.style = "classic"
+        shoe.color = "blue"
+        shoe.user_id = user_id
+      end
+
+       Shoe.populate 3 do |shoe|
+        shoe.name = "name"
+        shoe.season = 3
+        shoe.element = Faker::Commerce.department
+        shoe.style = "classic"
+        shoe.color = "blue"
+        shoe.user_id = user_id
+      end
+
+    Shoe.populate 3 do |shoe|
+        shoe.name = "name"
         shoe.season = 1
         shoe.element = Faker::Commerce.department
         shoe.style = "classic"
@@ -28,6 +55,15 @@ namespace :db do
 
       Garment.populate 3 do |garment|
         garment.name = "name"
+        garment.season = 0
+        garment.element = Faker::Commerce.department
+        garment.style = "classic"
+        garment.color = "blue"
+        garment.user_id = user_id
+      end
+
+    Garment.populate 3 do |garment|
+        garment.name = "name"
         garment.season = 1
         garment.element = Faker::Commerce.department
         garment.style = "classic"
@@ -35,9 +71,57 @@ namespace :db do
         garment.user_id = user_id
       end
 
+
+    Garment.populate 3 do |garment|
+        garment.name = "name"
+        garment.season = 2
+        garment.element = Faker::Commerce.department
+        garment.style = "classic"
+        garment.color = "blue"
+        garment.user_id = user_id
+      end
+
+
+    Garment.populate 3 do |garment|
+        garment.name = "name"
+        garment.season = 3
+        garment.element = Faker::Commerce.department
+        garment.style = "classic"
+        garment.color = "blue"
+        garment.user_id = user_id
+      end
+
+
+      Accessory.populate 3 do |accessory|
+        accessory.name = "name"
+        accessory.season = 0
+        accessory.element = Faker::Commerce.department
+        accessory.style = "classic"
+        accessory.color = "blue"
+        accessory.user_id = user_id
+      end
+
       Accessory.populate 3 do |accessory|
         accessory.name = "name"
         accessory.season = 1
+        accessory.element = Faker::Commerce.department
+        accessory.style = "classic"
+        accessory.color = "blue"
+        accessory.user_id = user_id
+      end
+
+      Accessory.populate 3 do |accessory|
+        accessory.name = "name"
+        accessory.season = 2
+        accessory.element = Faker::Commerce.department
+        accessory.style = "classic"
+        accessory.color = "blue"
+        accessory.user_id = user_id
+      end
+
+      Accessory.populate 3 do |accessory|
+        accessory.name = "name"
+        accessory.season = 3
         accessory.element = Faker::Commerce.department
         accessory.style = "classic"
         accessory.color = "blue"
