@@ -2,21 +2,24 @@
 
 Armoire is an intuitive real time apparel planner and scheduling platform built with Ruby on Rails. It optimizes your daily outfit selection based on:
 
-*Apparel/Accessories/Shoes you already own
-*Current geocoordinates
-*Time since last wear
-*Color coordination
-*Amount of likes by friends
+```
+-Apparel/Accessories/Shoes you already own
+-Current geocoordinates
+-Time since last wear
+-Color coordination
+-Amount of likes by friends
+```
 
 **Features**
 
-*Users can uploaded pictures, set attributes of their favorite garments, shoes and accessories. 
-*Users can create their own unique outfits, and preview before adding to their Armoire. 
-*Alternatively users can generate random outfits, or view customized recommendations based on a proprietary algorithm.
-*Users can friend, favorite outfits and communicate with other users. 
-*Weather API integration (Forecast.io) for real time updates based on season/weather reports.
-*Clean, user friendly interface 
-
+```
+-Users can uploaded pictures, set attributes of their favorite garments, shoes and accessories. 
+-Users can create their own unique outfits, and preview before adding to their Armoire. 
+-Alternatively users can generate random outfits, or view customized recommendations based on a proprietary algorithm.
+-Users can friend, favorite outfits and communicate with other users. 
+-Weather API integration (Forecast.io) for real time updates based on season/weather reports.
+-Clean, user friendly interface 
+```
 
 ## Getting Started
 
