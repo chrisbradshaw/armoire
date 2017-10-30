@@ -334,7 +334,7 @@ DEPENDENCIES
   carrierwave (~> 1.2, >= 1.2.1)
   coffee-rails (~> 4.1.0)
   devise (~> 4.3)
-  dotenv-rails (~> 2.2, >= 2.2.1)
+  dotenv-rails
   faker (~> 1.8, >= 1.8.4)
   fog (~> 1.37.0)
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
