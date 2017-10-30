@@ -1,28 +1,6 @@
-ARMOIRE: look great so you can focus on what matters. 
-
-Armoire is an intuitive real time apparel planner and scheduling platform. It optimizes your daily outfit selection based on:
-
-, , amongst ).  
-
-Incorporates: 
-Ruby on Rails
-Relational mapping: PostgreSQL
-User authentication and session: Devise 
-Bootstrap customized with SASS
-Early Beta currently located on Heroku: https://intense-harbor-75235.herokuapp.com/
-
-Features:
-
-
-
-
-Authors:
-Jen Abella, Chris McGuigan, Chris Bradshaw, Maisie Athens
-
-
 # Armoire 1.0.0
 
-Armoire is an intuitive real time apparel planner and scheduling platform. It optimizes your daily outfit selection based on:
+Armoire is an intuitive real time apparel planner and scheduling platform built with Ruby on Rails. It optimizes your daily outfit selection based on:
 
 *Apparel/Accessories/Shoes you already own
 *Current geocoordinates
